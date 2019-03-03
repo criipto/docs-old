@@ -1,2 +1,2 @@
-# docs
+# Documentation
 Documentation for Criipto Verify
