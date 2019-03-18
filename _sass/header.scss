@@ -1,0 +1,25 @@
+header {
+    padding: 15px 0;
+
+    .container {
+        height: 50px;
+    }
+
+    .header-flex {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .logo {
+        position: absolute;
+        left: 50%;
+        top: 15px;
+        transform: translate(-50%, 0);
+
+        img {
+            width: 90px;
+        }
+    }
+}
+
+

@@ -17,7 +17,7 @@ title: Criipto - Secure and Compliant Customer Identification
 email: hello@criipto.com
 description: >- # this means to ignore newlines until "baseurl:"
   National and bank e-ID services such as Danish NemID, Swedish BankID, and Norwegian BankID as a service.
-baseurl: "/docs" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: criiptoCPH
 github_username:  criipto
@@ -26,23 +26,11 @@ permalink: pretty
 
 # Build settings
 markdown: kramdown
+highlighter: rouge
 
-sass:
-  sass_dir: ./css
-
-collections:
-
-defaults:
-  -
-    scope: 
-      path: "" # all files
-    values:
-      show-navigation: true
-      show-login-verify: true
-      show-login-subscription: true
-      show-login-share: false
-      show-signup-verify: true
-      show-signup-share: false
+theme: minima
+plugins:
+  - jekyll-feed
 
 
 # Exclude from processing.
