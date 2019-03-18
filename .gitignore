@@ -21,3 +21,6 @@ config.json
 *.swo
 Session.vim
 .netrwhist
+
+# Jekyll
+_site

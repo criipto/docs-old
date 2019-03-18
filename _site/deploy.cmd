@@ -47,9 +47,9 @@ IF NOT DEFINED KUDU_SYNC_CMD (
   :: Locally just running "kuduSync" would also work
   SET KUDU_SYNC_CMD=%appdata%\npm\kuduSync.cmd
 )
-ECHO CALLING GET RUBY
+ECHO CALLING RUN JEKYLL
 
-call :ExecuteCmd "getruby.cmd"
+call :ExecuteCmd "runjekyll.cmd"
 
 ECHO WE MADE IT
 
