@@ -24,20 +24,20 @@ echo DONE Unzipping Ruby
 
 REM Get DevKit to build Ruby native gems  
 REM If you don't need DevKit, rem this out.
-curl -o DevKit.zip http://cdn.rubyinstaller.org/archives/devkits/DevKit-mingw64-64-4.7.2-20130224-1432-sfx.exe
-echo START Unzipping DevKit
-d:\7zip\7za x -y -oDevKit DevKit.zip > devkitout
+REM curl -o DevKit.zip http://cdn.rubyinstaller.org/archives/devkits/DevKit-mingw64-64-4.7.2-20130224-1432-sfx.exe
+REM echo START Unzipping DevKit
+REM d:\7zip\7za x -y -oDevKit DevKit.zip > devkitout
 echo DONE Unzipping DevKit
 
 REM Init DevKit
-ruby DevKit\dk.rb init
+REM ruby DevKit\dk.rb init
 
 REM Tell DevKit where Ruby is
-echo --- > config.yml
-echo - D:/home/site/deployments/tools/r/ruby-2.3.1-x64-mingw32 >> config.yml
+REM echo --- > config.yml
+REM echo - D:/home/site/deployments/tools/r/ruby-2.3.1-x64-mingw32 >> config.yml
 
 REM Setup DevKit
-ruby DevKit\dk.rb install
+REM ruby DevKit\dk.rb install
 
 REM Update until someone fixes the Ruby Windows installer https://github.com/oneclick/rubyinstaller/issues/261
 curl -L -o update.gem https://rubygems.org/gems/rubygems-update-2.6.8.gem
