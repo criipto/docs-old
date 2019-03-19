@@ -22,9 +22,8 @@ steps:
 - script: bundle exec jekyll build
   displayName: 'bundle exec jekyll build'
 
-- task
+- task: PublishBuildArtifacts@1
   displayName: 'Publish artifacts: drop'
   inputs: 
     PathtoPublish: $(build.artifactstagingdirectory)
-  condition: succeededOrFaild()
-
+  condition: succeededOrFailed()
