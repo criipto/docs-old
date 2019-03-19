@@ -126,6 +126,9 @@ if [ -e "$DEPLOYMENT_TARGET/Gemfile" ]; then
   rbenv global $LATEST_RUBY_VERSION
   exitWithMessageOnError "Failed to switch ruby versions"
   
+  echo "VERSIONS:"
+  echo "Ruby: `ruby --version`"
+  echo "Bundler: `bundle --version`"
   echo "Running bundle clean"
   bundle clean --force
   
