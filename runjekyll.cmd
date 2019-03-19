@@ -2,7 +2,7 @@
 
 REM Put Ruby in Path
 REM You can also use %TEMP% but it is cleared on site restart. Tools is persistent.
-SET PATH=%PATH%;D:\home\site\deployments\tools\r\ruby-2.5.3-x64-mingw32\bin
+SET PATH=%PATH%;D:\home\site\deployments\tools\r\rubyinstaller-2.5.3-1-x64\bin
 
 REM I am in the repository folder
 pushd D:\home\site\deployments
@@ -10,7 +10,7 @@ if not exist tools md tools
 cd tools 
 if not exist r md r
 cd r 
-if exist ruby-2.5.3-x64-mingw32 goto end
+if exist rubyinstaller-2.5.3-1-x64 goto end
 
 echo No Ruby, need to get it!
 
