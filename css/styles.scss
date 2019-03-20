@@ -3,10 +3,15 @@
 
 body {
     font-family: 'Raleway', sans-serif;
+
+    a {
+        color: #0a84ae;
+    }
 }
 
 @import "header";
 @import "sidebar";
 @import "code";
 @import "code-monokai";
-@import "article"
+@import "article";
+@import "footer";

@@ -2,6 +2,32 @@
 layout: article
 ---
 
-# Test users for the different e-ID types
+# E-ID Test Users
 
-{% include snippets/test-users.md %}
+Almost all e-ID types have a notion of _test_ and _real_ users.
+
+_Real users_ are real people logging in to a web site, thus voluntering their real name and typically also a social security number, SSN.
+
+_Test users_ are either created by you for the occasion, or we provide you with access to already created test users. 
+
+You may refer to the sections below for test users for your choice of e-ID.
+
+## Swedish BankID
+
+Swedish BankID test users are created at the <a href="https://demo.bankid.com/" target="_blank">demo web site</a>.   
+
+Even if the demo site is where you will actually create your test users, it does link to the <a href="https://www.bankid.com/bankid-i-dina-tjanster/rp-info" target="_blank">general BankID technical page</a>. As a Criipto Verify customer you don't have worry about most of what's this site, but on the page is also a link to the document describing in detail how to create and use test user accounts. The document is called something like "How to get a test BankID" and links to a PDF.
+
+_Note_ that, as is also described in the document, using test BankID users does require a reconfiguration of the BankID application. This means it cannot be used for real BankID. So if you are Swedish and already have BankID on your phone, you may want to use a spare phone for testing.
+
+## Norwegian BankID
+
+Norwegian BankID test users come in two flavors:
+
+1. _Web based BankID with a hardware token_. Test users from this type of BankID may be created and used on the fly
+2. _Mobile BankID_. Norwegian mobile BankID is based on a socalled _SIM card application_ which means you need a special SIM card issued by one of the Norwegian carriers. For testing you may order three of those cards through Criipto once you have signed up for Norwegian BankID
+
+
+## Danish NemID
+
+Peter skriver noget her?!

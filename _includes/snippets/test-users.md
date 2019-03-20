@@ -1,1 +1,7 @@
-# Test users
+Almost all e-ID types have a notion of test users and real users.
+
+_Real users_ are real people logging in to a web site, thus voluntering their real name and typically also a social security number, SSN.
+
+_Test users_ are either created by you for the occasion, or we provide you with access to already created test users. 
+
+You may ready more in the [section on test users](/how-to/test-users)

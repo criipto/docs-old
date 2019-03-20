@@ -1,9 +1,19 @@
+.article {
+    padding-bottom: 50px;
 
-h3 {
-    font-size: 18px;
-    font-weight: 600;
-}
+    h3 {
+        font-size: 18px;
+        font-weight: 600;
+        margin-top: 12px;
+    }
 
-.article img {
-    max-width: 100%;
+    img {
+        display: block;
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        box-shadow: 10px 10px 10px lightgrey; 
+        margin-bottom: 36px;
+        margin-top: 26px;   
+    }
 }
