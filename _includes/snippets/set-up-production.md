@@ -2,4 +2,4 @@ Once you have integrated with Criipto Verify and tested that it works with test 
 
 _Please note_ that for production usage a paid subscription is required.
 
-Read more in the section on [how to set up for production](how-to/get-ready-for-production).
+Read more in the section on [how to set up for production](/how-to/get-ready-for-production).
