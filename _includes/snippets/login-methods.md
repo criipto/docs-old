@@ -19,5 +19,4 @@ The current list of possible values is:
 | BankID:                                    |`urn:grn:authn:fi:tupas` | 
 | Mobile certificate (Mobiilivarmenne):&nbsp;|`urn:grn:authn:fi:mobile-id` | 
 | Any of the two:                            |`urn:grn:authn:fi:mobile-id` | 
-{: .inline-code } 
 &nbsp;

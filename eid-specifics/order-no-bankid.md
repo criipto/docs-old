@@ -1,3 +1,38 @@
 ---
 layout: article
 ---
+# Ordering Norwegian BankID
+
+To start accepting real users with Norwegian BankID, you must first request a _merchant certificate_ from the Norwegian BankID organisation.
+
+### Prerequisites for ordering a merchant certificate
+
+In order to apply for a BankID merchant certificate for a company you must meet the basic requirements:
+
+- The company is registered in the central Norwegian business registry, _Brønnøysundregistrene_
+- The company is a customer of a Norwegian Bank. Most banks in Norway are part of the BankID network.
+- The person that will sign the contract must be in possession of one of these personal e-IDs: Norwegian BankID, Swedish BankID, or Danish NemID
+
+## Ordering the merchant certificate
+
+To order the actual certificate please send a request to this address <a href="mailto:upport@criipto.com?subject=NO BankID for ...">support@criipto.com</a> with answers to these questions:
+
+1. Your company: _Name, organisation number, and address_
+2. Your company's Norwegian bank: _Name, organisation number, and address_
+3. General contact person at your company for BankID related communication: _Name and email_
+4. Contact person with authorization to block/revoke the BankID merchant certificate: _Name, mobile phone, and email_
+5. Person registered in the business registry with authorization to sign the agreement: _Name and email_
+6. The name to appear in the login app. E.g. the name of your company or your specific service
+7. Web address of your service to be listed on www.banki.no
+8. Contact persons who should be notified of BankID operations related issues: _Names and emails_
+9. If you need access to social security numbers ("fødselsnummer") please provide brief explanation of why and reference the Norwegian law and paragraph that grant you the right
+10. Finally, you must enclose a company certificate ("firmaattest") from the business registry, Brønnøysundregistrene.
+
+## Next steps
+
+After Criipto has received the above information, we order the certificate from the BankID network by filling out an online agreement. The agreement is then sent to the appointed person at your company for signing, after which also Criipto will sign. 
+
+When all signatures are in place the signed agreement is sent to your bank for further processing and eventual issuance of your merchant certificate. 
+
+Once issued the certificated is installed directly into Criipto's or the BankID infrastructure.
+

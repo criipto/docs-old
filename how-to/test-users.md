@@ -22,7 +22,7 @@ _Note_ that, as is also described in the document, using test BankID users does 
 
 ## Norwegian BankID
 
-Norwegian BankID test users come in two flavors:
+Two types of Norwegian BankID are available:
 
 1. _Web based BankID with a hardware token_. Test users from this type of BankID may be created and used on the fly
 2. _Mobile BankID_. Norwegian mobile BankID is based on a socalled _SIM card application_ which means you need a special SIM card issued by one of the Norwegian carriers. For testing you may order three of those cards through Criipto once you have signed up for Norwegian BankID
