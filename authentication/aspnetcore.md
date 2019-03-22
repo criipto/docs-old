@@ -13,7 +13,7 @@ Four steps are required to complete your first test login:
 3. [Configure your application to use Criipto Verify](#application)
 4. [Trigger authentication in your application](#trigger)
 
-This explains how to set up your applictions and test with test users. To use real e-IDs for login the setup is the same, but you must be [set up for Production](#production)
+This explains how to set up your application and test with test users. To use real e-IDs for login the setup is the same, but you must be [set up for Production](#production)
 
 And note that you need test e-ID users to see your code in action. How to get those is [described further down](#testusers).
 
@@ -43,9 +43,9 @@ For more on how to make it work in an iframe using the _postMessage()_ functiona
 
 # Install dependencies
 
-To integrate Criipto Verify with ASP.NET Core you will use the Cookie and OpenID Connect (OIDC) authentication handlers. The seed project already references the ASP.NET Core metapackage (Microsoft.AspNetCore.App) which includes all NuGet packages shipped by Microsoft as part of ASP.NET Core 2.2, including the packages for the Cookie and OIDC authentication handlers.
+To integrate Criipto Verify with ASP.NET Core you will use the Cookie and OpenID Connect (OIDC) authentication handlers. The seed project already references the ASP.NET Core meta package (Microsoft.AspNetCore.App) which includes all NuGet packages shipped by Microsoft as part of ASP.NET Core 2.2, including the packages for the Cookie and OIDC authentication handlers.
 
-If you are adding this to your own existing project, and you have not referenced the metapackage, then please make sure that you add the Microsoft.AspNetCore.Authentication.Cookies and Microsoft.AspNetCore.Authentication.OpenIdConnect packages to your application.
+If you are adding this to your own existing project, and you have not referenced the meta package, then please make sure that you add the Microsoft.AspNetCore.Authentication.Cookies and Microsoft.AspNetCore.Authentication.OpenIdConnect packages to your application.
 
 ``` powershell
 Install-Package Microsoft.AspNetCore.Authentication.Cookies
@@ -57,7 +57,7 @@ Install-Package Microsoft.AspNetCore.Authentication.OpenIdConnect
 To enable authentication in your ASP.NET Core application, use the OpenID Connect (OIDC) middleware.
 Go to the `ConfigureServices` method of your `Startup` class. To add the authentication services, call the `AddAuthentication` method. To enable cookie authentication, call the `AddCookie` method.
 
-Next, configure the OIDC authentication handler. Add a call to `AddOpenIdConnect`. Configure the necessary parameters, such as `ClientId`, `ClientSecret`, `ResponseType`, and not least the `Authority`. The latter is used by the middelvare to get the metadata describing the relevant endpoints, the signing keys etc.
+Next, configure the OIDC authentication handler. Add a call to `AddOpenIdConnect`. Configure the necessary parameters, such as `ClientId`, `ClientSecret`, `ResponseType`, and not least the `Authority`. The latter is used by the middleware to get the metadata describing the relevant endpoints, the signing keys etc.
 
 The OIDC middleware requests both the `openid` and `profile` scopes by default, but note that Criipto Verify by nature returns only the information derived from the underlying e-ID service. Changing the scopes does not affect the amount and nature of information delivered from the user information endpoint.
 
@@ -109,7 +109,7 @@ _Note_ that the above code dynamically sets the `AcrValues` by picking it from t
 
 {% include snippets/login-methods.md %}
 
-### Enable the OpenID Connect middelware
+### Enable the OpenID Connect middleware
 
 Next, add the authentication middleware. In the `Configure` method of the `Startup` class, call the `UseAuthentication` method.
 
@@ -146,7 +146,7 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 <a name="trigger"></a>
 ## Trigger Login and Logout in Your Application
 
-After the middelware for performing the authentication is wired up, the next step is to perform the actual authentication.
+After the middleware for performing the authentication is wired up, the next step is to perform the actual authentication.
 
 ### Protected resources trigger login
 
@@ -189,13 +189,13 @@ public async Task Logout()
 
 In summary, the steps above will lead to a runtime flow looks like this:
 
-1. The web server starts the application which configures and initializes the OpenID Connect middelware. The middelware is configured with a URL from which it retrieves the metadata describing the various endpoints and encryption keys, such as the token and userinfo endpoints as well the token signing certificates
-2. User picks login method, or the application is hardcoded to one of the [authentication options](#loginmethod)
-2. A request for a resource protected by the `[Authorization]` kicks off the OIDC middelware login flow
-3. The user's browser is redirected to the Criipto Verfiy service where actual login happens
-4. A callback with an issued _authorization code_ is sent back to the application and intercepted by the OIDC middelware
-5. The middelware calls the Criipto Verify service to exchange the code for an _access token_. Note that this is a direct server to server call which - unlike the other communication - does not pass through the browser
-6. The access token is used by the OIDC middelware to retrieve the available user information which is set as claims on the user principal.
+1. The web server starts the application which configures and initializes the OpenID Connect middleware. The middleware is configured with a URL from which it retrieves the metadata describing the various endpoints and encryption keys, such as the token and userinfo endpoints as well the token signing certificates
+2. The user picks the login method, or the application is hardcoded to one of the [authentication options](#loginmethod)
+2. A request for a resource protected by the `[Authorization]` kicks off the OIDC middleware login flow
+3. The user's browser is redirected to the Criipto Verify service where actual login happens
+4. A callback with an issued _authorization code_ is sent back to the application and intercepted by the OIDC middleware
+5. The middleware calls the Criipto Verify service to exchange the code for an _access token_. Note that this is a direct server to server call which - unlike the other communication - does not pass through the browser
+6. The access token is used by the OIDC middleware to retrieve the available user information which is set as claims on the user principal.
 
 If you want to inspect what is actually going on you may see much of it if you use for example chrome and turn on the developer tools to inspect the network traffic.
 

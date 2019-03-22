@@ -5,18 +5,20 @@ To pick the login method you must set the `AcrValues` parameter on the authentic
 
 The current list of possible values is:
 
+
 | **Norwegian BankID** |
-| Mobile:                                    | `urn:grn:authn:no:bankid:mobile` |
-| Hardware token (kodebrikke):&nbsp;         | `urn:grn:authn:no:bankid:central` | 
+| &nbsp;&nbsp;Mobile:                                    | `urn:grn:authn:no:bankid:mobile` |
+| &nbsp;&nbsp;Hardware token (kodebrikke):&nbsp;         | `urn:grn:authn:no:bankid:central` | 
 | **Swedish BankID** |
-| Same device:                               | `urn:grn:authn:se:bankid:same-device` | 
-| Another device (aka mobile):&nbsp;         | `urn:grn:authn:se:bankid:another-device` | 
+| &nbsp;&nbsp;Same device:                               | `urn:grn:authn:se:bankid:same-device` | 
+| &nbsp;&nbsp;Another device (aka mobile):&nbsp;         | `urn:grn:authn:se:bankid:another-device` | 
 | **Danish NemID** |
-| Personal with code card:&nbsp;             | `urn:grn:authn:dk:nemid:poces` | 
-| Employee with code card:&nbsp;             | `urn:grn:authn:dk:nemid:moces` | 
-| Employee with code file:&nbsp;             | `urn:grn:authn:dk:nemid:moces:codefile` | 
+| &nbsp;&nbsp;Personal with code card:&nbsp;             | `urn:grn:authn:dk:nemid:poces` | 
+| &nbsp;&nbsp;Employee with code card:&nbsp;             | `urn:grn:authn:dk:nemid:moces` | 
+| &nbsp;&nbsp;Employee with code file:&nbsp;             | `urn:grn:authn:dk:nemid:moces:codefile` | 
 | **Finish e-ID** |
-| BankID:                                    |`urn:grn:authn:fi:tupas` | 
-| Mobile certificate (Mobiilivarmenne):&nbsp;|`urn:grn:authn:fi:mobile-id` | 
-| Any of the two:                            |`urn:grn:authn:fi:mobile-id` | 
-&nbsp;
+| &nbsp;&nbsp;BankID:                                    |`urn:grn:authn:fi:tupas` | 
+| &nbsp;&nbsp;Mobile certificate (Mobiilivarmenne):&nbsp;|`urn:grn:authn:fi:mobile-id` | 
+| &nbsp;&nbsp;Any of the two:                            |`urn:grn:authn:fi:mobile-id` | 
+
+&nbsp;&nbsp;

@@ -1,10 +1,18 @@
 .article {
     padding-bottom: 50px;
+    line-height: 1.6;
 
     h3 {
         font-size: 18px;
         font-weight: 600;
         margin-top: 12px;
+    }
+
+    p {
+        margin-bottom: 12px;
+    }
+    li {
+        margin-bottom: 6px;
     }
 
     img {

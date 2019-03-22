@@ -4,9 +4,9 @@ layout: article
 
 # Getting ready for production
 
-Once you have integrated with Criipto Verify and tested that it works with test user accounts, you are ready to go to production to accept real e-ID logins and signatures.
+Once you have developed and tested your application to work with test user accounts, you are ready to move ahead and work with real user e-ID accounts.
 
-_Please note_ that for production usage a paid subscription is required.
+_Please note_ that for production usage you do need a paid subscription.
 
 1. If you haven't done so already, go to the [subscription management site](https://subscription.criipto.com) and choose a plan that suits your expected usage.
 2. Go to [manage.criipto.id](https://manage.criipto.id) and log in to access your tenant
