@@ -27,7 +27,7 @@ with answers to these questions:
 4. Contact person with authorization to block/revoke the BankID merchant certificate: _Name, mobile phone, and email_
 5. Person registered in the business registry with authorization to sign the agreement: _Name and email_
 6. The display name to appear in the login app. E.g. the name of your company or your specific service. (See the image below)
-7. Web address of your service to be listed on www.banki.no
+7. Web address of your service to be listed on www.bankid.no
 8. Contact persons who should be notified of BankID operations related issues: _Names and emails_
 9. If you need access to social security numbers ("fødselsnummer") please provide brief explanation of why and reference the Norwegian law and paragraph that grant you the right
 10. Finally, you must enclose a company certificate ("firmaattest") from the business registry, Brønnøysundregistrene.
