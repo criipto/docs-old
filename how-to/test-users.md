@@ -36,19 +36,10 @@ Test users are created through the web page at [https://ra-preprod.bankidnorge.n
 3. Fill out the first name, last name, and BankID friendly name.
 4. Click "Order" to initiate the process
 5. Once the process complete you now have a test user. User name is the generated SSN, one time password (OTP) is always "otp", and password is always "qwer1234"
-6. TOnce the process is complete you can use the newly created test user.
-Best,
 
-Niels
+You can test it out at [www.grean.id](https://www.grean.id) which is a small sample run by Criipto. 
 
-]
-
-1. Go to the "TEST NUMBER GENERATOR" to generate valid SSN
-2. It now says "Could not find any bankIDs for ..."
-Fill out the first name, last name, and BankID friendly name
-Click "Order"
-Once the process complete you now have a test user. User name is the generated SSN, one time password (OTP) is "otp", and password is "qwer1234"
-You can test it out here: www.grean.id which is a small sample run by Criipto. There you can also see the screen flow.
+### Testing Mobile BankID 
 
 
 For testing you may order three of those cards through Criipto once you have signed up for Norwegian BankID
