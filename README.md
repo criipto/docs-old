@@ -1,3 +1,7 @@
+---
+published: false
+---
+
 # Documentation
 Documentation for Criipto Verify
 

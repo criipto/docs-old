@@ -6,7 +6,18 @@ body {
 
     a {
         color: #0a84ae;
+
+        &:hover, &:focus, &:active {
+            color: #ff7058;
+            outline: none;
+            text-decoration: none; 
+        }
     }
+
+    .main-content {
+        margin-top: 90px;
+    }
+      
 }
 
 @import "header";

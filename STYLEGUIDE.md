@@ -1,3 +1,7 @@
+---
+published: false
+---
+
 # Criipto Style Guide
 
 This style guide covers the terminology and content specific to Criipto, along with some comments on common writing issues.

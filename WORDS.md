@@ -1,3 +1,7 @@
+---
+published: false
+---
+
 # Words
 This document contains spellings and definitions as they are to be used in the Criipto docs.
 
