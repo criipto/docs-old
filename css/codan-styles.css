@@ -1,0 +1,20 @@
+#dknemid-error-message-label {
+    display: none;
+}
+
+#dknemid-error-message .dknemid-label:first-child {
+    display: none;
+}
+
+.dknemid-error {
+    color: transparent;
+    font-size: 0;
+    z-index: -100;
+}
+
+.dknemid-error:after {
+    font-size: 16px;
+    color: black;
+    content: 'Du kan ikke bruge dit personlige NemId til at logge ind på Erhverv.';
+}
+

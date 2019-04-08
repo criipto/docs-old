@@ -49,4 +49,4 @@ For testing you may order three of those cards through Criipto once you have sig
 
 ## Danish NemID
 
-Peter skriver noget her?!
+coming ...
