@@ -18,3 +18,19 @@
     content: 'Du kan ikke bruge dit personlige NemId til at logge ind på Erhverv.';
 }
 
+.company-selector p {
+    color: transparent;
+    font-size: 0;
+    z-index: -100;
+}
+
+.company-selector p:after {
+    font-size: 16px;
+    color: black;
+    content: 'Vælg den virksomhed, som du vil logge ind på vegne af. Vær opmærksom på, at du skal logge ud af Mit Codan før du kan logge ind på vegne af en anden virksomhed.';
+}
+
+.company-button-continue {
+    cursor: pointer;
+}
+
