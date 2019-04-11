@@ -20,10 +20,13 @@
         </li>
         <li>E-ID specifics
             <ul>
-<!--                 <li class="{% if '/eid-specifics/order-dk-nemid/' == page.url %}active{% endif %}">
+                <li class="{% if '/eid-specifics/order-eid/' == page.url %}active{% endif %}">
+					<a href="{% link eid-specifics/order-eid.md %}">Order company e-ID certificates</a>
+				</li>
+                <li class="{% if '/eid-specifics/order-dk-nemid/' == page.url %}active{% endif %}">
 					<a href="{% link eid-specifics/order-dk-nemid.md %}">Danish NemID</a>
 				</li>
- -->                <li class="{% if '/eid-specifics/order-no-bankid/' == page.url %}active{% endif %}">
+                <li class="{% if '/eid-specifics/order-no-bankid/' == page.url %}active{% endif %}">
 					<a href="{% link eid-specifics/order-no-bankid.md %}">Norwegian BankID</a>
 				</li>
 <!--                 <li class="{% if '/eid-specifics/order-se-bankid/' == page.url %}active{% endif %}">

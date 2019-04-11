@@ -8,6 +8,12 @@ Once you have developed and tested your application to work with test user accou
 
 _Please note_ that for production usage you do need a paid subscription.
 
+First you must acquire a production certificate from the e-ID provider - or providers - of choice. More on how to do that [can be found here](/eid-specifics/order-eid).
+
+Once you have obtained your production certificate, and you or Criipto - depending on type of e-ID - have installed it, you are ready to move to production.
+
+Below are the steps to follow to 
+
 1. If you haven't done so already, go to the [subscription management site](https://subscription.criipto.com) and choose a plan that suits your expected usage.
 2. Go to [manage.criipto.id](https://manage.criipto.id) and log in to access your tenant
 3. Go to the "Domains" tab and set up a production domain.

@@ -27,7 +27,14 @@
 .company-selector p:after {
     font-size: 16px;
     color: black;
+}
+
+.company-selector p.lang-da:after {
     content: 'Vælg den virksomhed, som du vil logge ind på vegne af. Vær opmærksom på, at du skal logge ud af Mit Codan før du kan logge ind på vegne af en anden virksomhed.';
+}
+
+.company-selector p.lang-en:after {
+    content: 'Choose the company on behalf of which you want to sign in. Please note that you must sign out of Mit Codan before you can log in on behalf of another company.';
 }
 
 .company-button-continue {
