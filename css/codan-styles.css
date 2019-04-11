@@ -17,17 +17,10 @@
     color: black;
 }
 
-.dknemid-error-message-label-default .dknemid-error .lang-da:after {
-    font-size: 16px;
-    color: black;
+.dknemid-error:after {
     content: 'Du kan ikke bruge dit personlige NemId til at logge ind på Erhverv.';
 }
 
-.dknemid-error-message-label-default .dknemid-error .lang-en:after {
-    font-size: 16px;
-    color: black;
-    content: 'You cannot use your personal NemID to log in to Erhverv.';
-}
 
 
 
