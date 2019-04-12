@@ -22,6 +22,17 @@
 }
 
 
+.company-selector h2 {
+    color: transparent;
+    font-size: 0;
+    z-index: -100;
+}
+
+.company-selector h2:after {
+    font-size: 20px;
+    color: black;
+    content: "Vælg virksomhed"
+}
 
 
 .company-selector p {
@@ -47,3 +58,13 @@
     cursor: pointer;
 }
 
+.company-list ul li .left.note {
+    color: transparent;
+    font-size: 0;
+}
+
+.company-list ul li .left.note:after {
+    font-size: 14px;
+    color: grey;
+    content: "CVR-nummer:";
+}
