@@ -41,11 +41,7 @@ You can test it out at [www.grean.id](https://www.grean.id) which is a small sam
 
 ### Testing Mobile BankID 
 
-
-For testing you may order three of those cards through Criipto once you have signed up for Norwegian BankID
-
-
-
+For testing you may order up to three test SIM cards through Criipto once you have signed up for Norwegian BankID.
 
 ## Danish NemID
 

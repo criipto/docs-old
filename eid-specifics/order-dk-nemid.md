@@ -5,63 +5,58 @@ layout: article
 
 # Order NemID for production
 
-Below is a short walkthrough of the process of registering as a _NemID service provider_, "Tjenesteudbyder" in Danish.
+To start accepting real users with Danish NemID, you must first enter into a service provider agreement (Danish: "Tjenestedudbyderaftale") with Nets, the operator of NemID.
 
-As NemID is a proprietary Danish e-ID solution the documentation is available in Danish only.
+### Prerequisites before setting up an agreements
 
-Here is a guide to how to proceed with entering into an agreement with Nets DanID to use NemID in your company. 
+In order to become a NemID service provider, your organisation must meet a few basic requirements:
 
-Note that Nets DanID is a Danish company, and with a NemID authentication solution stricly for Danish residents/nationals. 
-Therefore most of the documentation and agreements will be in Danish. Still, the steps below should give you and idea of 
-is required.
+- Your company must registered in the central Danish business registry and be issued a orgnisational id, a CVR number.
+- There must be a NemID administrator already in your organisation, a socalled _LRA_. All Danish companies have one.
 
-The guide is based on the [Nets DanID's own description (in Danish)](http://www.nets.eu/dk-da/Service/kundeservice/nemid-tu/implementering/Pages/default.aspx#tab2),
-but slightly rephrased to suit the conditions around Greans NemID as a Service. 
+## Filling out the agreement
 
-1. The Company Signature, the certificate used to identity your company) 
-    must be ordered by your company's NemID administrator via self-service for NemID for Business (NemID employee signature). 
-    The Company Signature is ordered under the heading "Øvrige signaturer" . 
+First of all [follow the guide](https://www.nets.eu/dk-da/kundeservice/nemid-tjenesteudbyder/bestilling) provided by Nets.  It takes you through the 4 steps and includes the relevant download links etc.:
 
-   [Order the Company Signature from Nets DanID (in Danish)](https://www.medarbejdersignatur.dk/produkter/nemid_medarbejdersignatur/log_paa_nemid_selvbetjening/)
+1. Order a company certificate ("Virksomhedssignatur")
+2. Fill out the online service provider agreement ("Tjenesteudbyderaftale"). This form includes a download link for the CPR agreement in the next step.
+3. Download and fill out the CPR agreement form ("PID/RID cpr-tjenesterne"), sign it, and attach it to the service provider agreeement.
+4. Attach the CPR agreement to the online service provider agreement and send it
 
-    The Company Signature is free if it is only to be used for the purpose of NemID login. 
-    If you wish to make use of the offer of a free company certificate, in the ordering process indicate 
-    NemID [company name] in the Name of the Company Signature. After that you must within 5 days of the order 
-    send an e-mail to faktura@danid.dk with your CVR number (Danish company registry) 
-    and a message that the signature is created solely for use as a NemID service provider. 
-   
-2.  *Remember*. Once you have ordered the Company Signature, you must locate the so-called UID number, 
-    as it must be inserted in the service provider agreement together with your CVR number (company id from Danish business registry). 
-    The UID number may be found in the [overview of the issued signatures](https://www.medarbejdersignatur.dk/produkter/nemid_medarbejdersignatur/nemid_selvbetjening/oevrige_signaturer/virksomhedssignatur/administrer_virksomhedssignatur/.) 
+As you fill out the forms please check the section below for a few details related to the Criipto Verify service.
 
-    <img style="max-width: 100%" src="/images/adminsignatur.png" alt="Comopany signature administration (in Danish)" />
+## Criipto Verify related notes
 
-3.  *Optional*. If you need also your users' social security numbers (Danish CPR), you must enter into a separate agreement 
-    about Nets DanID's PID / RID services.     
-    Note that when you submit the NemID service provider agreement, the PID/RID agreement must abe attached. 
-    
-    * [The PID/ RID Agreement is a PDF](http://www.nets.eu/dk-da/Produkter/Sikkerhed/Documents/bestil_pid_rid_cpr-tjeneste.zip)
-       to be completed and uploaded with the service provider agreement. 
-    * When filling out the agreement must choose to use your own company certificate, as illustrated below.
-    <img style="max-width: 100%" src="/images/RIDPID-aftale1.png" alt="Brug eget virksomhedscertifikat" />
-    * Note that you must fill the form with the CVR and UID from your Company Signature, as shown in the first picture. 
+When filling out the online sevice provider agreement keep this in mind:
 
-4.	Who should be the technical contact on the agreement with Nets DanID? With Grean handling all implementation and 
-    operation of the solution, you are welcome to refer to Grean using the email address nemid@grean.com as a contact. 
+- _Forbrugsafregning_ (consumption billing). You will be billed directly by Nets based on your choice in this section. Criipto _does not_ act as a NemID reseller and we cannot bill you you consumption of the raw NemID service.
+- _Opsætning_ (setup). This section has a few important details:
+    - _Friendly name_. As the form explains this is the name that will appear in the NemID client. _Immportant:_ Note that this name must also be entered in the Criipto Verify management UI for our integration with Nets to work!
+    - _Virksomhedssignatur UID-nummer_ (part of company certificate subject name). This information is found in the [NemID administration](https://www.medarbejdersignatur.dk/produkter/nemid_medarbejdersignatur/log_paa_nemid_selvbetjening/). Look under "Øvrige signaturer -> Administrer virksmohedssignatur".
+- _Aftale om brug af PID/RID cpr-tjenesten_ (CPR agreement). If you need social seurity numbers, CPR, you need to pick one or more of these options. Unless you are a goverment organisation you choices will be the _-match_ services. _PID_ is for personal NemID, _RID_ is for employee NemID.
+    - This is where you download, fill out and sign the CPR agreement, and attach it
+_​Opsætning af testsystem_ (setup of test system). Answer _yes_ here only if you need to be able to generate test users for NemID employee signatures, MOCES.
+- _IP-adresser_. You may enter a set of IP addresses for access to a the test and development environment. These must be the IP addresses you use to connect from (use for example [MyIP.com](https://www.myip.com/)). Note that this is not necessary to use Criipto Verify as we are already registered, but if you have a set of fixed IP adresses, you may enter them just to gain access to the tool needed to generate test users for employee signatures.
 
-    To the extent there should a need for your involvement Grean will get in touch.
+That's basically it. Once you've filled out and submitted the service provider agreement form, you will, typcically after a week or so, receive an email with the details you need to start using production NemID. Use this information and the company certificated to configure Criipto Verify as described below.
 
-    (According Nets DanID's own description: "The technical contact is the person who is involved in the technical implementation 
-    of the solution, since it is also the e-mail address of that person that will receive operational information.") 
+## Setting up Criipto Verify for NemID for production
 
-5.  Select a *friendly name* you want to associate with your solution. This will be the name that appears in the login applet 
-    when your users log on to your service. This will typically be your company name. 
+Keep and eye out for an email from Nets with the details of your NemID service provider agreement. It should be sent from `tu-support@nemid.nets.eu` with a subject "RE: Bestilling af NemID tjenesteudbyder". In that email you will need the production informtion listed _after_ the test details.
 
+![Email from Nets](/images/TU-done.png)
 
-6.  *Optional**. Enter the IP addresses from which connections to to NemID test systems will be made. 
-    Note however that since Grean already has access to NemID test systems, you should not need to specify anything here. 
+Now fill matching fields in the Criipto Verify UI:
 
-7.  Once you have been through the above steps and have filled out the optional PID/RID agreement, 
-    you are ready to fill out [your order to NemID](http://www.nets.eu/dk-da/Produkter/Sikkerhed/NemID-tjenesteudbyder/Pages/Bestil.aspx)
+1. Switch the toggle in the UI to "Production environment"
+2. Locate and upload the company certificate, the "Virksomhedssignatur", you ordered and received before starting the service provider process. The password is the one you picked when you downloaded the certificate from Nets.
+3. Enter the SPID for PID/CPR as listed in the email from Nets. Make sure you use the one from the production section closer to the bottom of the email.
+4. Enter tne friendly name exactly as listed in the email.
 
-<br/>
+![Email from Nets](/images/nemid-prod.png)
+
+That's - finally - it! You have ordered, received, and configured the necessary information and certificates to start accepting real NemID logins and signatures.
+
+## Next steps
+
+You are now ready to set up your application to use real NemID in production. Please refer to the [guide on how to move to production](/how-to/get-ready-for-production).

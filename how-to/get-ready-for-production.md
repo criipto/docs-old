@@ -8,7 +8,7 @@ Once you have developed and tested your application to work with test user accou
 
 _Please note_ that for production usage you do need a paid subscription.
 
-First you must acquire a production certificate from the e-ID provider - or providers - of choice. More on how to do that [can be found here](/eid-specifics/order-eid).
+__First you must acquire a production certificate__ from the e-ID provider - or providers - of choice. More on how to do that [can be found here](/eid-specifics/order-eid).
 
 Once you have obtained your production certificate, and you or Criipto - depending on type of e-ID - have installed it, you are ready to move to production.
 
