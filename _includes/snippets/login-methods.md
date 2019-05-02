@@ -19,6 +19,6 @@ The current list of possible values is:
 | **Finish e-ID** |
 | &nbsp;&nbsp;BankID:                                    |`urn:grn:authn:fi:tupas` | 
 | &nbsp;&nbsp;Mobile certificate (Mobiilivarmenne):&nbsp;|`urn:grn:authn:fi:mobile-id` | 
-| &nbsp;&nbsp;Any of the two:                            |`urn:grn:authn:fi:mobile-id` | 
+| &nbsp;&nbsp;Any of the two:                            |`urn:grn:authn:fi:all` | 
 
 &nbsp;&nbsp;
