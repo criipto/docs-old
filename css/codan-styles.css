@@ -18,7 +18,7 @@
 }
 
 .dknemid-error:after {
-    content: 'Du kan ikke bruge dit personlige NemId til at logge ind på Erhverv.';
+    content: 'Du har indtastet forkert CPR-nummer, eller du har brugt dit personlige NemId til at logge ind på Erhverv.';
 }
 
 
