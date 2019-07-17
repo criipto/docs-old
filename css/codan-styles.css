@@ -17,8 +17,16 @@
     color: black;
 }
 
+form .dknemid-error:after {
+    content: 'Du har indtastet forkert CPR-nummer.';
+}
+
 .dknemid-error:after {
-    content: 'Du har indtastet forkert CPR-nummer, eller du har brugt dit personlige NemId til at logge ind på Erhverv.';
+    content: 'Du kan ikke bruge dit personlige NemId til at logge ind på Erhverv.';
+}
+
+.dknemid-error-message-not-company-signatory .dknemid-error:after {
+    content: 'Du kan ikke bruge dit personlige NemId til at logge ind på Erhverv, da du ikke tegner for en virksomhed.';
 }
 
 
