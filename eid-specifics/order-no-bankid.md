@@ -40,5 +40,5 @@ After Criipto has received the above information, we order the certificate from 
 
 When all signatures are in place the signed agreement is sent to your bank for further processing and eventual issuance of your merchant certificate. 
 
-Once issued the certificated is installed directly into Criipto's or the BankID infrastructure.
+Once issued the certificated is installed directly into Criipto's infrastructure.
 
