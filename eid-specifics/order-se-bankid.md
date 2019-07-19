@@ -1,5 +1,6 @@
 ---
 layout: article
+title: Ordering Swedish BankID
 ---
 # Ordering Swedish BankID
 
