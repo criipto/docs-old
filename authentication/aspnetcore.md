@@ -39,7 +39,9 @@ To modify your existing application to work with Criipto Verify follow the steps
 
 Most of the e-ID services supported by Criipto are suited for _iframe_ integration into your web pages. The approach described here does not make any assumptions about that, but simply shows how to enable Criipto Verify authentication in a web application.
 
-For more on how to make it work in an iframe using the _postMessage()_ functionality please check our guide to [iframed authentication](/authentication/iframe.md).
+<!--
+For more on how to make it work in an iframe using the _postMessage()_ functionality please check our guide to [iframed authentication](/authentication/iframe.md). 
+-->
 
 # Install dependencies
 
