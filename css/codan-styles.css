@@ -26,7 +26,7 @@ form .dknemid-error:after {
 }
 
 .dknemid-error-message-not-company-signatory .dknemid-error:after {
-    content: 'Du kan ikke bruge dit personlige NemId til at logge ind på Erhverv, da du ikke tegner for en virksomhed.';
+    content: 'Det ser ud til, at du ikke er kunde i Codan Erhverv. Ønsker du i stedet at logge ind og se dine privatforsikringer skal du vælge fanen for Privat.';
 }
 
 
