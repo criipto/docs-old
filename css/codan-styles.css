@@ -26,7 +26,8 @@ form .dknemid-error:after {
 }
 
 .dknemid-error-message-not-company-signatory .dknemid-error:after {
-    content: 'Det ser ud til, at du ikke er kunde i Codan Erhverv. Ønsker du i stedet at logge ind og se dine privatforsikringer skal du vælge fanen for Privat.';
+    content: 'Det ser ud til, at du ikke er kunde i Codan Erhverv.\000A Ønsker du i stedet at logge ind og se dine privatforsikringer skal du vælge fanen for Privat.';
+    white-space: pre-wrap;
 }
 
 

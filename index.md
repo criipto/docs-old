@@ -8,7 +8,7 @@ layout: default
 
 On these pages you will find the growing body of documentation on how to integrate and use Criiptos products.
 
-Please use the navigation on the right.
+Please use the navigation on the left.
 <br/>
 <br/>
 <br/>
