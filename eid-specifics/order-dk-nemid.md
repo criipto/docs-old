@@ -38,6 +38,8 @@ When filling out the online sevice provider agreement keep this in mind:
 _​Opsætning af testsystem_ (setup of test system). Answer _yes_ here only if you need to be able to generate test users for NemID employee signatures, MOCES.
 - _IP-adresser_. You may enter a set of IP addresses for access to the test and development environments. These must be the IP addresses you use to connect from (use for example [MyIP.com](https://www.myip.com/)). _Note that this is not necessary_ to use Criipto Verify, as we are already registered. But if you have a set of fixed IP adresses, you may enter them just to gain access to the tool needed to generate test users for employee signatures.
 
+<a name="setup"></a>
+
 That's basically it. Once you've filled out and submitted the service provider agreement form, you will, typcically after a week or so, receive an email with the details you need to start using production NemID. Use this information and the company certificated to configure Criipto Verify as described below.
 
 ## Setting up Criipto Verify for NemID for production
