@@ -1,6 +1,19 @@
 <div class="sidebar">
     <ul>
-        <li><h1>Articles</h1></li>
+		<li><h1>Articles</h1></li>
+		<li>Getting Started
+			<ul>
+				<li class="{% if '/getting-started/overview/' == page.url %}active{% endif %}" >
+					<a href="{% link getting-started/overview.md %}">Criipto Overview</a>
+				</li>
+				<li class="{% if '/getting-started/basics/' == page.url %}active{% endif %}" >
+					<a href="{% link getting-started/basics.md %}">Learn the Basics</a>
+				</li>
+				<li class="{% if '/getting-started/oidc-intro/' == page.url %}active{% endif %}" >
+					<a href="{% link getting-started/oidc-intro.md %}">Using OpenID Connect</a>
+				</li>
+			</ul>
+		</li>
         <li>Authentication Integration
             <ul>
                 <li class="{% if '/authentication/aspnetcore/' == page.url %}active{% endif %}">

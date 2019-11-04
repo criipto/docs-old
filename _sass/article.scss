@@ -24,4 +24,22 @@
         margin-bottom: 36px;
         margin-top: 26px;   
     }
+
+    
+    .alert-with-icon {
+        display: flex;
+        
+        i {
+            font-size: 20px;
+            margin-right: 16px;
+            line-height: 28px;
+            position: relative;
+            top: 0px;
+        }
+
+        
+        .alert-content :last-child {
+            margin-bottom: 0;
+        }
+    }
 }
