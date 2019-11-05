@@ -49,9 +49,9 @@ To integrate Criipto Verify with ASP.NET Core you will use the Cookie and OpenID
 
 If you are adding this to your own existing project, and you have not referenced the meta package, then please make sure that you add the Microsoft.AspNetCore.Authentication.Cookies and Microsoft.AspNetCore.Authentication.OpenIdConnect packages to your application.
 
-``` powershell
-Install-Package Microsoft.AspNetCore.Authentication.Cookies
-Install-Package Microsoft.AspNetCore.Authentication.OpenIdConnect
+``` console
+dotnet add package Microsoft.AspNetCore.Authentication.Cookies
+dotnet add package Microsoft.AspNetCore.Authentication.OpenIdConnect
 ```
 
 ### Configure OpenID Connect Middleware
