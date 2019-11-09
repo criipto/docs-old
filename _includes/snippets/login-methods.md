@@ -8,6 +8,8 @@ The current list of possible values is:
 
 | **Norwegian BankID** |
 | &nbsp;&nbsp;Mobile or Web (user choice):&nbsp;         | `urn:grn:authn:no:bankid` | 
+| **Norwegian Vipps Login** |
+| &nbsp;&nbsp;Login with Vipps app:&nbsp;                | `urn:grn:authn:no:vipps` | 
 | **Swedish BankID** |
 | &nbsp;&nbsp;Same device:                               | `urn:grn:authn:se:bankid:same-device` | 
 | &nbsp;&nbsp;Another device (aka mobile):&nbsp;         | `urn:grn:authn:se:bankid:another-device` | 
