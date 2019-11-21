@@ -1,5 +1,6 @@
 ---
 layout: article
+title: Ordering Norwegian BankID
 ---
 # Ordering Norwegian BankID
 
