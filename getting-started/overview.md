@@ -9,9 +9,9 @@ Criipto Verify provides e-ID authentication as a service.
 
 {% iconnote note %}
 
-An **e-ID** is a special kind of online identity that is tied to a *natural person*. A natural person in relation to e-ID is a living, individual human being. 
+An **e-ID** is a special kind of online identity that is tied to a *natural person*. A natural person in relation to e-ID is a living, individual human being. Examples of e-IDs are Danish NemID, Swedish BankID, and Dutch DigiD.
 
-This means that when a person signs into your app or your web site with an e-ID you will know who the person really is. 
+An e-ID may be used for authentication and in most cases also for digitally signing legal documents.
 
 {% endiconnote %}
 

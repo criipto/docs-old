@@ -1,6 +1,6 @@
 <div class="sidebar">
     <ul>
-		<li><h1>Articles</h1></li>
+		<li><h1><a href="/">Articles</a></h1></li>
 		<li>Getting Started
 			<ul>
 				<li class="{% if '/getting-started/overview/' == page.url %}active{% endif %}" >
@@ -31,22 +31,19 @@
 				</li>
  -->            </ul>
         </li>
-        <li>E-ID in production
+        <li>Prepare for e-ID in production
             <ul>
-                <li class="{% if '/eid-specifics/order-eid/' == page.url %}active{% endif %}">
-					<a href="{% link eid-specifics/order-eid.md %}">Prepare to accept real e-ID</a>
-				</li>
                 <li class="{% if '/eid-specifics/order-dk-nemid/' == page.url %}active{% endif %}">
-					<a href="{% link eid-specifics/order-dk-nemid.md %}">Order Danish NemID</a>
+					<a href="{% link eid-specifics/order-dk-nemid.md %}">Danish NemID</a>
 				</li>
                 <li class="{% if '/eid-specifics/order-no-bankid/' == page.url %}active{% endif %}">
-					<a href="{% link eid-specifics/order-no-bankid.md %}">Order Norwegian BankID</a>
+					<a href="{% link eid-specifics/order-no-bankid.md %}">Norwegian BankID</a>
 				</li>
                 <li class="{% if '/eid-specifics/order-no-vipps/' == page.url %}active{% endif %}">
-					<a href="{% link eid-specifics/order-no-vipps.md %}">Order Norwegian Vipps Login</a>
+					<a href="{% link eid-specifics/order-no-vipps.md %}">Norwegian Vipps Login</a>
 				</li>
 				<li class="{% if '/eid-specifics/order-se-bankid/' == page.url %}active{% endif %}">
-					<a href="{% link eid-specifics/order-se-bankid.md %}">Order Swedish BankID</a>
+					<a href="{% link eid-specifics/order-se-bankid.md %}">Swedish BankID</a>
 				</li>
                 <li class="{% if '/eid-specifics/order-fi-bankid/' == page.url %}active{% endif %}">
 					<a href="{% link eid-specifics/order-fi-bankid.md %}">Finnish BankID</a>
@@ -67,7 +64,11 @@
                 <li class="{% if '/how-to/iframe/' == page.url %}active{% endif %}">
 					<a href="{% link how-to/iframe.md %}">E-ID in an iframe</a>
 				</li>
- -->                <li class="{% if '/how-to/test-users/' == page.url %}active{% endif %}">
+ -->                
+                <li class="{% if '/how-to/order-eid/' == page.url %}active{% endif %}">
+					<a href="{% link how-to/order-eid.md %}">Order e-ID for production</a>
+				</li>
+				<li class="{% if '/how-to/test-users/' == page.url %}active{% endif %}">
 					<a href="{% link how-to/test-users.md %}">Create or Get e-ID Test Users</a>
 				</li>
             </ul>
