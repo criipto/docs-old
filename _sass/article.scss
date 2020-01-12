@@ -8,6 +8,13 @@
         margin-top: 12px;
     }
 
+    h4 {
+        font-size: 18px;
+        font-weight: 400;
+        margin-top: 12px;
+        font-style: italic;
+    }
+
     p {
         margin-bottom: 12px;
     }
@@ -41,5 +48,19 @@
         .alert-content :last-child {
             margin-bottom: 0;
         }
+    }
+
+    table {
+        width: 100%;
+        th {
+            border-bottom: 2px solid #ddd;
+        }
+        td {
+            min-width: 150px;
+            padding: 8px;
+            vertical-align: top;
+            border-top: 1px solid #ddd;
+        }
+            
     }
 }

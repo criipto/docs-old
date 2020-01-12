@@ -1,7 +1,7 @@
 ---
+layout: article
 title: Learn the Basics
 description: Learn the basics of Criipto and familiarize yourself with the terminology.
-layout: article
 ---
 # Learn the Basics
 
