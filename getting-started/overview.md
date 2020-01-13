@@ -30,7 +30,7 @@ Generally you will want to use Criipto Verify when one of these scenarios fit yo
 
 In each of these cases using e-ID services provided by banks and governments may be the preferable solution: It may be used both for the initial onboarding identity verification, and as a continued means to strong authentication. Also, your customers will be familiar with using e-ID already, which caters for a smooth user experience.
 
-At Criipto we strive to give developers and companies an easy path to using e-ID services without having to become security experts. To actually go live in production with e-ID you will still (in most cases) need to set up a formal relationship with a bank or government body in each of the relevant countries.
+At Criipto we strive to give developers and companies an easy path to using e-ID services without having to become security experts. To actually go live in production with e-ID you will (in most cases) have to set up a formal relationship with a bank or government body in each of the relevant countries.
 
 Technically, you can connect any application (written in any language or on any stack) to Criipto Verify and define the e-ID providers you want to use (how you want your users to log in). 
 
