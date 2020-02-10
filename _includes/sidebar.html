@@ -33,6 +33,9 @@
         </li>
         <li>Prepare for e-ID in production
             <ul>
+                <li class="{% if '/eid-specifics/order-eid/' == page.url %}active{% endif %}">
+					<a href="{% link eid-specifics/order-eid.md %}">E-ID in production</a>
+				</li>
                 <li class="{% if '/eid-specifics/order-dk-nemid/' == page.url %}active{% endif %}">
 					<a href="{% link eid-specifics/order-dk-nemid.md %}">Danish NemID</a>
 				</li>
