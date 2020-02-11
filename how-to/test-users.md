@@ -52,7 +52,7 @@ Test users are created through the web page at [https://ra-preprod.bankidnorge.n
 4. Click "Order" to initiate the process
 5. Once the process complete you now have a test user. User name is the generated SSN, one time password (OTP) is always "otp", and password is always "qwer1234"  
 
-_NOTE that it takes about 1 hour before the test user works completely_
+_NOTE that it takes about 1 hour before a test user works completely._
 
 You can test it out at [www.grean.id](https://www.grean.id) which is a small sample run by Criipto. 
 
