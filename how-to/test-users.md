@@ -4,7 +4,7 @@ title: Criipto Documentation - Test users
 description: How to create and/or obtain test user accounts for the various e-ID types
 ---
 
-# Create or Get e-ID Test Users
+# Create or get e-ID test users
 
 Almost all e-ID types have a notion of _test_ and _real_ users.
 
@@ -50,7 +50,9 @@ Test users are created through the web page at [https://ra-preprod.bankidnorge.n
 2. It now says "Could not find any bankIDs for ..."
 3. Fill out the first name, last name, and BankID friendly name.
 4. Click "Order" to initiate the process
-5. Once the process complete you now have a test user. User name is the generated SSN, one time password (OTP) is always "otp", and password is always "qwer1234"
+5. Once the process complete you now have a test user. User name is the generated SSN, one time password (OTP) is always "otp", and password is always "qwer1234"  
+
+_NOTE that it takes about 1 hour before the test user works completely_
 
 You can test it out at [www.grean.id](https://www.grean.id) which is a small sample run by Criipto. 
 
