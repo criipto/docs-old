@@ -82,7 +82,7 @@ The settings object must include following properties:
 - `authority`: Your Criipto Domain.
 - `client_id`: Your Criipto Client ID/Realm.
 - `redirect_uri`: The Callback URI where Criipto Verify will redirect to after the user has authenticated.
-- `post_logout`_redirect_uri: The Callback URI where Criipto Verify will redirect to after the user has signed out.
+- `post_logout_redirect_uri`: The Callback URI where Criipto Verify will redirect to after the user has signed out.
 - `acr_values`: Identifies which e-ID identity service you want to use. For example, using the Vipps service: `urn:grn:authn:no:vipps`.
 
 You may also provide following properties. If omitted, default values will apply.
