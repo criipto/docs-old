@@ -4,7 +4,7 @@ layout: article
 
 # Node.js with Express
 
-This tutorial demonstrates how to add user login to an Node.js Express application. 
+This is a sample application showing how to configure and enable OpenID Connect middleware to use with Criipto Verify in a Node.js web application with Express, openid-client and Passport.
 
 Four steps are required to complete your first test login:
 
@@ -17,7 +17,7 @@ This explains how to set up your application and test with test users. To use re
 
 And note that you need test e-ID users to see your code in action. How to get those is [described further down](#testusers).
 
-You may get a completed and ready to run [sample from GitHub](https://github.com/criipto/aspnetcore-oidc-sample) showing the below recipe in the simplest of Node.js Express applications.
+You may get a completed and ready to run [sample from GitHub](https://github.com/goranlisak/criipto-nodejs-demo) showing the below recipe in the simplest of Node.js Express applications.
 
 To modify your existing application to work with Criipto Verify follow the steps below.
 
@@ -25,7 +25,29 @@ To modify your existing application to work with Criipto Verify follow the steps
 
 ## Register Your Application in Criipto Verify
 
-{% include snippets/register-app.md callback-urls-img="/images/callback-urls-aspnet.png" %}
+After you signed up for Criipto Verify, you must register an application before you can actually try logging in with any e-ID.
+
+Once you register your application you will also need some of the information for communicating with Criipto Verify. You get these details from the settings of the application in the dashboard.
+
+Specifically you need the following information to configure you application
+
+- _Client ID_ to identify you application to Criipto Verify. In the case below we chose `urn:criipto:nodejs:demo:1010`
+- _Domain_ on which you will be communicating with Criipto Verify. Could be for example `nodejs-sample.criipto.id`
+
+![Register App](/images/register-nodejs-sample.JPG)
+
+### Register callback URLs
+
+Before you can start sending authentication requests to Criipto Verify you need to register the URLs on which you want to receive the returned *JSON Web Token*, JWT.
+
+The Callback URL of your application is the URL where Criipto Verify will redirect to after the user has authenticated in order for the OpenID Connect middleware to complete the authentication process.
+
+You will need to add this URL to the list of allowed URLs for your application. The Callback URL for the sample project is http://localhost:3000/auth/callback and http://localhost:3000/logout/callback so be sure to add this to the Callback URLs section of your application. Put each URL on a new line.
+
+![Register App](/images/callbacks-nodejs-sample.JPG)
+
+If you deploy your application to a different URL you will also need to ensure to add that URL to the Callback URLs. 
+
 
 <a name="flow"></a>
 
@@ -33,153 +55,236 @@ To modify your existing application to work with Criipto Verify follow the steps
 
 {% include snippets/oauth2-code-flow.md %}
 
+
 <a name="application"></a>
 
 ## Configure Your Application to Use Criipto Verify
 
-Most of the e-ID services supported by Criipto are suited for _iframe_ integration into your web pages. The approach described here does not make any assumptions about that, but simply shows how to enable Criipto Verify authentication in a web application.
+### Install dependencies
 
-For more on how to make it work in an iframe using the _postMessage()_ functionality please check our guide to [iframed authentication](/authentication/iframe.md).
+For this sample application you will be using Node.js with Express. If you are building a new Express application from scratch, consider using [Express generator](https://expressjs.com/en/starter/generator.html) to quickly create an application skeleton.
 
-# Install dependencies
+On top of Express, you will need to install openid-client, a server side OpenID implementation for Node.js, and Passport, Express-compatible authentication middleware. Also make sure to install express-session and connect-ensure-login packages which provide a way to establish a user session and protect private routes.
 
-To integrate Criipto Verify with ASP.NET Core you will use the Cookie and OpenID Connect (OIDC) authentication handlers. The seed project already references the ASP.NET Core meta package (Microsoft.AspNetCore.App) which includes all NuGet packages shipped by Microsoft as part of ASP.NET Core 2.2, including the packages for the Cookie and OIDC authentication handlers.
-
-If you are adding this to your own existing project, and you have not referenced the meta package, then please make sure that you add the Microsoft.AspNetCore.Authentication.Cookies and Microsoft.AspNetCore.Authentication.OpenIdConnect packages to your application.
-
-``` powershell
-Install-Package Microsoft.AspNetCore.Authentication.Cookies
-Install-Package Microsoft.AspNetCore.Authentication.OpenIdConnect
+``` console
+npm install openid-client
+npm install passport
+npm install express-session
+npm install connect-ensure-login
 ```
 
-### Configure OpenID Connect Middleware
+### Configure openid-client
 
-To enable authentication in your ASP.NET Core application, use the OpenID Connect (OIDC) middleware.
-Go to the `ConfigureServices` method of your `Startup` class. To add the authentication services, call the `AddAuthentication` method. To enable cookie authentication, call the `AddCookie` method.
+Got to app.js file where your Express app is initialized and import `Issuer` from openid-client.
 
-Next, configure the OIDC authentication handler. Add a call to `AddOpenIdConnect`. Configure the necessary parameters, such as `ClientId`, `ClientSecret`, `ResponseType`, and not least the `Authority`. The latter is used by the middleware to get the metadata describing the relevant endpoints, the signing keys etc.
-
-The OIDC middleware requests both the `openid` and `profile` scopes by default, but note that Criipto Verify by nature returns only the information derived from the underlying e-ID service. Changing the scopes does not affect the amount and nature of information delivered from the user information endpoint.
-
-```cs
-// Startup.cs
-
-public void ConfigureServices(IServiceCollection services)
-{
-    services.Configure<CookiePolicyOptions>(options =>
-    {
-        // This lambda determines whether user consent for non-essential cookies is needed for a given request.
-        options.CheckConsentNeeded = context => true;
-        options.MinimumSameSitePolicy = SameSiteMode.None;
-    });
-
-    services.AddAuthentication(options => {
-        options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-        options.DefaultChallengeScheme = OpenIdConnectDefaults.AuthenticationScheme;
-    })
-    .AddCookie()
-    .AddOpenIdConnect(options => {
-        options.ClientId = Configuration["Criipto:ClientId"]; // ClientID from application registration
-        options.ClientSecret = Configuration["Criipto:ClientSecret"]; // Client from application registration
-        options.Authority = $"https://{Configuration["Criipto:Domain"]}/"; // Domain from application registration
-        options.ResponseType = "code";
-
-        // The next to settings must match the Callback URLs in Criipto Verify
-        options.CallbackPath = new PathString("/callback"); 
-        options.SignedOutCallbackPath = new PathString("/signout");
-
-        // Hook up an event handler to set the acr_value of the authorize request
-        // In a real world implementation this is probably a bit more flexible
-        options.Events = new OpenIdConnectEvents() {
-            OnRedirectToIdentityProvider = context => {
-                context.ProtocolMessage.AcrValues = context.Request.Query["loginmethod"];
-                return Task.FromResult(0);
-            }
-        };
-    });
-
-    services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-}
+``` javascript
+const { Issuer } = require('openid-clien');
 ```
 
-_Note_ that the above code dynamically sets the `AcrValues` by picking it from the query string. In the general case, this may, of course, be set in other ways. Just note that it is dynamically set at the time of the actual login.
+Call `discover` method of `Issuer` and pass it your Criipto domain as an argument. This will return a promise which will, after resolved, provide a Criipto Issuer instance. From Criipto Issuer instance you can create a new client by calling a `Client` constructor and passing in a settings object which must include following properties:
+
+- `client_id`: Criipto Client ID/Realm, for example `urn:criipto:nodejs:demo:1010`
+- `client_secret`: Generated in second step, for example `j9wYVyD3zXZPMo3LTq/xSU/sMu9/shiFKpTHKfqAutM=`
+- `redirect_uris`: An array of post-login redirect URIs, for example `["http://localhost:3000/auth/callback"]`
+- `post_logout_redirect_uris`: An array of post-logout redirect URIs, for example `["http://localhost:3000/logout/callback"]`
+- `token_endpoint_auth_method`: Requested authentication method for the token endpoint, for example `client_secret_post`
+
+``` javascript
+Issuer.discover('https://nodejs-sample.criipto.id')
+  .then(criiptoIssuer => {
+    const client = new criiptoIssuer.Client({
+      client_id: 'urn:criipto:nodejs:demo:1010',
+      client_secret: 'j9wYVyD3zXZPMo3LTq/xSU/sMu9/shiFKpTHKfqAutM=',
+      redirect_uris: [ 'http://localhost:3000/auth/callback' ],
+      post_logout_redirect_uris: [ 'http://localhost:3000/logout/callback' ],
+      token_endpoint_auth_method: 'client_secret_post'
+    });
+
+    // do the rest of setup here
+  });
+```
+
+### Configure Passport and Express session
+
+Next step is to initialize Passport (authentication middleware) and Express session. Start by importing required modules.
+
+``` javascript
+const expressSesssion = require('express-session');
+const passport = require('passport');
+```
+
+It is important to set up an Express session before initializing Passport. Add the following code to your app.js file.
+
+``` javascript
+app.use(
+  expressSesssion({
+    secret: 'Some secret you say?',
+    resave: false,
+    saveUninitialized: true
+  })
+);
+
+app.use(passport.initialize());
+app.use(passport.session());
+```
+
+After you have initialized Passport, you have to tell it which strategy (authentication mechanisms) to use with your application. Openid-client provides a strategy that you can use with the client, so make sure to import it from openid-client.
+
+``` javascript
+const { Strategy } = require('openid-client');
+```
+
+When passing a strategy to the passport, you have to pass two arguments to the `use` method: the strategy name and initialized strategy object. To initialize the strategy imported from opeid-client, you have to call a constructor with two arguments: settings object containing at least the initialized client and a callback function to execute after you receive user information from Criipto Verify.
+
+Add the following code to your app.js file.
+
+``` javascript
+passport.use(
+  'oidc',
+  new Strategy({ client }, (tokenSet, userinfo, done) => {
+    id_token = tokenSet.id_token; // store the id_token to use for logout
+    return done(null, tokenSet.claims());
+  })
+);
+```
+
+{% iconnote note %}
+
+To start the logout request, you will have to provide the `id_token_hint`, so make sure to store the `id_token` because Passport nor openid-client will store it for you. In the sample, we are just storing it in a global variable, but for a real application you may want to handle it differently.
+
+{% endiconnote %}
+
+The last thing you need to finish setting up the passport is to provide a function to serialize and deserialize a user. Add the following code to your app.js file.
+
+``` javascript
+passport.serializeUser(function(user, done) {
+  done(null, user);
+});
+passport.deserializeUser(function(user, done) {
+  done(null, user);
+});
+```
+
+<a name="trigger"></a>
+
+## Trigger authentication in your application
 
 <a name="loginmethod"></a>
+
 ### Choosing the specific login method
 
 {% include snippets/login-methods.md %}
 
-### Enable the OpenID Connect middleware
+In the sample, we have created a **form** which will put the chosen login option in a request parameter and redirect a user to the authentication route specified.
 
-Next, add the authentication middleware. In the `Configure` method of the `Startup` class, call the `UseAuthentication` method.
+``` html
+<select class="form-control" name="loginmethod" form="loginForm">
+  <option value="urn:grn:authn:no:bankid">Norwegian BankID</option>
+  <option value="urn:grn:authn:no:vipps">Norwegian Vipps</option>
+  <option value="urn:grn:authn:se:bankid:same-device">Swedish BankID same device</option>
+  <option value="urn:grn:authn:se:bankid:another-device">Swedish BankID another device</option>
+  <option value="urn:grn:authn:dk:nemid:poces">Danish NemID personal with code card</option>
+  <option value="urn:grn:authn:dk:nemid:moces">Danish NemID employee with code card</option>
+  <option value="urn:grn:authn:dk:nemid:moces:codefile">Danish NemID employee with code file</option>
+  <option value="urn:grn:authn:fi:bankid">Finish e-ID - BankID</option>
+  <option value="urn:grn:authn:fi:mobile-id">Finish e-ID - Mobile certificate</option>
+  <option value="urn:grn:authn:fi:all">Finish all options</option>
+</select>
 
-```csharp
-// Startup.cs
-
-public void Configure(IApplicationBuilder app, IHostingEnvironment env)
-{
-    if (env.IsDevelopment())
-    {
-        app.UseDeveloperExceptionPage();
-    }
-    else
-    {
-        app.UseExceptionHandler("/Home/Error");
-        app.UseHsts();
-    }
-
-    app.UseHttpsRedirection();
-    app.UseStaticFiles();
-    app.UseCookiePolicy();
-
-    app.UseAuthentication();
-
-    app.UseMvc(routes =>
-    {
-        routes.MapRoute(
-            name: "default",
-            template: "{controller=Home}/{action=Index}/{id?}");
-    });
-}
+<form action="/auth" id="loginForm">
+  <input class="btn btn-outline-primary" type="submit" value="Login">
+</form>
 ```
 
-<a name="trigger"></a>
-## Trigger Login and Logout in Your Application
+### Start the authentication request
 
-After the middleware for performing the authentication is wired up, the next step is to perform the actual authentication.
+After you submit a form, you will be redirected to the `/auth` route. Now you have to set up an Express middleware for the `/auth` route where you will tell passport to start the authentication request and redirect the user to the chosen login option.
 
-### Protected resources trigger login
+To do that, you have to invoke `authenticate` method and tell it which strategy to use. You also have to provide an object with `acr_values` and optionally some other additional parameters.
 
-One way to trigger the authentication flow is to tag routes in ASP.NET MVC with the `Authorize`. This is a way of telling the framework to only allow requests from authenticated users.
+Add the following code to your app.js file.
 
-```csharp
-[Authorize] // If not already authenticated, this kicks off the process
-public IActionResult Protected()
-{
-    return View();
-}
+``` javascript
+app.get('/auth', (req, res, next) => {
+  let loginMethod = req.query.loginmethod;
+  passport.authenticate('oidc', { acr_values: loginMethod })(req, res, next);
+});
 ```
 
-Note that you may plug in your own Authorization handlers derived from `Microsoft.AspNetCore.Authorization.AuthorizationHandler<TRequirement>` to add additional guards beyond just authentication.
+This will redirect the user to the authentication URL. If you want to show the authentication page in an iframe, you can simply create an iframe with a `name` attribute and set the target of the login form to the name of the iframe. Just make sure that the iframe is generated in the DOM before executing the form.
 
-### Explicit logout
+``` html
+<form action="/auth" id="loginForm" target="loginIframe">
+  <input class="btn btn-outline-primary" type="submit" value="Login">
+</form>
 
-Logout requires both terminating the local session by removing the cookies as well as telling Criipto Verify that the session is over.
+<iframe class="login-iframe" name="loginIframe"></iframe>
+```
 
-```csharp
-public async Task Logout()
-{
-    // Call the server to terminate the session
-    await HttpContext.SignOutAsync(OpenIdConnectDefaults.AuthenticationScheme);
+### Set up authentication redirect route
+After successful authentication with Criipto Verify, you will be redirected to the authentication redirect route which you provided when you initialized the openid-client. If you haven't already, make sure that the route is registered in Callback URLs section in Criipto Verify. For this sample application, the redirect route is `/auth/callback` so you have to create an Express route which will handle the callback and authenticate the user in your application.
 
-    // Remove authnetication cookies
-    await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-}
-``` 
+To do that, you simply have to call `authenticate` method of the passport and pass it the strategy name and an object containing following properties: 
+
+- `successRedirect`: where to redirect if the authentication was successful
+- `failureRedirect`: where to redirect if the authentication was not successful
+
+``` javascript
+app.get('/auth/callback', (req, res, next) => {
+  passport.authenticate('oidc', {
+    successRedirect: '/success',
+    failureRedirect: '/error'
+  })(req, res, next);
+});
+```
+
+If you are redirecting a user to the authentication URL, then you can set `successRedirect` directly to the private rout, for example `/users`, but if you are doing the authentication inside of an iframe, you will have to create an additional route, for example `/success`, which will load a JavaScript code to break out of an iframe and redirect the user on the client side. In the sample application, as soon as the `/success` route loads, we are calling a redirect on the top window.
+
+``` javascript
+window.top.location.replace('/users');
+```
+
+### Protecting the private route
+You can use connect-ensure-login middleware to protect the private route and redirect the user to the login route if they are not authenticated. To do that, first import `ensureLoggedIn` method from the connect-ensure-login middleware.
+
+``` javascript
+const ensureLoggedIn = require('connect-ensure-login').ensureLoggedIn;
+```
+
+Then you can simply use the method with Express Router for the protected route. You can specify where to redirect the user if they are not authenticated by passing the desired route as an argument of `ensureLoggedIn` method.
+
+``` javascript
+router.get('/', ensureLoggedIn('/'), (req, res) => {
+  res.render('users', req.user);
+});
+```
+
+### Set up a user logout
+
+The logout process consists of two parts: sending the request to Criipto Verify to end the session and clearing the user from the local storage.
+
+First you will have to create a `/logout` route to send the request to Criipto Verify to end the session. You can retrieve the logout redirect URL from the client by calling `endSessionUrl` method and passing an object with `id_token_hint` property as an argument.
+
+``` javascript
+app.get('/logout', (req, res) => {
+  res.redirect(client.endSessionUrl({ id_token_hint: id_token }));
+});
+```
+
+When Criipto Verify successfuly ends the session, you will be redirected to the post-logout URL that you have provided when initializing the client.
+
+Create a post-logout route where you have to invoke `logout` method to ensure that the passport clears the user from the local storage. Now the logout process is completed and you can redirect the user to the public route.
+
+``` javascript
+app.get('/logout/callback', (req, res) => {
+  req.logout();
+  res.redirect('/');
+});
+```
 
 <a name="testusers"></a>
 
-### Test users
+## Test users
 
 {% include snippets/test-users.md %}
 
@@ -187,17 +292,17 @@ public async Task Logout()
 
 ## The runtime flow
 
-In summary, the steps above will lead to a runtime flow looks like this:
+In summary, the steps above will lead to a runtime flow that looks like this:
 
-1. The web server starts the application which configures and initializes the OpenID Connect middleware. The middleware is configured with a URL from which it retrieves the metadata describing the various endpoints and encryption keys, such as the token and userinfo endpoints as well the token signing certificates
+1. The web server starts the application which configures and initializes the openid-client and Passport middleware. The openid-client is configured with a URL from which it retrieves the metadata describing the various endpoints and encryption keys, such as the token and userinfo endpoints as well the token signing certificates.
 2. The user picks the login method, or the application is hardcoded to one of the [authentication options](#loginmethod)
-2. A request for a resource protected by the `[Authorization]` kicks off the OIDC middleware login flow
-3. The user's browser is redirected to the Criipto Verify service where actual login happens
-4. A callback with an issued _authorization code_ is sent back to the application and intercepted by the OIDC middleware
-5. The middleware calls the Criipto Verify service to exchange the code for an _access token_. Note that this is a direct server to server call which - unlike the other communication - does not pass through the browser
-6. The access token is used by the OIDC middleware to retrieve the available user information which is set as claims on the user principal.
+2. Posting the login form to the authentication route `/auth` will trigger the authentication flow.
+3. The user's browser is redirected to the Criipto Verify service where actual login happens.
+4. A callback with an issued _authorization code_ is sent back to the application and intercepted by the middleware.
+5. The middleware calls the Criipto Verify service to exchange the code for an _access token_. Note that this is a direct server to server call which - unlike the other communication - does not pass through the browser.
+6. The access token is used by the middleware to retrieve the available user information which is set as claims on the user principal.
 
-If you want to inspect what is actually going on you may see much of it if you use for example chrome and turn on the developer tools to inspect the network traffic.
+If you want to inspect what is actually going on you may see much of it if you use for example Chrome and turn on the developer tools to inspect the network traffic.
 
 ## Setting up for Production
 
