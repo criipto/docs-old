@@ -4,7 +4,7 @@ layout: article
 
 # React.js
 
-This tutorial demonstrates how to add a user login to a React.js application, but similar steps can be applied to any other JavaScript library or framework like Angular, Vue or even pure JavaScript applications.
+This tutorial demonstrates how to add a user login to a React.js application, but similar steps can be applied to other JavaScript frameworks such as Angular and Vue or even pure JavaScript applications.
 
 Four steps are required to complete your first test login:
 
@@ -69,21 +69,21 @@ Once you have a saved application registration you are ready to enable Callback 
 ## Configure oidc-client to use Criipto Verify
 
 ### Install dependencies
-In the sample we are using OpenID Connect certified [oidc-client](https://github.com/IdentityModel/oidc-client-js), so make sure to do npm instal for oidc-client.
+In the example we use the OpenID Connect certified [oidc-client](https://github.com/IdentityModel/oidc-client-js) by Brock Allen.
 
 ``` console
 npm install oidc-client --save
 ```
 
 ### Configure the oidc-client
-To configure oidc-client you need to initialize the UserManager object and pass the settings object to it's constructor. The UserManager class provides a higher level API for logging a user in, signing out and managing user's claims returned from Criipto Verify.
+To configure oidc-client you need to initialize the UserManager object and pass the settings object to it's constructor. The UserManager class provides a higher level API for logging in, signing out and managing the user's claims returned from Criipto Verify.
 
 The settings object must include following properties:
 - `authority`: Your Criipto Domain.
-- `client_id`: Your Criipto Client ID/Realm.
+- `client_id`: Your Criipto Client ID.
 - `redirect_uri`: The Callback URI where Criipto Verify will redirect to after the user has authenticated.
 - `post_logout_redirect_uri`: The Callback URI where Criipto Verify will redirect to after the user has signed out.
-- `acr_values`: Identifies which e-ID identity service you want to use. For example, using the Vipps service: `urn:grn:authn:no:vipps`.
+- `acr_values`: Identifies which e-ID identity service you want to use. For example to use personal Danish NemID pass `urn:grn:authn:dk:nemid:poces`.
 
 You may also provide following properties. If omitted, default values will apply.
 - `responseType`: The requested response type. Default: `id_token`.
@@ -114,7 +114,7 @@ new UserManager({
 
 
 ### Create a React Context
-In the sample we have created an additional class AuthService which initializes the UserManager and implements necessary login and logout methods as well as the isAuthorized method.
+In the sample an additional class AuthService  initializes the UserManager and implements the necessary login and logout methods as well as the isAuthenticated method.
 
 ``` jsx
 // scr\Authentication\AuthService.js
@@ -209,7 +209,7 @@ Oidc-client offers two ways to do the authentication:
 ### Trigger authentication with redirect
 To start the authentication process you have to call the `signinRedirect()` method of the AuthService which will call the same method of the UserManager and automatically redirect the user to the authentication page associated with the chosen login option.
 
-Now the only thing left to do is to set up a callback route where you will receive a response. Create a callback component where you will call the signinRedirectCallback() method which will finish the authentication process and persist the user in the local storage.
+Now the only thing left is to set up a callback route where you will receive a response. Create a callback component where you will call the signinRedirectCallback() method which will finish the authentication process and persist the user in the local storage.
 
 ``` jsx
 export const RedirectCallback = (url) => (
@@ -223,10 +223,10 @@ export const RedirectCallback = (url) => (
 ```
 
 ### Trigger authentication in an iframe or a popup window
-Oidc-client also provides a way to implement the authentication in a new window which can be opened as a new browser window or displayed inside of an iframe in the application. To enable popupSignin it is very important to set some additional properties in the UserManager settings object:
-- `popup_redirect_uri`: A URI where you will receive a response from Criipto Verify. Don't forget to register it as one of the callback URIs.
+The oidc-client module also provides a way to implement the authentication in a new window which can be opened as a new browser window or displayed inside of an iframe in the application. To enable popupSignin it is very important to set some additional properties in the UserManager settings object:
+- `popup_redirect_uri`: A URL where you will receive the response from Criipto Verify. Don't forget to register it as one of the callback URLs in Criipto Verify as describe earlier.
 - `popupWindowFeatures`: Provides a way to customise the look of a new window. For example, `location=no,toolbar=no,width=600,height=500,left=100,top=100`
-- `popupWindowTarget`: Set this to `_blank` if you want a new browser window or set it to you iframe's name if you want it to show inside of an iframe.
+- `popupWindowTarget`: Set this to `_blank` if you want a new browser window. Or set it to an the name of an iframe where you want it to show.
 
 Also, make sure to implement following methods in the AuthService class:
 ``` jsx
@@ -260,14 +260,14 @@ export const PopupCallback = (url) => (
 );
 ```
 
-The UserManager will close a new browser window on it's own, but if you are implementing the authentication inside of an iframe, you will have to handle that part yourself. To make that easier, you can raise an event on the top window after the user logs in successfully and register an event listener which will, for example, close the login modal or remove the iframe from the DOM.
-
+The UserManager will close the new browser window on it's own, but if you are implementing the authentication in an iframe, you must handle that part yourself. To make that easier, you can raise an event on the top window after the user successfully logs in  and register an event listener which will, for example, close the login modal or remove the iframe from the DOM.
 
 ### Trigger a user logout
 
 Logout requires both terminating the local session by clearing the local storage as well as telling Criipto Verify that the session is over. To start the process of a user logout, just call the `logout()` method of the AuthService which will call the `signoutRedirect()` method of the UserManager and start the logout process.
 
 You also need to set up a callback route where you will receive the response. Create a callback component where you will call a `signoutRedirectCallback()` method.
+
 ``` jsx
 export const LogoutCallback = (url) => (
   <AuthConsumer>
