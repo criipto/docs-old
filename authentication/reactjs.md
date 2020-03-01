@@ -17,7 +17,7 @@ This explains how to set up your application and test with test users. To use re
 
 And note that you need test e-ID users to see your code in action. How to get those is [described further down](#testusers).
 
-You may get a completed and ready to run [sample from GitHub](https://github.com/goranlisak/criipto-react-demo) showing the below recipe in the simplest of React.js applications.
+You may get a completed and ready to run [sample from GitHub](https://github.com/criipto/verify-with-reactjs) showing the below recipe in the simplest of React.js applications.
 
 To modify your existing application to work with Criipto Verify follow the steps below.
 
