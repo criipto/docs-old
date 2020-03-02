@@ -20,7 +20,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   and bank e-ID services such as Danish NemID, Swedish BankID, and Norwegian BankID as a service.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://docs.criipto.com" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: criiptoCPH
+twitter_username: criipto
 github_username:  criipto
 
 permalink: pretty
