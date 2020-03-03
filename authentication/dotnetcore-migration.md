@@ -42,7 +42,7 @@ Following steps are required to complete your first test login:
 
 Restore dependencies to make sure they are compatible with a new version of .NET Core.
 
-Run the following comand:
+Run the following command:
 
 ``` console
   dotnet restore
