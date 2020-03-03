@@ -142,17 +142,10 @@ Add the following code to your app.js file.
 passport.use(
   'oidc',
   new Strategy({ client }, (tokenSet, userinfo, done) => {
-    id_token = tokenSet.id_token; // store the id_token to use for logout
     return done(null, tokenSet.claims());
   })
 );
 ```
-
-{% iconnote note %}
-
-To start the logout request, you will have to provide the `id_token_hint`, so make sure to store the `id_token` because Passport nor openid-client will store it for you. In the sample, we are just storing it in a global variable, but for a real application you may want to handle it differently.
-
-{% endiconnote %}
 
 The last thing you need to finish setting up the passport is to provide a function to serialize and deserialize a user. Add the following code to your app.js file.
 
@@ -263,11 +256,11 @@ router.get('/', ensureLoggedIn('/'), (req, res) => {
 
 The logout process consists of two parts: sending the request to Criipto Verify to end the session and clearing the user from the local storage.
 
-First you will have to create a `/logout` route to send the request to Criipto Verify to end the session. You can retrieve the logout redirect URL from the client by calling `endSessionUrl` method and passing an object with `id_token_hint` property as an argument.
+First you will have to create a `/logout` route to send the request to Criipto Verify to end the session. You can retrieve the logout redirect URL from the client by calling `endSessionUrl` method.
 
 ``` javascript
 app.get('/logout', (req, res) => {
-  res.redirect(client.endSessionUrl({ id_token_hint: id_token }));
+  res.redirect(client.endSessionUrl());
 });
 ```
 
