@@ -8,6 +8,8 @@ To start accepting real users with Norwegian BankID, you must first request your
 
 {% iconnote info %}
 
+**Prerequisites for ordering**
+
 In order to apply for the BankID client credentials for a company you must meet the basic requirements:
 
 - Your company must be registered in the central Norwegian business registry, _Brønnøysundregistrene_
