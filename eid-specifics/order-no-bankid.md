@@ -4,17 +4,20 @@ title: Ordering Norwegian BankID
 ---
 # Ordering Norwegian BankID
 
-To start accepting real users with Norwegian BankID, you must first request a set of secret keys - so-called _client credentials_ from the Norwegian BankID organisation.
+To start accepting real users with Norwegian BankID, you must first request your _client credentials_ - a set of secret keys - from the Norwegian BankID organisation.
 
-### Prerequisites for ordering a BankID
+{% iconnote info %}
 
-In order to apply for the BankID secret keys for a company you must meet the basic requirements:
+In order to apply for the BankID client credentials for a company you must meet the basic requirements:
 
 - Your company must be registered in the central Norwegian business registry, _Brønnøysundregistrene_
 - Your company must be a customer of a Norwegian Bank. Most banks in Norway are part of the BankID network.
 - The person that will sign the contract must be in possession of one of these personal e-IDs: Norwegian BankID, Swedish BankID, or Danish NemID
+- You must have completed step 5 in the [Getting ready for production](/how-to/get-ready-for-production) guide. You will need the production domain to complete the order for your client credentials.
 
-## Ordering the secret keys
+{% endiconnote %}
+
+## Ordering the client credentials
 
 To order the actual keys please send a request to 
 
@@ -22,6 +25,8 @@ To order the actual keys please send a request to
 
 with answers to these questions:
 
+1. A short description of what your application does and why it needs BankID.
+2. The URL of your production domain as setup in step 5 of the [Getting ready for production](/how-to/get-ready-for-production)
 1. Your company: _Name, organisation number, and address_
 2. Your company's Norwegian bank: _Name, organisation number, and address_
 3. General contact person at your company for BankID related communication: _Name and email_
@@ -38,9 +43,9 @@ with answers to these questions:
 
 ## Next steps
 
-After Criipto has received the above information, we order the secret keys from your bank by filling out an online agreement. The agreement is then sent to the appointed person at your company for signing, after which also Criipto will sign. 
+After Criipto has received the above information, we order the client credntials from your bank by filling out an online agreement, which is then sent to the appointed persons at your company for signing. Criipto will also sign the agreement
 
-When all signatures are in place the signed agreement is sent to your bank for further processing and eventual issuance of your keys. 
+When all signatures are in place the signed agreement is sent to your bank for further processing and eventual issuance of your client credentials. 
 
-Once you have received the secret keys, the client credentials, they must be entered into the Criipto Verify management UI to configure your NO BankID integration.
+Once you have received credentials, they must be entered into the Criipto Verify management UI to configure your NO BankID integration.
 

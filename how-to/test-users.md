@@ -18,6 +18,7 @@ You may refer to the sections below for test users for your choice of e-ID:
 
 - [Swedish BankID](#sebankid)
 - [Norwegian BankID](#nobankid)
+- [Norwegian Vipps Login](#novipps)
 - [Danish NemID](#dknemid)
 - [Finnish BankID](#fibankid)
 
@@ -60,7 +61,19 @@ You can test it out at [www.grean.id](https://www.grean.id) which is a small sam
 
 ### Testing Mobile BankID 
 
+<a name="novipps"></a>
+
 For testing you may order up to three test SIM cards through Criipto once you have signed up for Norwegian BankID.
+
+<br/>
+
+## Norwegian Vipps Login
+
+In order to test Vipps Login you need to install the Vipps app in a special test version on your device. Follow the Vipps [guide for intstructions](https://github.com/vippsas/vipps-developers#vipps-test-apps) on how to set up test apps.
+
+<a name="dknemid"></a>
+
+In order to test you also need a test phone number. Write to [support@criipto.com](mailto:support@criipto.com) and put something like "Vipps Login test number" in the subject line.
 
 <br/>
 
