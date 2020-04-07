@@ -1,0 +1,112 @@
+/* custom range input styles */
+
+.jcf-range {
+  display: block;
+  margin: 0 12px 17px;
+  width: calc(100% - 24px);
+
+  &.jcf-disabled {
+    background: none !important;
+    opacity: 0.3;
+  }
+
+  &.jcf-vertical {
+    width: auto;
+
+    .jcf-range-wrapper {
+      margin: 0;
+      width: 10px;
+      height: auto;
+      padding: 20px 0 0;
+    }
+
+    .jcf-range-track {
+      height: 180px;
+      width: 10px;
+    }
+
+    .jcf-range-handle {
+      left: -5px;
+      top: auto;
+    }
+
+    .jcf-range-mark {
+      margin: 0 0 9px;
+      left: 14px;
+      top: auto;
+      width: 3px;
+      height: 1px;
+    }
+
+    .jcf-range-handle {
+      border: 1px solid #f00;
+      margin: -5px 0 0 -1px;
+    }
+  }
+
+
+  .jcf-range-track {
+    margin: 0 24px 0 0;
+    position: relative;
+    display: block;
+  }
+
+  .jcf-range-wrapper {
+    background: #bebbb7;
+    border-radius: 5px;
+    display: block;
+    margin: 10px 0;
+    height: 4px;
+    position: relative;
+  }
+
+  .jcf-range-display-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 5px;
+  }
+
+  .jcf-range-display {
+    background: $primary;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    border-radius: 5px;
+  }
+
+  .jcf-range-handle {
+    @include animate(color border background);
+    position: absolute;
+    background: $light;
+    width: 24px;
+    height: 24px;
+    margin: -12px 0 0;
+    z-index: 1;
+    top: 50%;
+    left: 0;
+    border-radius: 50%;
+    border: 1px solid #e5e2df;
+    box-shadow: 0 2px 5px rgba($black, 0.35);
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      background: $blue-02;
+      border-color: $blue-02;
+    }
+
+  }
+
+  .jcf-range-mark {
+    position: absolute;
+    overflow: hidden;
+    background: #000;
+    width: 1px;
+    height: 3px;
+    top: -7px;
+    margin: 0 0 0 9px;
+  }
+}

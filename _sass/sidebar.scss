@@ -27,7 +27,11 @@
     }
 
     a {
-        color: inherit
+        color: inherit;
+        
+        &:hover {
+            color: #f19737;
+        }
     }
 
 }

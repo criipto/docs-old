@@ -1,46 +1,51 @@
 <!-- start section footer -->
-<footer class="footer">
+<footer class="footer position-relative overflow-hidden text-white">
 
     {% if page.footer-only-copyright %}
-    <p class="copyright">Criipto 2019</p>
+      <p class="copyright">Criipto 2017, 2018, 2019, 2020</p>
     {% else %}
-    <div class="container">
+      <div class="bg-stretch has-gradient-box">
+        <span data-srcset="/images/bg02.jpg, /images/bg02-2x.jpg 2x"></span>
+      </div>
+      <div class="container">
         <div class="row">
-            <div class="col-xs-12 col-sm-3">
-                <div class="collection">
-                    <img src="/images/logo-criipto-dark.svg" alt="Criipto"/>
-                </div>
+          <div class="col-6 col-lg-12">
+            <div class="logo">
+              <a href="https://criipto.com">
+                <img src="/images/logo.svg" alt="Criipto">
+              </a>
             </div>
-            <div class="col-xs-12 col-sm-3">
-                <div class="collection">
-                    <p>Criipto ApS</p>
-                    <p>Dronninggårds Allé 136</p>
-                    <p>2840 Holte</p>
-                    <p>Denmark</p>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-3">
-                <div class="collection">
-                    <a class="black" href="mailto:hello@criipto.com">hello@criipto.com</a>
-                    <a class="black" href="mailto:sales@criipto.com">sales@criipto.com</a>
-                    <a class="black" href="mailto:support@criipto.com">support@criipto.com</a>
-                    <p>&nbsp;</p>
-                    <a class="black" href="https://criipto.com/tos">Terms of Service</a>
-                    <a class="black" href="https://criipto.com/privacy">Data Protection Policy</a>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-3">
-                <div class="collection">
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/company/3078112"><i class="fa fa-linkedin" aria-hidden="true"></i>Check us on Linkedin</a>
-                        <a href="https://twitter.com/criipto"><i class="fa fa-twitter" aria-hidden="true"></i>Check us on Twitter</a>
-                    </div>
-                </div>
-            </div>
+          </div>
+          <div class="col-6 col-lg-3 col-xl-2 order-lg-last">
+            <ul class="social-networks list-unstyled">
+              <li><a href="https://twitter.com/criipto"><i class="icon icon-twitter"></i></a></li>
+              <li><a href="https://www.linkedin.com/company/3078112"><i class="icon icon-linkedin"></i></a></li>
+            </ul>
+          </div>
+          <div class="col-12 col-md-4 col-lg-3">
+            <address>Criipto ApS <br>Dronninggårds Allé 136 <br>2840 Holte <br>Denmark</address>
+          </div>
+          <nav class="col-12 col-md-4 col-lg-3 col-xl-4">
+            <ul class="pl-xl-70">
+              <li><a href="mailto:hello@criipto.com">hello@criipto.com</a></li>
+              <li><a href="mailto:sales@criipto.com">sales@criipto.com</a></li>
+              <li><a href="mailto:support@criipto.com">support@criipto.com</a></li>
+            </ul>
+          </nav>
+          <nav class="col-12 col-md-4 col-lg-3">
+            <ul class="pl-xl-10">
+              <li><a href="/legal/tos">Terms of Service</a></li>
+              <li><a href="/legal/privacy">Data Protection Policy</a></li>
+              <li class="status" id="footer-status"><a href="https://status.criipto.com">Operations Status</a></li>
+            </ul>
+          </nav>
         </div>
-    </div>
+      </div>
     {% endif %}
 
 </footer>
-
 <!-- end section footer -->
+
+<script type="text/javascript" src="https://cdn.statuspage.io/se-v2.js"></script>
+<script src="/js/plugins.js"></script>
+<script src="/js/utils.js"></script>
