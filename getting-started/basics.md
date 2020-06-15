@@ -40,7 +40,7 @@ A domain in Criipto Verify is the DNS domain on which you call our service to pe
 {% iconnote info %}
 Domains are registered for either test or production and as such determines whether you can use test e-ID accounts or real, live e-ID accounts. 
 
-As such, **the domain is the key separator between test and production.**
+As such, **the domain is the key distinction between test and production.**
 {% endiconnote %}
 
 ### Bring your own domain
