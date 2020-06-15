@@ -4,7 +4,7 @@
   z-index: 10;
   @include font(18, 22, 400);
   font-family: $font-family-serif;
-  background: $primary url(../images/bg01.jpg) no-repeat 50% 50% / cover;
+  background: $primary;
 
   .hero-block .sticky-wrap-header:not(.fixed-position) & {
     background: none;
