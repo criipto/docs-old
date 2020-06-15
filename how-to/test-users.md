@@ -53,8 +53,6 @@ Test users are created through the web page at [https://ra-preprod.bankidnorge.n
 4. Click "Order" to initiate the process
 5. Once the process complete you now have a test user. User name is the generated SSN, one time password (OTP) is always "otp", and password is always "qwer1234"  
 
-_NOTE that it takes about 1 hour before a test user works completely._
-
 You can test it out at [www.grean.id](https://www.grean.id) which is a small sample run by Criipto. 
 
 <a name="dknemid"></a>
@@ -69,7 +67,7 @@ For testing you may order up to three test SIM cards through Criipto once you ha
 
 ## Norwegian Vipps Login
 
-In order to test Vipps Login you need to install the Vipps app in a special test version on your device. Follow the Vipps [guide for intstructions](https://github.com/vippsas/vipps-developers#vipps-test-apps) on how to set up test apps.
+In order to test Vipps Login you need to install the Vipps app in a special test version on your device. Follow the Vipps [guide for intstructions](https://github.com/vippsas/vipps-developers/blob/master/vipps-test-environment.md#vipps-test-apps) on how to set up test apps.
 
 <a name="dknemid"></a>
 
