@@ -25,3 +25,5 @@ Session.vim
 # Jekyll
 _site
 .sass-cache
+.fake
+.ionide
