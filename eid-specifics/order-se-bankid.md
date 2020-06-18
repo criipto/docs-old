@@ -8,7 +8,7 @@ To start accepting real users with Swedish BankID, you must first request a cert
 
 Criipto acts as a reseller for Swedbank, which means that you will have to go through a simple approval process with Swedbank. The process is managed by Criipto.
 
-To order the actual certificate simply <a href="../VerksamhetsinfoBankid-template.docx" download>download this Word template</a> and return a filled out copy to <a href="mailto:support@criipto.com?subject=Swedish BankID for ...">support@criipto.com</a>
+To order the actual certificate simply <a href="/eid-specifics/VerksamhetsinfoBankid-template.docx" download>download this Word template</a> and return a filled out copy to <a href="mailto:support@criipto.com?subject=Swedish BankID for ...">support@criipto.com</a>
 
 ## Next steps
 
