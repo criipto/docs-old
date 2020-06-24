@@ -11,9 +11,12 @@
     success: function(data) {
       data.components.forEach(component => {
         var element = document.getElementById(component.id);
-        if(!element.classList.contains(classByStatus[component.status])) {
-          element.classList.add(classByStatus[component.status]);
-        }
+        var classesToAdd = classByStatus[component.status];
+        classesToAdd.split(' ').forEach(function(classToAdd) {
+          if(classToAdd.length > 0 && !element.classList.contains(classToAdd)) {
+            element.classList.add(classToAdd);
+          }
+        });
       });
 
       var operationalComponents = data.components.filter(component => component.status === 'operational');
@@ -43,33 +46,3 @@
     }
   })
 })();
-
-function isValidEmail(email) {
-  if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
-    return true;
-  }
-  return false;
-}
-
-function onSubscribe() {
-  var email = document.getElementById("subscribe-email").value;
-  var messageElement = document.getElementById("subscription-message");
-
-  if(isValidEmail(email)) {
-    $.post("/subscribe?email=" + email, data => {
-      if(data.success) {
-        messageElement.className = "success-message";
-        messageElement.innerHTML = "You have successfully subscribed.";
-      } else {
-        messageElement.className = "error-message";
-        messageElement.innerHTML = "There was an error. Pleas try again.";
-      }
-    }).fail(() => {
-      messageElement.className = "error-message";
-      messageElement.innerHTML = "There was an error. Pleas try again.";
-    });
-  } else {
-    messageElement.className = "error-message";
-    messageElement.innerHTML = "Email is not valid.";
-  }
-}
