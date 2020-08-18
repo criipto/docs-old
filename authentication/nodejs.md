@@ -100,8 +100,18 @@ Issuer.discover('https://nodejs-sample.criipto.id')
       token_endpoint_auth_method: 'client_secret_post'
     });
 
+    // you can optionally set clock_tolerance to allow JWT to be valid
+    // even if your system is not in sync with the server time
+    client[custom.clock_tolerance] = 300 // seconds
+
     // do the rest of setup here
   });
+```
+
+Optionally, you can set `clock_tolerance` option for openid-client, to allow JWT to be valid even if your system is not in sync with the server time.
+
+``` javascript
+client[custom.clock_tolerance] = 300 // seconds
 ```
 
 ### Configure Passport and Express session
@@ -296,6 +306,9 @@ In summary, the steps above will lead to a runtime flow that looks like this:
 6. The access token is used by the middleware to retrieve the available user information which is set as claims on the user principal.
 
 If you want to inspect what is actually going on you may see much of it if you use for example Chrome and turn on the developer tools to inspect the network traffic.
+
+### Tracing the flow in the demo application
+By default, our [Demo application](https://github.com/goranlisak/criipto-nodejs-demo) will log important steps of the authentication flow to the console. You can turn it off, or change the logging level, by setting `DEBUG` environment variable in `.env` file to desired value.
 
 ## Setting up for Production
 
