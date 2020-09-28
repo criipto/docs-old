@@ -2,62 +2,68 @@
 layout: article
 ---
 
-# Criipto Signing
+# Criipto Verify Document Signatures
 
-This tutorial demonstrates how to implement digital signature for PDF or plain text using Criipto Verify signing feature.
+This tutorial demonstrates how to you can easily add digital signature capabilities for PDF and plain text documents to your own application(s), by using Criipto Verify's document signing features.
 
 * [Register application in Criipto Verify](#register)
 * [PDF signature](#pdf)
 * [Plain text signature](#text)
 
-This explains how to set up your application and test with test users. To use real e-IDs for signing, the setup is the same, but you must be [set up for Production](#production)
+The tutorial will walk you through the technical details of the integration process between your application and Criipto Verify, and will also explain how to use test e-ID's to validate your integration. To use real e-ID's for signing, the integration is the same, but you must be [set up for Production](#production).
 
-And note that you need test e-ID users to see your code in action. How to get those is [described further down](#testusers).
+***Note*** _Getting access to test e-ID users is [described here](#testusers)._
 
-You may get a completed and ready to run [sample from GitHub](https://github.com/criipto/signatures-demo) showing the below recipe in the simplest of .NET Core and React.js applications, but similar principals can be applied to any technology, as it mainly relays on making properly structured HTTP requests to Criipto service.
+You can download a ready-to-run [sample from GitHub](https://github.com/criipto/signatures-demo) showing the below recipe in a minimalistic application setup.
 
+***Note***
+_The sample uses a `.NET Core` backend and accompanying `React.js` frontend. If you are building your system on other platforms, no problem. You can do exactly the same in any system that supports `JSON` over `HTTP`._
 
 <a name="register"></a>
 
 ## Register Your Application in Criipto Verify
-After you signed up for Criipto Verify, you must register an application before you can actually try requesting a signature.
+After you signed up for Criipto Verify, you must register an application before you can try requesting a signature. If you gaven't already done this, go to our management dashboard on [manage.criipto.id](https://manage.criipto.id), and navigate to the `Applications` tab and create a new application.
 
-Once you register your application you will also need some of the information for communicating with Criipto Verify. You get these details from the settings of the application in the dashboard.
+The sample application for this tutorial uses the following settings. When you move outside the scope of the demo and start the integration from your own system, change the values accordingly so your system communicates with Criipto Verify using it's dedicated settings.
 
-Specifically you need the following information to configure you application
+![Register App](/images/register-app2.png)
+
+Specifically, you will need the following information:
 
 - _Client ID_ to identify your application to Criipto Verify. In the case below we chose `urn:criipto:samples:no1`
 - _Domain_ on which you will be communicating with Criipto Verify. Could be for example `samples.criipto.id`
+- _Callback URL_ on which your application expects the result of the signing process from Criipto Verify
 
-![Register App](/images/register-app.png)
+### Register Callback URLs
 
-### Register callback URLs
+Before you can start sending requests to Criipto Verify, you need to pre-register the URL(s) on which you expect to receive the returned JSON Web Token (aka a `JWT`) on.
 
-Before you can start sending requests to Criipto Verify you need to register URLs on which you want to receive returned JSON Web Token, JWT.
+These URLs are known as `Callback URL`s, and they are links to your system. Criipto Verify will send the `JWT` containing the outcome of the document signing process only to a pre-registered `Callback URL`. 
 
-A Callback URL of your application is a URL where Criipto Verify will post returned JWT after the user has signed the text/pdf. You will need to add this URL to the list of allowed URLs for your application. Callback URLs for the sample project are: `http://localhost:5000/sign/callback` and `https://localhost:5001/sign/callback`
+Callback URLs for the sample project are: `http://localhost:5000/sign/callback` and `https://localhost:5001/sign/callback`:
 
-Make sure to add these to the Callback URLs section of your application. Put each URL on a new line.
+![Callback URLs](/images/callback-urls-signatures.png)
+
+Make sure to add your own `Callback URL`s. Put each URL on a new line.
 
 If you deploy your application to a different URL you will also need to ensure to add that URL to Callback URLs. 
 
-
 <a name="pdf"></a>
 
-## PDF signature
+## PDF Documents
 
-PDF signature is currently supported by Bank ID only.
+PDF document signatures are currently supported for Norwegian BankID.
 
 There are three important steps in obtaining a signature:
 1. [Upload a PDF to Criipto Verify and retrieve a redirect URI](#pdfUpload)
-2. [Redirect a user to the redirect URI](#pdfRedirect)
+2. [Redirect the user to the redirect URI](#pdfRedirect)
 3. [Handle a callback from Criipto Verify](#pdfCallback)
 
 <a name="pdfUpload"></a>
 
 ### 1. Upload a PDF to Criipto Verify and retrieve a redirect URI
 
-A first step in obtaining a signature is to upload a PDF document to Criipto Verify, which will responde with a redirect URI where you have to redirect a user to complete the signature process.
+A first step in obtaining a signature is to upload one or more PDF documents to Criipto Verify, which will respond with a redirect URI where you have to redirect the users browser to, so they can complete the signature process.
 
 Endpoint: `/sign/pdfv1`
 
@@ -65,7 +71,7 @@ Query parameters:
   * `wa` - constant value: `wsignin1.0`
   * `wtrealm` - Your Criipto Verify Client ID
   * `wreply` - a signature callback URL for your application
-  * `wauth` - `acr_value` of the authentication method you want to use - currently only Bank ID is supported: `urn:grn:authn:no:bankid`
+  * `wauth` - `acr_value` of the authentication method you want to use: `urn:grn:authn:no:bankid`
   * `ui_locales` - specify the UI language to use by authentication provider
 
 Body parameters:
@@ -73,8 +79,8 @@ Body parameters:
   * documents: List\<PdfDocument\>
 
 SignProperties class:
-  * `orderName` - string displayed to a user as an instruction when starting a signature process by authentication provider
-  * `showConfirmation` and `showUnderstanding` - booleans which control respective UI aspects of authentication provider
+  * `orderName` - string displayed to the user as an instruction when starting the signature process
+  * `showConfirmation` and `showUnderstanding` - booleans that controls some aspect of the native provider's UX
 ```c#
 public class SignProperties {
   public string orderName {get; set;}
@@ -84,7 +90,7 @@ public class SignProperties {
 ```
 
 PdfDocument class:
-  * `description` - string, document description,
+  * `description` - string, per-document description displayed to the user
   * `pdf` - string, base64 encoded PDF document
   * `seal` - Object\<PdfSeal\>, specify an absolute position of the seal in the signed document 
 ```c#
@@ -119,7 +125,7 @@ var body = new PdfSignRequest {
   documents = new List<PdfDocument> {
     new PdfDocument {
       description = "Demo document",
-      pdf = input.pdfBase64,
+      pdf = "...base64-encoded PDF document contents (UTF8)...",
       seal = new PdfSeal {
         x = 10,
         y = 10,
@@ -130,21 +136,26 @@ var body = new PdfSignRequest {
 };
 ```
 
-If successful, Criipto Verify will respond with a `redirectUri`.
+If successful, Criipto Verify will respond with a `JSON` literal with a `redirectUri` property:
+```
+{
+  "redirectUri": "a URL that you must redirect the users browser to"
+}
+```
 
 <a name="pdfRedirect"></a>
 
-### 2. Redirect a user to the redirect URI
+### 2. Redirect the users browser to the redirect URI
 
-After you have successfully retrieved a redirect URI from Criipto Verify, you have to redirect a user to the redirect URI. Here a user will have a chance to review the document once again and proceed with signing.
+After you have successfully retrieved a redirect URI from Criipto Verify, you have to redirect the users browser to the redirect URI. The user will then be given the chance to review the document(s) and proceed to the actual signing.
 
 <a name="pdfCallback"></a>
 
-### 3. Handle a callback from Criipto Verify
+### 3. Handle the callback from Criipto Verify
 
-If signing was successful, a `signature` property will be posted to the callback route you specified in the first step, and it will contain a JWT.
+If signing was successful, a `signature` property will be posted to the `Callback URL` you specified in the first step, and it will contain a JWT.
 
-It's recommended to validate a JWT before consuming it.
+Your system must now validate the JWT before consuming it for production purposes (such as storing it for bookkeeping purposes).
 
 ```c#
 var validationParams = new TokenValidationParameters{
@@ -167,7 +178,7 @@ if (jwtToken != null) {
 }
 ```
 
-In the example above, `jwtToken.RawPayload` will contain information about a user who signed the document, and a base64-encoded PDF with the seal. Below is an example of a `jwtToken.RawPayload` retrieved from one of the test users.
+In the example above, `jwtToken.RawPayload` will contain information about the user that signed the document, and a base64-encoded PDF with the seal. Below is an example of a `jwtToken.RawPayload` retrieved from one of the test users.
 
 ```
 {
@@ -198,36 +209,35 @@ In the example above, `jwtToken.RawPayload` will contain information about a use
 
 A base64-encoded signed PDF can be retrieved from `jwtToken.RawPayload.evidence[0].padesSignedPdf`.
 
-
 <a name="text"></a>
 
 ## Text signature
 
-Text signature is currently supported by Nem ID, NO Bank ID and SE Bank ID.
+Text signature is supported for DK NemID, NO BankID and SE BankID.
 
 There are two important steps in obtaining a signature:
-1. [Redirect a user to the signature endpoint](#textRedirect)
+1. [Redirect the user to the signature endpoint](#textRedirect)
 2. [Handle a callback from Criipto Verify](#textCallback)
 
 <a name="textRedirect"></a>
 
-### 1. Redirect a user to the signature endpoint
+### 1. Redirect the user to the signature endpoint
 
-A first step is to construct a valid signature URL, and redirect a user to the Criipto Verify text signing endpoint: `/sign/text`
+A first step is to construct a valid signature URL, and redirect the user to the Criipto Verify text signing endpoint: `/sign/text`
 
 Query parameters:
   * `wa` - constant value: `wsignin1.0`
   * `wtrealm` - ˇYour Criipto Verify client ID
   * `wreply` - a signature callback URL for your application
-  * `wauth` - `acr_value` of the authentication method you want to use - currently only Nem ID, NO Bank ID and SE Bank ID are supported
+  * `wauth` - `acr_value` of the authentication method you want to use. You can find the exact value(s) to use [here](#acr_values)
   * `signtext` - base64-encoded text to be signed
-  * `orderName` - string displayed to a user as an instruction when starting a signature process by authentication provider
+  * `orderName` - string displayed to the user as an instruction when starting a signature process by authentication provider
   * `showUnderstanding` and `showConfirmation` - booleans which control respective UI aspects of authentication provider
   * `ui_locales` - specify the UI language to use by authentication provider
 
 Full signature URL example: `{your_criipto_domain}/sign/pdfv1?wa=wsignin1.0&wtrealm={your_criipto_id}&wreply=https://localhost:5001/sign/callback&wauth=urn:grn:authn:no:bankid&signtext=VGhpcyBpcyBhbiBleGFtcGxlLg%3D%3D&orderName=Signing%20demo&showUnderstanding=true&showConfirmation=true&ui_locales=en`
 
-If a valid signature URL has been constructed, Criipto Verify will redirect a user to the authentication provider and handle signing, after which a user will be redirected to the callback URL, and a JWT will be posted to the callback route.
+If a valid signature URL has been constructed, Criipto Verify will redirect the user to the authentication provider and handle signing, after which the user will be redirected to the callback URL, and a JWT will be posted to the callback route.
 
 <a name="textCallback"></a>
 
@@ -258,7 +268,7 @@ if (jwtToken != null) {
 }
 ```
 
-In the example above, `jwtToken.RawPayload` will contain information about a user who signed the text. Below is an example of a `jwtToken.RawPayload` retrieved from one of the test users.
+In the example above, `jwtToken.RawPayload` will contain information about the user who signed the text. Below is an example of a `jwtToken.RawPayload` retrieved from one of the test users.
 
 ```
 {
@@ -293,3 +303,8 @@ In the example above, `jwtToken.RawPayload` will contain information about a use
 ## Setting up for Production
 
 {% include snippets/set-up-production.md %}
+
+<a name="acr_values"></a>
+
+## List of acr_values
+{% include snippets/login-methods.md %}
