@@ -14,11 +14,12 @@ description: How to set up a custom domain for Criipto Verify
 
 If your custom domain successfully resolved to `idp.criipto.id`, you will see a checkmark appear, otherwise give it more time for DNS records to update, or check if you properly set a DNS CNAME record.
 
-![Callback URLs](/images/custom-domain.JPG)
+![Set up custom domain](/images/custom-domain.JPG)
 
 
 ## Create a self-contained certificate and upload it to Criipto Verify
 1. If you don't have it already, obtain a root CA from your issuer
+    - [How to obtain a root certificate](#root-certificate)
 2. Gather any intermediate certificates and/or `ca_bundle.crt` you may require, and the end-entity certificate with a `private.key`
 3. Ensure that all certificates are newline-terminated by executing the following command for every certificate:
   ```
@@ -44,3 +45,38 @@ If your custom domain successfully resolved to `idp.criipto.id`, you will see a 
   ```
   If you are on Windows, you can [get openssl for Windows](http://gnuwin32.sourceforge.net/packages/openssl.htm).
 6. In Criipto Verify Dashboard, under Domain, select your custom domain and upload a self-contained certificate with a password.
+
+<a name="root-certificate"></a>
+
+## How to obtain a root certificate
+
+### Windows
+1. Open a certificate with a default program - Crypto Shell Extensions
+2. Switch to a `Certification Path` tab
+  ![Certification Path](/images/certificate-general.JPG)
+3. Double-click on the top certificate (root certificate)
+4. Another window will pop up. Switch to a `Details` tab and choose `Copy to File...` button
+  ![Root Certificate](/images/root-certificate.JPG)
+5. Choose `Next`, then choose `Base-64 encoded X.509(.CER)`
+6. Enter a file name and choose a destination
+7. Choose `Next`, then `Finish`
+
+The root certificate is now copied to the chosen destination.
+
+### Linux
+1. Read the content of your certificate by executing:
+
+    For base-64 encoded certificates:
+    ```
+    openssl x509 -in {your_certificate}.crt -text -noout
+    ```
+    For certificates in DER format:
+    ```
+    openssl x509 -in {your_certificate}.crt -inform DER -text
+    ```
+2. Check the Issuer CN and Subject CN. If they do not match, it means this is an intermediate certificate. In that case, find `CA Issuers - URI` in the certificate details and download the issuer certificate.
+    ```
+    curl -O {issuer_certificate_uri}
+    ```
+3. Repeat steps 1 and 2 with obtained certificate in the previous step until you find a root certificate.
+
