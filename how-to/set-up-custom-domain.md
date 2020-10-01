@@ -21,29 +21,29 @@ If your custom domain successfully resolved to `idp.criipto.id`, you will see a 
 1. If you don't have it already, obtain a root CA from your issuer
     - [How to obtain a root certificate](#root-certificate)
 2. Gather any intermediate certificates and/or `ca_bundle.crt` you may require, and the end-entity certificate with a `private.key`
-3. Ensure that all certificates are newline-terminated by executing the following command for every certificate:
+3. Ensure that all certificates files are newline-terminated. You can use your favourite text editor to do this manually, but you can also leverage a tool such as `sed` by executing the following command for every certificate:
   ```
     sed -i -e '$a\' {file_name}.crt
   ```
-
-    If you are on Windows, you can [get sed for Windows](http://gnuwin32.sourceforge.net/packages/sed.htm).
+If you are on Windows, you can [install the Ubuntu app](#ubuntu-on-windows) to get access to `sed`.
 
 4. Concatenate all the certificates into one `.pem` file. Make sure to do it in the correct order.
   
     Linux:
     ```
-    cat root.crt ca_bundle.crt end-entity.crt > all-cert.pem
+    cat root.crt ca_bundle.crt end-entity.crt > all-certs.pem
     ```
 
     Windows:
     ```
-    type root.crt ca_bundle.crt end-entity.crt > all-cert.pem
+    type root.crt ca_bundle.crt end-entity.crt > all-certs.pem
     ```
 5. Create a self-contained `.p12` certificate. You will be prompted to create a password in this step.
   ```
     openssl pkcs12 -export -out {file_name}.p12 -inkey private.key -in all-certs.pem
   ```
-  If you are on Windows, you can [get openssl for Windows](http://gnuwin32.sourceforge.net/packages/openssl.htm).
+  If you are on Windows, you can [install the Ubuntu app](#ubuntu-on-windows) to get access to `openssl`.
+
 6. In Criipto Verify Dashboard, under Domain, select your custom domain and upload a self-contained certificate with a password.
 
 <a name="root-certificate"></a>
@@ -80,3 +80,9 @@ The root certificate is now copied to the chosen destination.
     ```
 3. Repeat steps 1 and 2 with obtained certificate in the previous step until you find a root certificate.
 
+<a name="ubuntu-on-windows"></a>
+
+## Get Ubuntu on Windows
+You can get access to a plethora of useful tools by installing the Ubuntu app from the Microsoft Store.
+
+In the Start Menu, type "Microsoft Store", open the store, type "Ubuntu" in the Store's search box, click the Install button and follow the setup instructions.
