@@ -143,7 +143,8 @@ If you want to show text in one of the hidden-by-default `<p>` elements, you can
 
 TODO: A drawing of our frame-model ?
 
-# Generally available CSS classes
+# CSS classes
+## Generally available
 Each `<body>` element has up to 5 CSS classes attached to it:
 1. Indicator of the e-ID method in use - such as `sebankid`.
 2. Indicator that this is a page from Criipto Verify - `broker`. This makes it possible to target our pages specifically, even if you use the same CSS file for different websites.
@@ -164,26 +165,14 @@ you will have the following CSS class content on the `body` tag:
 
 You can use these dynamically added CSS classes to customize the UI on a per-application basis, which may be quite practical for, say, Single Sign-On scenarios where you re-use a Criipto Verify DNS domain across web applications with very different branding requirements.
 
-## CSS classes per dialog
+## Dialog specific
 Each of the dialogs have their own HTML/CSS structure, and you can inspect the details with your browsers developer tools.
 You get the best overview if you expand the preview first.
 
-# Replacing built-in texts
-If you expand the `Another Device: Prompt for SSN` preview, you'll se a `{Log in with BankId | Logga in med BankId}` headline text (actual text will depend on the currently selected language for the SE BankID previews). If you want to change these texts, you could add the following to your stylesheet:
-```css
-.auth #headline .lang span {
-  display: none;
-}
-.auth #headline .lang-sv:after {
-  content: "Logga in med Bank-ID";
-}
-.auth #headline .lang-en:after {
-    content: "Auth with Bank-ID";
-}
-```
-The first bit hides the default texts (the `.lang` selector hits both built-in texts), and the 2 following selectors then add new content per supported language.
+# Example: Replacing headline texts in the signature flow for SE BankID
+If you expand the `Another Device: Prompt for SSN` preview, you'll se a `{Log in with BankId | Logga in med BankId}` headline text (actual text will depend on the currently selected language for the SE BankID previews).
 
-Should you also want to change the wording for signature flow, you could add the following selectors as well:
+Should you also want to change the wording for signature flow, you could add the following selectors to your custom stylesheet:
 ```css
 .sign #headline .lang span {
   display: none;
