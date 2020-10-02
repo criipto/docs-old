@@ -162,6 +162,8 @@ you will have the following CSS class content on the `body` tag:
     <body class="sebankid broker auth host-identity-yourdomain-com app-one">
 ```
 
+You can use these dynamically added CSS classes to customize the UI on a per-application basis, which may be quite practical for, say, Single Sign-On scenarios where you re-use a Criipto Verify DNS domain across web applications with very different branding requirements.
+
 ## CSS classes per dialog
 Each of the dialogs have their own HTML/CSS structure, and you can inspect the details with your browsers developer tools.
 You get the best overview if you expand the preview first.
