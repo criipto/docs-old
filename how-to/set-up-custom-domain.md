@@ -18,16 +18,19 @@ If your custom domain successfully resolved to `idp.criipto.id`, you will see a 
 
 
 ## Create a self-contained certificate and upload it to Criipto Verify
-1. If you don't have it already, obtain a root CA from your issuer
+1. If you don't have it already, download the root CA from your issuer
     - [How to obtain a root certificate](#root-certificate)
-2. Gather any intermediate certificates and/or `ca_bundle.crt` you may require, and the end-entity certificate with a `private.key`
-3. Ensure that all certificates files are newline-terminated. You can use your favourite text editor to do this manually, but you can also leverage a tool such as `sed` by executing the following command for every certificate:
+2. Download the chain of intermediate certificates from your issuer. Certificate issuers typically make these available from the same public website where you downloaded the root certificate in step 1. We will assume in the following that you have downloaded this bundle to a file called `ca_bundle.crt`.
+3. You need the end-entity certificate and a corresponding `private.key` as well. Your mileage may vary a lot here, depending on which format your issuer makes this available in. Some will deliver 2 separate files - and we will refer to them in the following as `private.key` and `end-entity.crt`. Others will wrap them into a password-protected .p12 or .pfx file. If you have such a file (and assuming that it is called `certificate.pfx`), you can split it up into a private key and an end-entity certificate with 2 `openssl` commands:
+    - `openssl pkcs12 -in certificate.pfx -nocerts -out private.key`
+    - `openssl pkcs12 -in certificate.pfx -nokeys -out end-entity.crt`
+4. Ensure that all certificates files are newline-terminated. You can use your favourite text editor to do this manually, but you can also leverage a tool such as `sed` by executing the following command for every certificate:
   ```
     sed -i -e '$a\' {file_name}.crt
   ```
 If you are on Windows, you can [install the Ubuntu app](#ubuntu-on-windows) to get access to `sed`.
 
-4. Concatenate all the certificates into one `.pem` file. Make sure to do it in the correct order.
+5. Concatenate all the certificates into one `.pem` file. Make sure to do it in the correct order.
   
     Linux:
     ```
@@ -38,13 +41,13 @@ If you are on Windows, you can [install the Ubuntu app](#ubuntu-on-windows) to g
     ```
     type root.crt ca_bundle.crt end-entity.crt > all-certs.pem
     ```
-5. Create a self-contained `.p12` certificate. You will be prompted to create a password in this step.
+6. Create a self-contained `.p12` certificate. You will be prompted to create a password in this step.
   ```
     openssl pkcs12 -export -out {file_name}.p12 -inkey private.key -in all-certs.pem
   ```
   If you are on Windows, you can [install the Ubuntu app](#ubuntu-on-windows) to get access to `openssl`.
 
-6. In Criipto Verify Dashboard, under Domain, select your custom domain and upload a self-contained certificate with a password.
+7. In Criipto Verify Dashboard, under Domain, select your custom domain and upload a self-contained certificate with a password.
 
 <a name="root-certificate"></a>
 
