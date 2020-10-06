@@ -14,6 +14,9 @@
 				<li class="{% if '/getting-started/oidc-intro/' == page.url %}active{% endif %}">
 					<a href="{% link getting-started/oidc-intro.md %}">Using OpenID Connect</a>
 				</li>
+				<li class="{% if '/getting-started/token-contents/' == page.url %}active{% endif %}">
+					<a href="{% link getting-started/token-contents.md %}">JWT payloads pr. e-ID type</a>
+				</li>
 			</ul>
 		</li>
 		<li>Authentication Integration
@@ -29,6 +32,13 @@
 				</li>
 				<li class="{% if '/authentication/nodejs/' == page.url %}active{% endif %}">
 					<a href="{% link authentication/nodejs.md %}">Node.js</a>
+				</li>
+			</ul>
+		</li>
+		<li>Signatures Integration
+			<ul>
+				<li class="{% if '/signatures/dotnet-core-v3/' == page.url %}active{% endif %}">
+					<a href="{% link signatures/dotnet-core-v3.md %}">ASP.NET Core 3.x</a>
 				</li>
 			</ul>
 		</li>

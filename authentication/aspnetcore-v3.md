@@ -2,7 +2,7 @@
 layout: article
 ---
 
-# ASP.NET Core v3.x
+# Authentication in ASP.NET Core v3.x
 
 This tutorial demonstrates how to add user login to the existing ASP.NET Core 3.x application. If you are migrating .NET Core v2.x application to .NET Core v3.1, skip to the [Migrate .NET Core v2.x sample to .NET Core v3.1](#migrate) section.
 
