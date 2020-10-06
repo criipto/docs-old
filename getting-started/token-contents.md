@@ -1,13 +1,17 @@
 ---
-title: Criipto Verify Json Web Tokens
+title: Criipto Verify JSON Web Tokens
 description: Examples of JWT payloads for select e-ID's
 layout: article
 ---
 
-The examples below contain only fields that are user-specific. The actual tokens issued by Criipto Verify also contain some other fields as well, which are mostly relevant for validation and session maintenance purposes.
+# JWT contents for each e-ID type
 
-# Sweden
-## BankID
+Below you will find the the structure and example content for the JSON Web Tokens, the ID tokens, returned when signing in with each of the supported e-ID types.
+
+The examples below illustrate only the fields that are user-specific. The actual JWTs issued contain other more technical, OIDC conformant, fields as well, which are mostly relevant for validation and session maintenance purposes.
+
+## Sweden
+### BankID
 ```json
 {
   "identityscheme": "sebankid",
@@ -23,8 +27,8 @@ The examples below contain only fields that are user-specific. The actual tokens
 ```
 The `ssn` field is the social security number.
 
-# Norway
-## BankID
+## Norway
+### BankID
 ```json
 {
   "identityscheme": "nobankid-oidc",
@@ -43,7 +47,7 @@ The `ssn` field is the social security number.
 ```
 The `socialno` field is the social security number. The `uniqueUserId` identifies the legal person corresponding to the login, and is not considered sensitive.
 
-## Vipps
+### Vipps
 ```json
 {
   "identityscheme": "novippslogin",
@@ -62,8 +66,8 @@ The `socialno` field is the social security number. The `uniqueUserId` identifie
 ```
 The `socialno` field is the social security number.
 
-# Denmark
-## NemID for citizens (POCES)
+## Denmark
+### NemID for citizens (POCES)
 ```json
 {
   "identityscheme": "dknemid",
@@ -82,7 +86,7 @@ The `socialno` field is the social security number.
 ```
 The `cprNumberIdentifier` field is the social security number. The `pidNumberIdentifier` identifies the legal person corresponding to the login, and is not considered sensitive.
 
-## NemID for company signatories (POCES-with-CVR)
+### NemID for company signatories (POCES-with-CVR)
 ```json
 {
   "identityscheme": "dknemid",
@@ -103,7 +107,7 @@ The `cprNumberIdentifier` field is the social security number. The `pidNumberIde
 ```
 The `cprNumberIdentifier` field is the social security number.
 
-## NemID for employees (MOCES)
+### NemID for employees (MOCES)
 ```json
 {
   "identityscheme": "dknemid",
@@ -122,7 +126,7 @@ The `cprNumberIdentifier` field is the social security number.
 ```
 No social security number in this case, but the combination of `cvrNumberIdentifier` and `ridNumberIdentifier` identifies the legal person corresponding to the login.
 
-## NemID for employees (MOCES)
+### NemID for employees (MOCES)
 ```json
 {
   "identityscheme": "dknemid",
@@ -141,7 +145,7 @@ No social security number in this case, but the combination of `cvrNumberIdentif
 ```
 No social security number in this case, but the combination of `cvrNumberIdentifier` and `ridNumberIdentifier` identifies the legal person corresponding to the login.
 
-## MitID
+### MitID
 ```json
 {
     "dk.mitid.assurancelevel": {
@@ -185,8 +189,8 @@ No social security number in this case, but the combination of `cvrNumberIdentif
   }
 ```
 
-# Finland
-## TUPAS
+## Finland
+### Finnish Trust Network - BankID
 ```json
 {
   "identityscheme": "fitupas",
@@ -203,5 +207,5 @@ No social security number in this case, but the combination of `cvrNumberIdentif
 ```
 The `hetu` field is the personal identity code.
 
-## Mobillivarmenne
-Similar to what you get from TUPAS, but `satu` will have a value as well.
+### innish Trust Network - Mobillivarmenne
+Same as BankID, except the `satu` property will have a value as well.
