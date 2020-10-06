@@ -122,6 +122,69 @@ The `cprNumberIdentifier` field is the social security number.
 ```
 No social security number in this case, but the combination of `cvrNumberIdentifier` and `ridNumberIdentifier` identifies the legal person corresponding to the login.
 
+## NemID for employees (MOCES)
+```json
+{
+  "identityscheme": "dknemid",
+  "nameidentifier": "c79c9cde000a4460b64ecb35730ee2bc",
+  "sub": "{c79c9cde-000a-4460-b64e-cb35730ee2bc}",
+  "ridNumberIdentifier": "72131748",
+  "cvrNumberIdentifier": "31884357",
+  "2.5.4.10": "HORSOSOFT ApS // CVR:31884357",
+  "companySignatory": "false",
+  "name": "PutandTrackTest",
+  "country": "DK",
+  "2.5.4.5.1": "CVR:31884357-RID:72131748",
+  "2.5.4.5": "5BAD00A0",
+  "2.5.29.29": "CN=TRUST2408 Systemtest XXII CA, O=TRUST2408, C=DK"
+}
+```
+No social security number in this case, but the combination of `cvrNumberIdentifier` and `ridNumberIdentifier` identifies the legal person corresponding to the login.
+
+## MitID
+```json
+{
+    "dk.mitid.assurancelevel": {
+      "loa": "LOW",
+      "ial": "HIGH",
+      "aal": "LOW",
+      "fal": "HIGH"
+    },
+    "sub": "d4bc4ade-cec2-4bc2-a28e-91c18a28b207",
+    "dk.mitid.brokersecurityctx": "Test Broker 1 security context description",
+    "dk.mitid.transactionid": "e85490b1-e27c-4c9d-bc89-cf02fc82a452",
+    "dk.mitid.riskdata": {
+      "riskData": [ ... ]
+    },
+    "dk.mitid.serviceproviderref": "Nets DanID A/S",
+    "dk.mitid.ctx": "...==",
+    "amr": [
+      "pwd"
+    ],
+    "kid": "jwt-sign-2019-11-04",
+    "iss": "MitID",
+    "aud": "1fb35fab-d795-4dfe-a6eb-9cafb186ed46",
+    "dk.mitid.attributes": {
+      "mitid.dk.cpr_address": "Sidevej 81 1 MF",
+      "mitid.dk.date_of_birth": "1990-08-01",
+      "mitid.dk.identity_name": "Frida749",
+      "mitid.dk.ial_identity_assurance_level": "HIGH",
+      "mitid.dk.access_to_self_service": "false",
+      "mitid.dk.uuid": "d4bc4ade-cec2-4bc2-a28e-91c18a28b207",
+      "mitid.dk.identity_address": "Sidevej 81 1 MF\n2200 København N\nDenmark",
+      "mitid.dk.age": "30",
+      "mitid.dk.cpr_name": "Gorm Von Testesen"
+    },
+    "name": "Gorm Von Testesen",
+    "dk.mitid.consenttxt": "Test Broker 1 consent text",
+    "dk.mitid.brokerref": "Log på Test Service Provider 1 reference text",
+    "dk.mitid.referencetxt": "Log på Test Service Provider 1 reference text",
+    "exp": 1602008375,
+    "iat": 1601990375,
+    "jti": "c625e346-6fa1-4ae0-ac71-920f06687f36"
+  }
+```
+
 # Finland
 ## TUPAS
 ```json
