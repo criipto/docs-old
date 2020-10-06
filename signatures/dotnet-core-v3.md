@@ -2,22 +2,33 @@
 layout: article
 ---
 
-# Criipto Verify Document Signatures
+#  Signing text or PDF documents - ASP.NET Core
 
-This tutorial demonstrates how to you can easily add digital signature capabilities for PDF and plain text documents to your own application(s), by using Criipto Verify's document signing features.
+This tutorial demonstrates how to you can easily add digital signature capabilities for PDF and plain text documents to your own application(s), by using Criipto Verify's signing features.
+
+{% iconnote note %}
+
+Signing operations are different from authentication in two ways: They are not goverend by standard protocols soch as OpenID Connect or SAML. And, secondly, they are transactional by nature, with no concept of a long running session like a typical authentication flow.
+
+{% endiconnote %}
+
+Three steps are required to complete your first test login:
 
 * [Register application in Criipto Verify](#register)
-* [PDF signature](#pdf)
-* [Plain text signature](#text)
+* [Set up your application to request PDF signature](#pdf)
+* [Set up your application to request plain text signature](#text)
 
 The tutorial will walk you through the technical details of the integration process between your application and Criipto Verify, and will also explain how to use test e-ID's to validate your integration. To use real e-ID's for signing, the integration is the same, but you must be [set up for Production](#production).
 
-***Note*** _Getting access to test e-ID users is [described here](#testusers)._
+{% iconnote info %}
 
-You can download a ready-to-run [sample from GitHub](https://github.com/criipto/signatures-demo) showing the below recipe in a minimalistic application setup.
+You need test e-ID users to see your code in action. How to get those is [described further down](#testusers).
 
-***Note***
-_The sample uses a `.NET Core` backend and accompanying `React.js` frontend. If you are building your system on other platforms, no problem. You can do exactly the same in any system that supports `JSON` over `HTTP`._
+And also, you can download a ready-to-run [sample from GitHub](https://github.com/criipto/signatures-demo) showing the below recipe in a minimalistic application setup.
+
+{% endiconnote %}
+
+This sample uses a `.NET Core` backend and accompanying `React.js` frontend. If you are building your system on other platforms, you can do exactly the same in any system that supports `JSON` over `HTTP`.
 
 <a name="register"></a>
 
@@ -50,9 +61,9 @@ If you deploy your application to a different URL you will also need to ensure t
 
 <a name="pdf"></a>
 
-## PDF Documents
+## PDF document signatures
 
-PDF document signatures are currently supported for Norwegian BankID.
+PDF document signatures are currently supported for Norwegian BankID only.
 
 There are three important steps in obtaining a signature:
 1. [Upload a PDF to Criipto Verify and retrieve a redirect URI](#pdfUpload)
@@ -71,7 +82,7 @@ Query parameters:
   * `wa` - constant value: `wsignin1.0`
   * `wtrealm` - Your Criipto Verify Client ID
   * `wreply` - a signature callback URL for your application
-  * `wauth` - `acr_value` of the authentication method you want to use: `urn:grn:authn:no:bankid`
+  * `wauth` - `acr_value` of the authentication method. Currently only the Norwegian BankID, `urn:grn:authn:no:bankid`, may be used for PDF signing.
   * `ui_locales` - specify the UI language to use by authentication provider
 
 Body parameters:
@@ -211,9 +222,9 @@ A base64-encoded signed PDF can be retrieved from `jwtToken.RawPayload.evidence[
 
 <a name="text"></a>
 
-## Text signature
+## Plain text signature
 
-Text signature is supported for DK NemID, NO BankID and SE BankID.
+Plain text signature is supported for DK NemID, NO BankID and SE BankID.
 
 There are two important steps in obtaining a signature:
 1. [Redirect the user to the signature endpoint](#textRedirect)
