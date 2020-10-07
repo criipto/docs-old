@@ -6,9 +6,11 @@ description: How to set up a custom domain for Criipto Verify
 
 # Set Up a Custom Domain
 
-Your Criipto Verify tenant is initially set up with a tenant specific domain, for example acme-corp.criipto.id. This is the domain on which you applciations will send requests to Criipto.
+Your Criipto Verify tenant is initially set up with a tenant specific domain for testing, for example acme-corp-test.criipto.id. This is the domain on which you applciations will send requests to Criipto.
 
-When as part of setting up you your tenant for production 
+As part of setting up you your tenant for production you will need to setup a specific production domain. You may choose to just set up a new criipto.id domain, such as acme-corp.criipto.id, but alternatively you can set up domain of your own, for example login.acme-corp.com.
+
+The following describes how to use your own domain with Criipto Verify.
 
 ## Set up DNS CNAME record
 
