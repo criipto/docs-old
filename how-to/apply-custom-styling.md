@@ -4,8 +4,13 @@ title: Criipto Documentation - custom styling
 description: How to customize the UI in user-facing dialogs
 ---
 
-# Preview of the user-facing dialogs
-You can see a preview of a representative subset of the dialogs in the `Identity Services` tab for your tenant in the management dashboard on [manage.criipto.id](https://manage.criipto.id) - such as the ones for SE BankID:
+# Apply custom styling to login pages
+
+Some of the e-ID methods require additional dialogs outside of those of the actual eID service. These may be styled to you liking 
+using CSS as described below.
+
+## Preview of the user-facing dialogs
+You can see a preview of the dialogs in the `Identity Services` tab for your tenant in the management dashboard on [manage.criipto.id](https://manage.criipto.id) - such as the ones for SE BankID:
 
 ![Previews](/images/preview-sebankid.png)
 
@@ -17,7 +22,7 @@ You can enter a URL to your own (self-hosted) stylesheet just above the previews
 
 ![Custom Styling](/images/custom-styling.png)
 
-# Common HTML structures found in user-facing dialogs
+## Common HTML structures found in user-facing dialogs
 
 ## Localizable texts
 These appear in both common and dialog-specific HTML elements. The structure is the same everywhere:
@@ -143,8 +148,8 @@ If you want to show text in one of the hidden-by-default `<p>` elements, you can
 
 TODO: A drawing of our frame-model ?
 
-# CSS classes
-## Generally available
+## CSS classes
+### Generally available
 Each `<body>` element has up to 5 CSS classes attached to it:
 1. Indicator of the e-ID method in use - such as `sebankid`.
 2. Indicator that this is a page from Criipto Verify - `broker`. This makes it possible to target our pages specifically, even if you use the same CSS file for different websites.
@@ -165,11 +170,11 @@ you will have the following CSS class content on the `body` tag:
 
 You can use these dynamically added CSS classes to customize the UI on a per-application basis, which may be quite practical for, say, Single Sign-On scenarios where you re-use a Criipto Verify DNS domain across web applications with very different branding requirements.
 
-## Dialog specific
+### Dialog specific
 Each of the dialogs have their own HTML/CSS structure, and you can inspect the details with your browsers developer tools.
 You get the best overview if you expand the preview first.
 
-# Example: Replacing headline texts in the signature flow for SE BankID
+## Example: Replacing headline texts in the signature flow for SE BankID
 If you expand the `Another Device: Prompt for SSN` preview, you'll se a `{Log in with BankId | Logga in med BankId}` headline text (actual text will depend on the currently selected language for the SE BankID previews).
 
 Should you also want to change the wording for signature flow, you could add the following selectors to your custom stylesheet:
@@ -185,5 +190,5 @@ Should you also want to change the wording for signature flow, you could add the
 }
 ```
 
-# Original (now obsolete) HTML/CSS version
+## Original (now obsolete) HTML/CSS version
 For tenants that were created before the beginning of October 2020, it is possible to toggle between the original and the current HTML/CSS structure. We recommend moving to the current version as soon as possible, as the original structure is now obsolete, and will only be updated with bugfixes.
