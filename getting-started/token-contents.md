@@ -148,46 +148,18 @@ No social security number in this case, but the combination of `cvrNumberIdentif
 ### MitID
 ```json
 {
-    "dk.mitid.assurancelevel": {
-      "loa": "LOW",
-      "ial": "HIGH",
-      "aal": "LOW",
-      "fal": "HIGH"
-    },
-    "sub": "d4bc4ade-cec2-4bc2-a28e-91c18a28b207",
-    "dk.mitid.brokersecurityctx": "Test Broker 1 security context description",
-    "dk.mitid.transactionid": "e85490b1-e27c-4c9d-bc89-cf02fc82a452",
-    "dk.mitid.riskdata": {
-      "riskData": [ ... ]
-    },
-    "dk.mitid.serviceproviderref": "Nets DanID A/S",
-    "dk.mitid.ctx": "...==",
-    "amr": [
-      "pwd"
-    ],
-    "kid": "jwt-sign-2019-11-04",
-    "iss": "MitID",
-    "aud": "1fb35fab-d795-4dfe-a6eb-9cafb186ed46",
-    "dk.mitid.attributes": {
-      "mitid.dk.cpr_address": "Sidevej 81 1 MF",
-      "mitid.dk.date_of_birth": "1990-08-01",
-      "mitid.dk.identity_name": "Frida749",
-      "mitid.dk.ial_identity_assurance_level": "HIGH",
-      "mitid.dk.access_to_self_service": "false",
-      "mitid.dk.uuid": "d4bc4ade-cec2-4bc2-a28e-91c18a28b207",
-      "mitid.dk.identity_address": "Sidevej 81 1 MF\n2200 København N\nDenmark",
-      "mitid.dk.age": "30",
-      "mitid.dk.cpr_name": "Gorm Von Testesen"
-    },
-    "name": "Gorm Von Testesen",
-    "dk.mitid.consenttxt": "Test Broker 1 consent text",
-    "dk.mitid.brokerref": "Log på Test Service Provider 1 reference text",
-    "dk.mitid.referencetxt": "Log på Test Service Provider 1 reference text",
-    "exp": 1602008375,
-    "iat": 1601990375,
-    "jti": "c625e346-6fa1-4ae0-ac71-920f06687f36"
-  }
-```
+  "identityscheme": "dkmitid",
+  "nameidentifier": "0f9960a0d28d4353a3e2ea07f8ffa185",
+  "sub": "{0f9960a0-d28d-4353-a3e2-ea07f8ffa185}",
+  "streetaddress": "Ny testvej 15 7\n2200 København N\nDenmark",
+  "uuid": "74ffcd31-fbaf-4c33-bdac-169f25c1e416",
+  "cprNumberIdentifier": "2101270087",
+  "dateofbirth": "1927-01-21",
+  "age": "93",
+  "name": "Ditlev Von Testesen",
+  "country": "DK"
+ ```
+The `cprNumberIdentifier` field is the social security number.
 
 ## Finland
 ### Finnish Trust Network - BankID
