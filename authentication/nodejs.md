@@ -308,7 +308,7 @@ In summary, the steps above will lead to a runtime flow that looks like this:
 If you want to inspect what is actually going on you may see much of it if you use for example Chrome and turn on the developer tools to inspect the network traffic.
 
 ### Tracing the flow in the demo application
-By default, our [Demo application](https://github.com/goranlisak/criipto-nodejs-demo) will log important steps of the authentication flow to the console. You can turn it off, or change the logging level, by setting `DEBUG` environment variable in `.env` file to desired value.
+By default, our [Demo application](https://github.com/criipto/criipto-nodejs-demo) will log important steps of the authentication flow to the console. You can turn it off, or change the logging level, by setting `DEBUG` environment variable in `.env` file to desired value.
 
 ## Setting up for Production
 
