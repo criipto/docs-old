@@ -1,32 +1,41 @@
 ---
 title: Criipto Verify Integration Troubleshooting
-description: Learn more about how to troubleshoot your integration to Criipto Verify
+description: Troubleshoot your integration to Criipto Verify
 layout: article
 ---
-# Criipto Verify Integration Troubleshooting
+# Troubleshooting you integration to Criipto Verify
 
-## Typical error messages
-The most common source of problems is caused by incomplete and/or incorrect requests for authentication.
-For example, if the request for authentication lacks an `acr_values` (OpenID Connect) / `wauth` (WS-Federation) parameter:
-These are optional parameters in the specifications, and most client-side frameworks/libraries must be explicitly configured to add them to the request for authentication. Criipto Verify needs the value to be able to start any particular login flow.
+You may from time to time run into various issues when setting up the connection from you application to Criipto Verify. 
+Quite ofen any problems you run into may for example boil down to errors in configuring the OIDC module of your platform.
+
+
+## Typical error scenarios
+The most common source of problems is caused by incomplete or incorrect requests for authentication.
+For example, if your request for authentication may be missing the `acr_values` parameter in OpenID Connect or 
+you may have specified an urecognized value.
+
+Parameters like this are optional parameters in the specifications, and most client-side frameworks/libraries must be explicitly configured to add them to the request for authentication. With Criipto Verify you must supply this value to be able to start any specific login flow.
 
 {% iconnote note %}
 
-Criipto Verify has several workarounds in place for how you can pass these values, to cater for both more advanced architectures and for very restrictive platforms - see either [work with metadata](/how-to/work-with-metadata) or [choose e-ID method](/how-to/choose-eid-method) for more details.
+Particularly for transfering the `acr_values` parameter Criipto Verify has a few workarounds to support more advanced architectures as well as some of the more restrictive platform. Check out how to [specify the e-ID method](/how-to/choose-eid-method) for more detail.
 
 {% endiconnote %}
 
-Other common examples are wrong `client_id` / `wtrealm` values, or `redirect_uri` / `wreply` parameter values that have not been pre-registered for your application in our management UI.
+Other common examples are wrong `client_id` or `redirect_uri` parameter values that have not been pre-registered for your application in our management UI.
 
-These error cases will typically result in an error message you can see in the browser directly (sometimes in the disguise of a fallback error message with the following wording: `Internal error - WS-Federation sign-in request dispatch cannot be handled`).
+Most of these scenarios will typically result in an error message directly in the browser (sometimes disguised as a fallback error message with the following wording: `Internal error - WS-Federation sign-in request dispatch cannot be handled`).
 
 ## Browser Developer Tools
-Digging a bit deeper using the developer tools that ships with most modern browsers is possible in some other cases.
-You will be able to see more details there, as all interactions with Criipto Verify are HTTP-based.
-Errors and warnings in the Console tab can sometimes point you in the right direction.
+Also be sure to use the developer tools in your browser for digging a bit deeper, such as the network tracing available in Chrome.
+You will be able to see more details there, as all interactions with Criipto Verify are HTTP-based, and errors and warnings in the Console tab can sometimes point you in the right direction.
+
+
+![Developer tools](/images/chrome-devtools.png)
+
 
 ## Logs
-Should you run into issues on backchannel requests (such as when using the `code` flow in OpenID Connect), you can see more details on the [subscriptions site](https://subscription.criipto.com) - go to the `Logs` tab and select the relevant domain in the dropdown.
-We expose a lot of details for test domains, which can hopefully help you find the source of the problem (such as a wrong client secret).
 
-For production domains, the logs are very limited. We only log failing requests there, do not display secrets, and most payloads are redacted.
+Should you run into issues on backchannel requests (such as when using the `code` flow in OpenID Connect), you can see more details on the logs on the [subscriptions site](https://subscription.criipto.com): Go to the `Logs` tab and select the relevant domain in the dropdown.
+
+We expose a lot of details for test domains, which can hopefully help you find the source of the problem (such as a wrong client secret). Logs for production domains are currently not available.
