@@ -4,7 +4,7 @@ title: Criipto Documentation - e-ID method
 description: How to specify which e-ID method to use for a login flow
 ---
 
-# Which e-ID and specific e-ID method?
+# How to request a specific e-ID
 
 When requesting authentication through Criipto Verify you must specify exactly which kind of e-ID the user will use, often including 
 a choice of one out of more options for each type. For example, Swedish BankID allows to different methods, either on the same device
@@ -51,7 +51,7 @@ login_hint=acr_values:urn:grn:authn:se:bankid:same-device
 
 You can also use this workaround in conjunction with sending other [prefilled fields](/how-to/specify-prefilled-fields) in the `login_hint`.
 
-## Option 4: In a HTTP header (OIDC only)
+## Option 4: In an HTTP header (OIDC only)
 You can also send the targeted e-ID method in an `acr_values` HTTP request header:
 ```
 acr_values: <e-ID method>
@@ -67,4 +67,4 @@ Each of the above e-ID method options in order of precedence:
 3. The URL-path contains an encoded e-ID method value 
 
 ## Can't make any of the options work for you?
-Drop us a message on <a href="support@criipto.com">support@criipto.com</a> with a description of your scenario if you are not able to make the above work for you.
+Drop us a message on <a href="mailto:support@criipto.com">support@criipto.com</a> with a description of your scenario if you are not able to make the above work for you.

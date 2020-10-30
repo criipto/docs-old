@@ -22,7 +22,7 @@ There are no limits to the number of interactive user logins, that is, an actual
 {% endiconnote %}
 
 - High-frequency guard: Maximum 2 SSO's per 5 seconds.
-- Low-frequency guard: Maximum 6 SSO's per hour.
+- Low-frequency guard: Maximum 6 SSO's per 20 minutes.
 
 The high-frequency guard protects against sudden spikes in traffic, while the low-frequency guard protects against long-running repeated SSO attempts.
 
