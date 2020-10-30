@@ -32,8 +32,8 @@ When filling out the online sevice provider agreement keep this in mind:
 
 - _Forbrugsafregning_ (consumption billing). You will be billed directly by Nets based on your choice in this section. Criipto _does not_ act as a NemID reseller and we cannot bill you you consumption of the raw NemID service.
 - _Opsætning_ (setup). This section has a few important details:
-    - _Friendly name_. As the form explains this is the name that will appear in the NemID client. _Immportant:_ Note that this name must also be entered in the Criipto Verify management UI for our integration with Nets to work!
-    - _Virksomhedssignatur UID-nummer_ (part of company certificate subject name). This information is found in the [NemID administration](https://www.medarbejdersignatur.dk/produkter/nemid_medarbejdersignatur/log_paa_nemid_selvbetjening/). Look under "Øvrige signaturer -> Administrer virksmohedssignatur".
+    - _Friendly name_. As the form explains this is the name that will appear in the NemID client. _Important:_ Note that this name must also be entered in the Criipto Verify management UI for our integration with Nets to work!
+    - _Virksomhedssignatur UID-nummer_ (part of company certificate subject name). This information is found in the [NemID administration](https://www.medarbejdersignatur.dk/produkter/nemid_medarbejdersignatur/log_paa_nemid_selvbetjening/). Look under "Øvrige signaturer -> Administrer virksomhedssignatur".
 - _Aftale om brug af PID/RID cpr-tjenesten_ (CPR agreement). If you need social seurity numbers, CPR, you need to pick one or more of these options. Unless you are a goverment organisation you choices will be the _-match_ services. _PID_ is for personal NemID, _RID_ is for employee NemID.
     - This is where you download, fill out and sign the CPR agreement, and attach it
 _​Opsætning af testsystem_ (setup of test system). Answer _yes_ here only if you need to be able to generate test users for NemID employee signatures, MOCES.

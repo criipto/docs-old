@@ -1,7 +1,7 @@
 
 Criipto Verify supports a range of country and bank specific e-ID services. They are all accessed through the same endpoints, e.g. `https://<YOUR COMPANY>.criipto.id/oauth2/authorize`
 
-To pick the login method you must set the `AcrValues` parameter on the authentication request in order to choose the type of authentication you want. How you set this query string parameter varies with programming platform and your OpenID Connect library of choice.
+To pick the login method you must set the `acr_values` parameter on the authentication request in order to choose the type of authentication you want. How you set this query string parameter varies with programming platform and your OpenID Connect library of choice.
 
 The current list of possible values is:
 

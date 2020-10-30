@@ -14,6 +14,12 @@
 				<li class="{% if '/getting-started/oidc-intro/' == page.url %}active{% endif %}">
 					<a href="{% link getting-started/oidc-intro.md %}">Using OpenID Connect</a>
 				</li>
+				<li class="{% if '/getting-started/token-contents/' == page.url %}active{% endif %}">
+					<a href="{% link getting-started/token-contents.md %}">JWT payloads pr. e-ID type</a>
+				</li>
+				<li class="{% if '/getting-started/rate-limiting/' == page.url %}active{% endif %}">
+					<a href="{% link getting-started/rate-limiting.md %}">Rate limiting</a>
+				</li>
 			</ul>
 		</li>
 		<li>Authentication Integration
@@ -29,6 +35,13 @@
 				</li>
 				<li class="{% if '/authentication/nodejs/' == page.url %}active{% endif %}">
 					<a href="{% link authentication/nodejs.md %}">Node.js</a>
+				</li>
+			</ul>
+		</li>
+		<li>Signatures Integration
+			<ul>
+				<li class="{% if '/signatures/dotnet-core-v3/' == page.url %}active{% endif %}">
+					<a href="{% link signatures/dotnet-core-v3.md %}">ASP.NET Core 3.x</a>
 				</li>
 			</ul>
 		</li>
@@ -84,6 +97,21 @@
 			</li>
 			<li class="{% if '/how-to/specify-prefilled-fields/' == page.url %}active{% endif %}">
 				<a href="{% link how-to/specify-prefilled-fields.md %}">Pre-populate user input</a>
+			</li>
+			<li class="{% if '/how-to/set-up-custom-domain/' == page.url %}active{% endif %}">
+				<a href="{% link how-to/set-up-custom-domain.md %}">Set up custom domain</a>
+			</li>
+			<li class="{% if '/how-to/acr-values/' == page.url %}active{% endif %}">
+				<a href="{% link how-to/acr-values.md %}">Request a specific e-ID type</a>
+			</li>
+			<li class="{% if '/how-to/apply-custom-styling/' == page.url %}active{% endif %}">
+				<a href="{% link how-to/apply-custom-styling.md %}">Apply custom styling to login pages</a>
+			</li>
+			<li class="{% if '/how-to/choose-eid-method/' == page.url %}active{% endif %}">
+				<a href="{% link how-to/choose-eid-method.md %}">Transmit choice of e-ID method</a>
+			</li>
+			<li class="{% if '/how-to/troubleshoot/' == page.url %}active{% endif %}">
+				<a href="{% link how-to/troubleshoot.md %}">Troubleshoot</a>
 			</li>
 		</ul>
 	</li>

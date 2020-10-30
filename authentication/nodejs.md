@@ -17,9 +17,9 @@ This explains how to set up your application and test with test users. To use re
 
 And note that you need test e-ID users to see your code in action. How to get those is [described further down](#testusers).
 
-You may get a completed and ready to run [sample from GitHub](https://github.com/goranlisak/criipto-nodejs-demo) showing the below recipe in the simplest of Node.js Express applications.
+You may get a completed and ready to run [sample from GitHub](https://github.com/criipto/verify-with-nodejs) showing the below recipe in the simplest of Node.js Express applications.
 
-To modify your existing application to work with Criipto Verify follow the steps below.
+To modify your existing application to work with Criipto Verify, follow the steps below.
 
 <a name="register"></a>
 
@@ -100,8 +100,18 @@ Issuer.discover('https://nodejs-sample.criipto.id')
       token_endpoint_auth_method: 'client_secret_post'
     });
 
+    // you can optionally set clock_tolerance to allow JWT to be valid
+    // even if your system is not in sync with the server time
+    client[custom.clock_tolerance] = 300 // seconds
+
     // do the rest of setup here
   });
+```
+
+Optionally, you can set `clock_tolerance` option for openid-client, to allow JWT to be valid even if your system is not in sync with the server time.
+
+``` javascript
+client[custom.clock_tolerance] = 300 // seconds
 ```
 
 ### Configure Passport and Express session
@@ -296,6 +306,9 @@ In summary, the steps above will lead to a runtime flow that looks like this:
 6. The access token is used by the middleware to retrieve the available user information which is set as claims on the user principal.
 
 If you want to inspect what is actually going on you may see much of it if you use for example Chrome and turn on the developer tools to inspect the network traffic.
+
+### Tracing the flow in the demo application
+By default, our [Demo application](https://github.com/criipto/criipto-nodejs-demo) will log important steps of the authentication flow to the console. You can turn it off, or change the logging level, by setting `DEBUG` environment variable in `.env` file to desired value.
 
 ## Setting up for Production
 
