@@ -18,7 +18,7 @@ The current list of possible values is:
 | &nbsp;&nbsp;Employee with code card:&nbsp;             | `urn:grn:authn:dk:nemid:moces` | 
 | &nbsp;&nbsp;Employee with code file:&nbsp;             | `urn:grn:authn:dk:nemid:moces:codefile` | 
 | **Finish e-ID** |
-| &nbsp;&nbsp;BankID:                                    |`urn:grn:authn:fi:bankid` | 
+| &nbsp;&nbsp;BankID:                                    |`urn:grn:authn:fi:bank-id` |
 | &nbsp;&nbsp;Mobile certificate (Mobiilivarmenne):&nbsp;|`urn:grn:authn:fi:mobile-id` | 
 | &nbsp;&nbsp;Any of the two:                            |`urn:grn:authn:fi:all` | 
 

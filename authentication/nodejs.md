@@ -189,7 +189,7 @@ In the sample, we have created a **form** which will put the chosen login option
   <option value="urn:grn:authn:dk:nemid:poces">Danish NemID personal with code card</option>
   <option value="urn:grn:authn:dk:nemid:moces">Danish NemID employee with code card</option>
   <option value="urn:grn:authn:dk:nemid:moces:codefile">Danish NemID employee with code file</option>
-  <option value="urn:grn:authn:fi:bankid">Finish e-ID - BankID</option>
+  <option value="urn:grn:authn:fi:bank-id">Finish e-ID - BankID</option>
   <option value="urn:grn:authn:fi:mobile-id">Finish e-ID - Mobile certificate</option>
   <option value="urn:grn:authn:fi:all">Finish all options</option>
 </select>
