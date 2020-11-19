@@ -1,5 +1,7 @@
 ---
 layout: article
+title: Criipto Documentation - Add Criipto Verify to Auth0
+description: Add Criipto Verify as an OIDC Connection to your Auth0 tenant
 ---
 
 # Auth0
