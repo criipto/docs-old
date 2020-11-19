@@ -1,0 +1,390 @@
+// custom variables and override bootstrap variables
+
+$body-bg: #fff;
+
+$white:  #fff !default;
+$gray-100: #faf8f5;
+$gray-200: #e9ecef !default;
+$gray-300: #dad8d5;
+$gray-400: #cbcac5;
+$gray-500: #92918d;
+$gray-600: #666;
+$gray-700: #525251;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black:  #000 !default;
+
+$blue:    #0b4c86;
+$blue-01: #0c4c86;
+$blue-02: #0a4b85;
+$blue-03: #0d4e88;
+$blue-04: #2d4a77;
+$blue-05: #334662;
+$indigo:  #6610f2 !default;
+$purple:  #6f42c1 !default;
+$pink:    #e83e8c !default;
+$red:     #ed625d;
+$red-01:  #f87777;
+$orange:  #fd7e14 !default;
+$yellow-light:  #fbdb94;
+$yellow:  #f6c452;
+$yellow-01:  #f7c870;
+$yellow-02:  #f9d38d;
+$yellow-dark:  #f19737;
+$green:   #61f95d;
+$teal:    #68bd84;
+$cyan:    #84f4f8;
+
+
+
+$colors: ();
+$colors: map-merge((
+  "blue":       $blue,
+  "indigo":     $indigo,
+  "purple":     $purple,
+  "pink":       $pink,
+  "red":        $red,
+  "orange":     $orange,
+  "yellow":     $yellow,
+  "green":      $green,
+  "teal":       $teal,
+  "cyan":       $cyan,
+  "white":      $white,
+  "gray":       $gray-600,
+  "gray-dark":  $gray-800
+), $colors);
+
+$primary:       $blue;
+$secondary:     $gray-600;
+$success:       $green;
+$info:          $cyan;
+$warning:       $yellow;
+$danger:        $red;
+$light:         $gray-100;
+$dark:          $gray-800;
+
+$theme-colors: ();
+$theme-colors: map-merge((
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "success":    $success,
+  "info":       $info,
+  "warning":    $warning,
+  "danger":     $danger,
+  "light":      $light,
+  "dark":       $dark
+), $theme-colors);
+
+$spacer: 0.625rem;
+$spacers: ();
+$spacers: map-merge((
+  0: 0,
+  1: ($spacer * .25),
+  2: ($spacer * .5),
+  3: $spacer,
+  4: ($spacer * 1.5),
+  5: ($spacer * .5),
+  10: ($spacer),
+  15: ($spacer * 1.5),
+  20: ($spacer * 2),
+  25: ($spacer * 2.5),
+  30: ($spacer * 3),
+  35: ($spacer * 3.5),
+  40: ($spacer * 4),
+  45: ($spacer * 4.5),
+  50: ($spacer * 5),
+  55: ($spacer * 5.5),
+  60: ($spacer * 6),
+  65: ($spacer * 6.5),
+  70: ($spacer * 7),
+  75: ($spacer * 7.5),
+  80: ($spacer * 8),
+  85: ($spacer * 8.5),
+  90: ($spacer * 9),
+  95: ($spacer * 9.5),
+  100: ($spacer * 10),
+  105: ($spacer * 10.5),
+  110: ($spacer * 11),
+  115: ($spacer * 11.5),
+  120: ($spacer * 12),
+  125: ($spacer * 12.5),
+  130: ($spacer * 13),
+  135: ($spacer * 13.5),
+  140: ($spacer * 14),
+  145: ($spacer * 14.5),
+  150: ($spacer * 15)
+  ),
+  $spacers
+);
+
+$base-min-width: 320px;
+
+// This is the default html and body font-size for the base rem value.
+$rem-base: 16px;
+
+
+// Body
+//
+// Settings for the `<body>` element.
+
+$body-bg:                   $white;
+$body-color:                theme-color("primary");
+
+
+// Links
+
+$link-color:                              theme-color("danger");
+$link-decoration:                         none;
+$link-hover-color:                        $yellow-dark;
+$link-hover-decoration:                   none;
+
+// Paragraphs
+
+$paragraph-margin-bottom:   1rem !default;
+
+
+// Grid breakpoints
+
+$grid-breakpoints: (
+  xs: 0,
+  xxs: 375px,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1360px
+);
+
+
+// Grid containers
+
+$container-max-widths: (
+  sm: 100%,
+  md: 768px,
+  lg: 960px,
+  xl: 1194px
+);
+
+// Grid columns
+$grid-gutter-width:           40px;
+
+
+// Components
+
+$line-height-lg:              (28/18);
+$line-height-sm:              (22/14);
+
+$border-width:                1px;
+$border-color:                $gray-300;
+
+$border-radius:               0.625rem; // 10px
+$border-radius-lg:            1.25rem; // 20px
+$border-radius-sm:            0.3125rem; // 5px
+
+$transition-base:             all .3s ease;
+$transition-fade:             opacity .2s linear;
+$transition-collapse:         height .3s ease;
+
+// Typography
+
+$font-family-sans-serif: 'Raleway', 'Arial', 'Helvetica Neue', 'Helvetica', sans-serif;
+$font-family-serif: 'Roboto Slab', 'Times New Roman', 'Times', 'Georgia', serif;
+
+$font-family-base:            $font-family-sans-serif;
+
+// stylelint-enable value-keyword-case
+
+$font-size-base:              1rem; // Assumes the browser default, typically `16px`
+$font-size-lg:                1.125rem; // 18px
+$font-size-sm:                0.875rem; // 14px
+
+$font-weight-lighter:         100;
+$font-weight-light:           300;
+$font-weight-normal:          400;
+$font-weight-bold:            700;
+$font-weight-bolder:          800;
+
+$font-weight-base:            $font-weight-normal;
+$line-height-base:            (26/16);
+
+$h1-font-size:                2.5rem; // 40px
+$h2-font-size:                1.625rem; // 26px
+$h3-font-size:                1.375rem; // 22px
+$h4-font-size:                1.25rem; // 20px
+$h5-font-size:                1.125rem; // 18px
+$h6-font-size:                $font-size-base; // 16px
+
+$headings-margin-bottom:      1rem; // 16px
+$headings-font-family:        $font-family-serif;
+$headings-font-weight:        400;
+$headings-line-height:        1.2;
+$headings-color:              null;
+
+
+
+// Buttons + Forms
+
+$input-btn-padding-y:         1.0625rem; // 17px
+$input-btn-padding-x:         1.25rem; // 20px
+$input-btn-font-family:       $font-family-serif;
+$input-btn-font-size:         1.625rem; // 26px
+$input-btn-line-height:       (34/26);
+
+$input-btn-focus-width:       0;
+$input-btn-focus-color:       transparent;
+$input-btn-focus-box-shadow:  none;
+
+$input-btn-padding-y-sm:      0.625rem; // 10px
+$input-btn-padding-x-sm:      $input-btn-padding-x;
+$input-btn-font-size-sm:      1.125rem; // 18px
+$input-btn-line-height-sm:    (22/18);
+
+$input-btn-padding-y-lg:      1.25rem; // 20px
+$input-btn-padding-x-lg:      $input-btn-padding-x;
+$input-btn-font-size-lg:      $input-btn-font-size;
+$input-btn-line-height-lg:    $input-btn-line-height;
+
+$input-btn-border-width:      $border-width;
+
+
+// Buttons
+
+$btn-padding-y:               $input-btn-padding-y;
+$btn-padding-x:               $input-btn-padding-x;
+$btn-font-family:             $input-btn-font-family;
+$btn-font-size:               $input-btn-font-size;
+$btn-line-height:             $input-btn-line-height;
+
+$btn-padding-y-sm:            $input-btn-padding-y-sm;
+$btn-padding-x-sm:            $input-btn-padding-x-sm;
+$btn-font-size-sm:            $input-btn-font-size-sm;
+$btn-line-height-sm:          $input-btn-line-height-sm;
+
+$btn-padding-y-lg:            $input-btn-padding-y-lg;
+$btn-padding-x-lg:            $input-btn-padding-x-lg;
+$btn-font-size-lg:            $input-btn-font-size-lg;
+$btn-line-height-lg:          $input-btn-line-height-lg;
+
+$btn-border-width:            $input-btn-border-width;
+
+$btn-font-weight:             $font-weight-light;
+$btn-box-shadow:              none;
+$btn-focus-width:             $input-btn-focus-width;
+$btn-focus-box-shadow:        $input-btn-focus-box-shadow;
+$btn-disabled-opacity:        .65;
+$btn-active-box-shadow:       $btn-box-shadow;
+
+$btn-link-disabled-color:     $gray-600;
+
+$btn-block-spacing-y:         .5rem;
+
+// Allows for customizing button radius independently from global border radius
+$btn-border-radius:           $border-radius;
+$btn-border-radius-lg:        $btn-border-radius;
+$btn-border-radius-sm:        $btn-border-radius;
+
+$btn-transition:              color .3s ease, background-color .3s ease, border-color .3s ease, box-shadow .3s ease;
+
+
+// Forms
+
+$label-margin-bottom:                   .5rem;
+
+$input-padding-y:                       $input-btn-padding-y;
+$input-padding-x:                       $input-btn-padding-x;
+$input-font-family:                     $input-btn-font-family;
+$input-font-size:                       $input-btn-font-size;
+$input-font-weight:                     $font-weight-base;
+$input-line-height:                     $input-btn-line-height;
+
+$input-padding-y-sm:                    $input-btn-padding-y-sm;
+$input-padding-x-sm:                    $input-btn-padding-x-sm;
+$input-font-size-sm:                    $input-btn-font-size-sm;
+$input-line-height-sm:                  $input-btn-line-height-sm;
+
+$input-padding-y-lg:                    $input-btn-padding-y-lg;
+$input-padding-x-lg:                    $input-btn-padding-x-lg;
+$input-font-size-lg:                    $input-btn-font-size-lg;
+$input-line-height-lg:                  $input-btn-line-height-lg;
+
+$input-bg:                              $white;
+$input-disabled-bg:                     $gray-200;
+
+$input-color:                           theme-color("primary");
+$input-border-color:                    $gray-300;
+$input-border-width:                    $input-btn-border-width;
+$input-box-shadow:                      none;
+
+$input-border-radius:                   $border-radius;
+$input-border-radius-lg:                $input-border-radius;
+$input-border-radius-sm:                $input-border-radius;
+
+$input-focus-bg:                        $input-bg;
+$input-focus-border-color:              theme-color("info");
+$input-focus-color:                     $input-color;
+$input-focus-width:                     $input-btn-focus-width;
+$input-focus-box-shadow:                $input-btn-focus-box-shadow;
+
+$input-placeholder-color:               $gray-400;
+$input-plaintext-color:                 $body-color;
+
+$input-height-border:                   $input-border-width * 2;
+
+$input-height-inner:                    calc(#{$input-line-height * 1em} + #{$input-padding-y * 2});
+$input-height-inner-half:               calc(#{$input-line-height * .5em} + #{$input-padding-y});
+$input-height-inner-quarter:            calc(#{$input-line-height * .25em} + #{$input-padding-y / 2});
+
+$input-height:                          calc(#{$input-line-height * 1em} + #{$input-padding-y * 2} + #{$input-height-border});
+$input-height-sm:                       calc(#{$input-line-height-sm * 1em} + #{$input-btn-padding-y-sm * 2} + #{$input-height-border});
+$input-height-lg:                       calc(#{$input-line-height-lg * 1em} + #{$input-btn-padding-y-lg * 2} + #{$input-height-border});
+
+$input-transition:                      border-color .3s ease, box-shadow .3s ease;
+
+
+$custom-control-gutter:                 0.25rem; //4px
+$custom-control-spacer-x:               1rem; // 16px
+
+$custom-control-indicator-size:         1.5rem; // 24px
+$custom-control-indicator-bg:           $input-bg;
+
+$custom-control-indicator-bg-size:      66.666% 66.666%;
+$custom-control-indicator-box-shadow:   $input-box-shadow;
+$custom-control-indicator-border-color: $blue-02;
+$custom-control-indicator-border-width: $input-border-width;
+
+$custom-control-indicator-disabled-bg:          $input-disabled-bg;
+$custom-control-label-disabled-color:           $gray-600;
+
+$custom-control-indicator-checked-color:        $custom-control-indicator-border-color;
+$custom-control-indicator-checked-bg:           $custom-control-indicator-bg;
+$custom-control-indicator-checked-disabled-bg:  rgba(theme-color("primary"), .5);
+$custom-control-indicator-checked-box-shadow:   none;
+$custom-control-indicator-checked-border-color: $custom-control-indicator-border-color;
+
+$custom-control-indicator-focus-box-shadow:     $input-focus-box-shadow;
+$custom-control-indicator-focus-border-color:   $input-focus-border-color;
+
+$custom-control-indicator-active-color:         $custom-control-indicator-checked-color;
+$custom-control-indicator-active-bg:            $custom-control-indicator-bg;
+$custom-control-indicator-active-box-shadow:    none;
+$custom-control-indicator-active-border-color:  $custom-control-indicator-border-color;
+
+$custom-checkbox-indicator-border-radius:       0.1875rem;
+$custom-checkbox-indicator-icon-checked:        str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='#{$custom-control-indicator-checked-color}' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e"), "#", "%23");
+
+$custom-checkbox-indicator-indeterminate-bg:           $custom-control-indicator-bg;
+$custom-checkbox-indicator-indeterminate-color:        $custom-control-indicator-checked-color;
+$custom-checkbox-indicator-icon-indeterminate:         str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 4'%3e%3cpath stroke='#{$custom-checkbox-indicator-indeterminate-color}' d='M0 2h4'/%3e%3c/svg%3e"), "#", "%23");
+$custom-checkbox-indicator-indeterminate-box-shadow:   none;
+$custom-checkbox-indicator-indeterminate-border-color: $custom-control-indicator-border-color;
+
+$custom-radio-indicator-border-radius:          50%;
+$custom-radio-indicator-icon-checked:           str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3e%3ccircle cx='12' cy='12' r='12' fill='#{$custom-control-indicator-checked-color}'/%3e%3c/svg%3e"), "#", "%23");
+
+
+// Close
+
+$close-font-size:                   0.875rem; // 14px
+$close-font-weight:                 $font-weight-normal;
+$close-color:                       $black;
+$close-text-shadow:                 none;

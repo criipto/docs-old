@@ -1,64 +1,79 @@
 <header class="header">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">                
-                <a href="https://criipto.com" class="logo"><img src="/images/logo-criipto-dark.svg" class="dark-logo"></a>
-                <a href="/" class="logo">DOCS</a>
-                
-
-                <!-- main navigation -->
-                <div class="wrap-login float-right hidden-xs">
-                    <div class="button-wrap">
-                        
-                        <a href="" class="login-button">Log in</a>
-
-                        <div class="popup-window">
-                            <div class="close-menu">
-                                <span></span>
-                                <span></span>
-                            </div>
-                            <div class="clearfix"></div>
-                            <div class="popup-head">
-                                <p class="h3">Log in</p>
-                            </div>
-                            
-                            <div class="popup-body">
-                                <a href="https://manage.criipto.id" class="login-verify">
-                                    <p class="bold">Criipto Verify</p>
-                                    <p>Setup national-ID verification in your app in minutes</p>
-                                </a>
-                            </div>                            
-                        </div>
-                    </div>
-
-                    <div class="button-wrap">
-                        
-                        <a href="" class="free-trial">Sign up</a>
-                        
-                        <div class="popup-window">
-                            <div class="close-menu">
-                                <span></span>
-                                <span></span>
-                            </div>
-                            <div class="clearfix"></div>
-                            <div class="popup-head">
-                                <p class="h3">Sign up</p>
-                            </div>
-                            
-                            <div class="popup-body">
-                                <a href="https://criipto.com/products/criipto-verify-pricing#plans">
-                                    <p class="bold">Criipto Verify</p>
-                                    <p>Setup national/bank ID verification in your app in minutes</p>
-                                </a>
-                            </div>
-                            
-                            <!--  -->
-                        </div>
-                    </div>
-
+    <div class="container-fluid">
+      <div class="btn-wrap">
+        <a href="" class="nav-opener" style="visibility: hidden;"><span class="icon"><span></span></span> Menu</a>
+        <div class="status-drop d-none d-md-block open-close">
+          <a href="" id="header-status" class="status opener">Operations status</a>
+          <div class="slide position-absolute" style="display: none;">
+            <a href="" class="btn-close close"></a>
+            <strong class="title">Live status:</strong>
+            <ul id="accordion" class="list-unstyled accordion-list">
+              <li>
+                <a href="#" class="status" id="z9tsg5vbfvw1">Criipto Verify Authentication Core</a>
+              </li>
+              <li>
+                <a href="#" id="kb5rdx4qskc1" class="status" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">E-ID services</a>
+                <div id="collapseOne" class="collapse" aria-labelledby="collapseOne" data-parent="#accordion">
+                  <ul class="list-unstyled">
+                    <li><a href="#" id="bkrwnt31ymr5" class="status">Swedish BankID</a></li>
+                    <li><a href="#" id="0bhfyr807p6s" class="status">Norwegian BankID</a></li>
+                    <li><a href="#" id="ftkd7zr1dh3r" class="status">Danish NemID</a></li>
+                    <li><a href="#" id="4vdvfc8d1ys0" class="status">Finnish BankID and Mobile ID</a></li>
+                    <li><a href="#" id="lhklf67qcr8y" class="status">Dutch DigiID</a></li>
+                  </ul>
                 </div>
-
-            </div>
+              </li>
+              <li>
+                <a href="" id="5gcvrf1gckpp" class="status" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Add-on services</a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="collapseTwo" data-parent="#accordion">
+                  <ul class="list-unstyled">
+                    <li><a href="#" id="t1psw7dvm8k8" class="status">Danish Address Lookup</a></li>
+                    <li><a href="#" id="fb0ymtjzktcf" class="status">Danish Company Signatory</a></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
+      </div>
+      <div class="logo">
+        <a href="/" style="color: white; font-size: 1.2em; font-weight: 200; line-height: 28px; font-family: 'Raleway', 'Arial', 'Helvetica Neue', 'Helvetica', sans-serif;">
+          <img src="/images/logo.svg" alt="Criipto" style="float: left; width: auto; margin-right: 2px;">
+          DOCS
+        </a>
+      </div>
+      <div class="nav-drop">
+        <nav class="main-nav">
+          <ul>
+            <li>
+              <div class="btn-wrap" style="width: 100%; padding: .5625rem 1.375rem .8125rem;">
+                <div class="status-drop d-none d-md-block open-close">
+                  <a href="" class="opener">Log in</a>
+                  <div class="slide position-absolute login-box" style="display: none;">
+                    <a href="" class="btn-close close"></a>
+                    <strong class="title">Log in</strong>
+                    <ul id="accordion" class="list-unstyled">
+                      <li>
+                        <div class="login-option">
+                          <a href="https://manage.criipto.id" target="_blank"><span class="status login-option-title"><strong>Criipto Verify</strong></span></a>
+                          <p class="status">Setup national-ID verification in your app in minutes</p>
+                        </div>
+                      </li>
+                      <hr/>
+                      <li>
+                        <div class="login-option login-subscriptions">
+                          <a href="https://manage.criipto.id" target="_blank"><span href="https://subscription.criipto.com" class="status login-option-title"><strong>Subscriptions</strong></span></a>
+                          <p class="status">Manage your subscription and payment setup.</p>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="btn-signup"><a href="https://criipto.com/products/criipto-verify-pricing/#plans" target="_blank">Sign up</a></li>
+          </ul>
+        </nav>
+      </div>
     </div>
-</header>
+  </header>

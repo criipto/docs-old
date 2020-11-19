@@ -1,0 +1,23 @@
+.login-box {
+  width: 300px !important;
+  left: -245px !important;
+
+  .login-option-title:hover {
+    color: #f19737;
+  }
+}
+
+@media only screen and (max-width: 1199px) {
+  .login-box {
+    left: -245px !important;
+  }
+}
+
+.login-option {
+  padding-top: 0.5em;
+  cursor: pointer;
+}
+
+.login-option-title {
+  color: #084a83;
+}

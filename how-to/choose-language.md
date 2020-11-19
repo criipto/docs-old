@@ -5,7 +5,7 @@ description: How to specify the language used by the user interface (where suppo
 ---
 
 # Language detection
-By default, Criipto Verify uses the _Accept-Langugage_ HTTP request header to figure out which language the user prefers. 
+By default, Criipto Verify uses the _Accept-Language_ HTTP request header to figure out which language the user prefers. 
 
 You can override this per authentication request by specifying a `ui_locales` query parameter. This works for both OpenID Connect and WS-Federation, even if WS-Federation does not have protocol support for per-request language selection.
 

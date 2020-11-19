@@ -2,17 +2,6 @@
 ---
 
 body {
-    font-family: 'Raleway', sans-serif;
-
-    a {
-        color: #0a84ae;
-
-        &:hover, &:focus, &:active {
-            color: #ff7058;
-            outline: none;
-            text-decoration: none; 
-        }
-    }
 
     .main-content {
         margin-top: 90px;
@@ -20,9 +9,48 @@ body {
       
 }
 
-@import "header";
+$breakpoints: (
+	'xs-phone': 320px,
+	'phone': 576px,
+	'tablet': 768px,
+	'desktop': 992px,
+	'widescreen': 1200px
+);
+
+// keywords
+$media-expressions: (
+	'screen': 'screen',
+	'print': 'print',
+	'handheld': 'handheld',
+	'landscape': '(orientation: landscape)',
+	'portrait': '(orientation: portrait)',
+	'retina2x': '(-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi)',
+	'retina3x': '(-webkit-min-device-pixel-ratio: 2.5), (min-resolution: 240dpi)'
+);
+
+// ligatured operators ≥ ≤
+
+@import 'vendors/include-media';
+
+@import "vendors/bootstrap/functions";
+@import "vendors/bootstrap/variables";
+@import "vendors/bootstrap/mixins";
+
+@import "bootstrap-custom";
+
+@import 'base/functions';
+@import 'base/mixins';
+@import 'base/helpers';
+@import 'base/icomoon';
+
+@import 'layout/header';
+@import 'components/navigation';
+@import 'components/login-box';
+@import 'layout/footer';
+@import 'layout/common';
+
+
 @import "sidebar";
 @import "code";
 @import "code-monokai";
 @import "article";
-@import "footer";
