@@ -9,3 +9,8 @@ This repo holds the documentation for Criipto Verify.
 
 
 Please view the [styleguide](./STYLEGUIDE.MD) and the [list of words](./WORDS.md) for guidance on e.g. whether and when to say "log in" og "login".
+
+To test the site just run: 
+```
+bundle exec jekyll serve
+``` 
