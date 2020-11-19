@@ -1,6 +1,7 @@
-If you are creating a new application you must first save the configuration.
+If you are registering a new application - or integrating a downstream identity service like Auth0 or Okta -  you must first save the configuration.
 
-Once you have a saved application registration you are ready to configure the OAuth2 code flow. 
+Once you have a saved application registration you may configure the OAuth2 code flow. 
+
 Open the application registration and configure it for the right OAuth2 flow:
 
 1. Enable OAuth2 code flow
