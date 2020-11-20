@@ -21,6 +21,7 @@ The setup requires a bit of switching back-and-forth between Criipto and Okta's 
 
 Before you get started, you will need the following information:
 - The callback URL for your Okta tenant - this will depend on the DNS name you use in Okta for running your logins. The value will probably look something like `https://eid.okta.com/oauth2/v1/authorize/callback`, but check your Okta settings to make sure.
+- _[Optional]_ The `post_logout_redirect_url` for your Okta tenant.
 
 <a name="register"></a>
 
@@ -32,14 +33,14 @@ Once you register your Okta tenant, you will also need some of the information f
 
 Specifically you need the following information to integrate with Okta:
 
-- _Client ID_ to identify your Okta tenant to Criipto Verify. In the case below we chose `urn:criipto:samples:no1`
+- _Client ID_ to identify your Okta tenant to Criipto Verify. In the case below we chose `urn:criipto:verify`
 - _Domain_ on which you will be communicating with Criipto Verify. Could be for example `samples.criipto.id`
 - _Client secret_ which Okta needs to fetch actual user information from Criipto Verify during login.
 The secret is generated and copied as describe further down.
 
-![Register App](/images/register-app.png)
+![Register App](/images/okta-register-application.png)
 
-Also add your Okta callback URL in the `Callback URLs` section. If you plan on using single-signon, you must also register your Okta `post_logout_redirect_url` here.
+If you plan on using single-signon, you must also register your Okta `post_logout_redirect_url` here so you can run single-logouts.
 
 <a name="enable"></a>
 
@@ -63,7 +64,7 @@ Fill in the form with values for you Criipto Verify application, similar to the 
 ![Example identity provider](/images/okta-example-identityprovider-settings.png)
 
 Given the values above, you must add
-1. _Client ID_: `unr:criipto:samples:no1`
+1. _Client ID_: `urn:criipto:verify`
 2. _Client Secret_: The secret generated for you by Criipto Verify during the `OAuth code flow` setup
 3. _Scopes_: `openid` will suffice
 4. _Issuer_: `https://samples.criipto.id`
