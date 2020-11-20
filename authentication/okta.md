@@ -20,7 +20,7 @@ Once configured you may test that everything works from Okta.
 The setup requires a bit of switching back-and-forth between Criipto and Okta's respective management dashboards, so we recommend that you have them open simultaneously to make the process really smooth.
 
 Before you get started, you will need the following information:
-- The callback URL for your Okta tenant - this will depend on the DNS name you use in Okta for running your logins. The value will probably look something like `https://eid.okta.com/oauth2/v1/authorize/callback`, but check your Okta settings to make sure.
+- The callback URL for your Okta tenant - this will depend on the DNS name you use in Okta for running your logins. The value will probably look something like `https://your-company-name.okta.com/oauth2/v1/authorize/callback`, but check your Okta settings to make sure. We have use `criipto-samples` as a replacement for `your-company-name` in this tutorial.
 - _[Optional]_ The `post_logout_redirect_url` for your Okta tenant.
 
 <a name="register"></a>
