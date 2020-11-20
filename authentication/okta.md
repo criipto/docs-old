@@ -72,7 +72,7 @@ Given the values above, you must add
 2. _Client Secret_: The secret generated for you by Criipto Verify during the `OAuth code flow` setup
 3. _Scopes_: `openid` will suffice
 4. _Issuer_: `https://samples.criipto.id`
-5. _Authorization endpoint_: `https://samples.criipto.id/oauth2/authorize` (you don't need to add any `acr_values` query parameters in the general case, you can send the from your own application through Okta in the authorize request)
+5. _Authorization endpoint_: `https://samples.criipto.id/oauth2/authorize`
 6. _Token endpoint_: `https://samples.criipto.id/oauth2/token`
 7. _JWKS endpoint_: `https://samples.criipto.id/.well-known/jwks`
 
