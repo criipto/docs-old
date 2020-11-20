@@ -51,7 +51,7 @@ If you plan on using single-signon, you must also register your Okta `post_logou
 <a name="okta-identityprovider"></a>
 
 ## Create Okta identity provider
-Go to the `Identity Providers` menu
+Make sure you are in `Classic UI` mode, and click on the `Security -> Identity Providers` item.
 
 ![Identity Providers](/images/okta-identity-providers.png)
 
@@ -59,9 +59,13 @@ and click on the `Add Identity Provider` button, select `OIDC` for protocol.
 
 ![Add identity provider](/images/okta-add-identity-provider.png)
 
+Select `Add OpenID Connect IdP`
+
+![OIDC](/images/okta-add-oidc-identityprovider.png)
+
 Fill in the form with values for you Criipto Verify application, similar to the following example
 
-![Example identity provider](/images/okta-example-identityprovider-settings.png)
+![Example identity provider](/images/okta-add-criipto-verify-example-identityprovider.png)
 
 Given the values above, you must add
 1. _Client ID_: `urn:criipto:verify`
@@ -73,6 +77,10 @@ Given the values above, you must add
 7. _JWKS endpoint_: `https://samples.criipto.id/.well-known/jwks`
 
 The _Name_ is entirely up to you, and you don't have to specify the optional _Userinfo endpoint_ if you at the same time ensure that you configure your Criipto Verify application to use `fromTokenEndpoint` in the `User info response strategy` dropdown.
+
+{% include snippets/test-users.md %}
+You can [find more details here](https://developer.okta.com/docs/guides/add-an-external-idp/openidconnect/configure-idp-in-okta/)
+{% endiconnote %}
 
 ### Test users
 
