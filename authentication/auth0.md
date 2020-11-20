@@ -13,7 +13,7 @@ This tutorial demonstrates how to integrate Criipto Verify with Auth0. Following
 3. [Create Auth0 connections](#auth0-connection)
 4. [Integrate your application with Auth0](#integrate)
 
-In the follwoing you will be configuring first Criipto Verify, then Auth0, and finally finishing the Criipto Verify configuration
+In the following you will be configuring first Criipto Verify, then Auth0, and finally finishing the Criipto Verify configuration
 with the information you get from Auth0. Once configured you may test that everything works from Auth0.
 
 
@@ -27,7 +27,7 @@ Once you register your Auth0 tenant, you will also need some of the information 
 
 Specifically you need the following information to integrate with Auth0:
 
-- _Client ID_ to identify you application to Criipto Verify. In the case below we chose `urn:criipto:samples:no1`
+- _Client ID_ to identify your Auth0 tenant to Criipto Verify. In the case below we chose `urn:criipto:samples:no1`
 - _Domain_ on which you will be communicating with Criipto Verify. Could be for example `samples.criipto.id`
 - _Client secret_ is needed if you choose the *Back Channel* approach - which we do recommend. 
 The secret is generated and copied as describe further down.
@@ -121,4 +121,4 @@ To test your OpenID Connect connection, go back to the list of all OpenID Connec
 
 ## Integrate your application with Auth0
 
-How to integrate your application with Auth0 depends on the technology you are working with. Refere to the [Auth0 quickstart guide](https://auth0.com/docs/quickstarts/) for more details.
+How to integrate your application with Auth0 depends on the technology you are working with. Refer to the [Auth0 quickstart guide](https://auth0.com/docs/quickstarts/) for more details.
