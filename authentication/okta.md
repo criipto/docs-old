@@ -79,6 +79,8 @@ Given the values above, you must add
 The _Name_ is entirely up to you, and you don't have to specify the optional _Userinfo endpoint_ if you at the same time ensure that you configure your Criipto Verify application to use `fromTokenEndpoint` in the `User info response strategy` dropdown.
 
 {% include snippets/test-users.md %}
+
+{% iconnote note %}
 You can [find more details here](https://developer.okta.com/docs/guides/add-an-external-idp/openidconnect/configure-idp-in-okta/)
 {% endiconnote %}
 
