@@ -182,8 +182,8 @@ The `hetu` field is the personal identity code.
 ### Finnish Trust Network - Mobillivarmenne
 Same as BankID, except the `satu` property will have a value as well.
 
-## Itsme
-### Basic level, with Extra ID Data and Security Data enabled
+## Belgium
+### Itsme - Basic level, with Extra ID Data and Security Data enabled
 ```json
 {
   "identityscheme": "itsme",
