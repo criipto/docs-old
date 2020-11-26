@@ -19,8 +19,8 @@ The examples below illustrate only the fields that are user-specific. The actual
   "sub": "{1373c272-b61a-4cb5-88b2-9c44883fe62f}",
   "ssn": "196802020575",
   "name": "Terne Paulsen",
-  "givenname": "Terne",
-  "surname": "Paulsen",
+  "given_name": "Terne",
+  "family_name": "Paulsen",
   "ipaddress": "77.241.128.160",
   "country": "SE"
 }
@@ -37,10 +37,10 @@ The `ssn` field is the social security number.
   "uniqueuserid": "9578-6000-4-351726",
   "certissuer": "CN=BankID - TestBank1 - Bank CA 3,OU=123456789,O=TestBank1 AS,C=NO;OrginatorId=9980;OriginatorName=BINAS;OriginatorId=9980",
   "certsubject": "CN=CriiptoTest\\, Mikkel,O=TestBank1 AS,C=NO,SERIALNUMBER=9578-6000-4-351726",
-  "dateofbirth": "1946-03-27",
+  "birthdate": "1946-03-27",
   "socialno": "27034698436",
-  "surname": "CriiptoTest",
-  "givenname": "Mikkel",
+  "family_name": "CriiptoTest",
+  "given_name": "Mikkel",
   "name": "Mikkel CriiptoTest",
   "country": "NO"
 }
@@ -53,13 +53,19 @@ The `socialno` field is the social security number. The `uniqueUserId` identifie
   "identityscheme": "novippslogin",
   "nameidentifier": "75dca5991ad74a0981c092d424b82fbc",
   "sub": "{75dca599-1ad7-4a09-81c0-92d424b82fbc}",
-  "streetaddress": "{\"street_address\":\"BOKS 6300, ETTERSTAD\",\"postal_code\":\"0603\",\"region\":\"OSLO\",\"country\":\"NO\",\"formatted\":\"BOKS 6300, ETTERSTAD\\n0603\\nOSLO\\nNO\",\"address_type\":\"home\"}",
-  "dateofbirth": "10.09.1955",
+  "address": {
+    "street_address": "BOKS 6300, ETTERSTAD",
+    "postal_code": "0603",
+    "region": "OSLO",
+    "country": "NO",
+    "formatted": "BOKS 6300, ETTERSTAD\n0603\nOSLO\nNO"
+  },
+  "birthdate": "10.09.1955",
   "emailaddress": "mikkel@criipto.com",
   "mobilephone": "4748059940",
   "socialno": "10098235846",
-  "surname": "Ggacbs",
-  "givenname": "Mlihgw",
+  "family_name": "Ggacbs",
+  "given_name": "Mlihgw",
   "name": "Mlihgw Ggacbs",
   "country": "NO"
 }
@@ -85,6 +91,21 @@ The `socialno` field is the social security number.
 }
 ```
 The `cprNumberIdentifier` field is the social security number. The `pidNumberIdentifier` identifies the legal person corresponding to the login, and is not considered sensitive.
+
+Also, you may additionally opt-in to having and `address` lookup enabled. This will add the following property to the payload:
+```json
+  "address": {
+    "formatted": "Terne Paulsen\nDuevej 11\n2000 Frederiksberg",
+    "common_name": "Terne Paulsen",
+    "street_address": "Duevej 11",
+    "postal_code": "2000",
+    "city": "Frederiksberg",
+    "locality": null,
+    "region": null,
+    "country": "Danmark"
+  }
+```
+Existence of this field is not guaranteed, even if the you have opted in to lookup.
 
 ### NemID for company signatories (POCES-with-CVR)
 ```json
@@ -154,7 +175,7 @@ No social security number in this case, but the combination of `cvrNumberIdentif
   "streetaddress": "Ny testvej 15 7\n2200 København N\nDenmark",
   "uuid": "74ffcd31-fbaf-4c33-bdac-169f25c1e416",
   "cprNumberIdentifier": "2101270087",
-  "dateofbirth": "1927-01-21",
+  "birthdate": "1927-01-21",
   "age": "93",
   "name": "Ditlev Von Testesen",
   "country": "DK"
@@ -170,9 +191,9 @@ The `cprNumberIdentifier` field is the social security number.
   "sub": "{788eb5ab-b2f8-4c09-94a4-d359f416f7ca}",
   "name": "_19cfbd642c4a82b08613b841caf0e153c5956c14",
   "country": "FI",
-  "givenname": "Väinö",
-  "surname": "Tunnistus",
-  "dateofbirth": "1970-07-07",
+  "given_name": "Väinö",
+  "family_name": "Tunnistus",
+  "birthdate": "1970-07-07",
   "satu": "",
   "hetu": "070770-905D"
 }
@@ -215,15 +236,15 @@ Same as BankID, except the `satu` property will have a value as well.
     "country": "BE",
     "formatted": "Uccle BE"
   },
-  "dateofbirth": "1980-01-01",
+  "birthdate": "1980-01-01",
   "phone_number_verified": "true",
   "phone_number": "+32 425010937",
   "email_verified": "false",
   "email": "alexandre@dierckx.com",
   "nationalnumber": "42501093792",
   "gender": "male",
-  "surname": "Dierckx",
-  "givenname": "Alexandre",
+  "family_name": "Dierckx",
+  "given_name": "Alexandre",
   "name": "Alexandre Dierckx",
   "address": {
     "formatted": "Havenlaan 1 1000 Brussel BE",
