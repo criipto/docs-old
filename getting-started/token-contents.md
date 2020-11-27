@@ -60,7 +60,7 @@ The `socialno` field is the social security number. The `uniqueUserId` identifie
     "country": "NO",
     "formatted": "BOKS 6300, ETTERSTAD\n0603\nOSLO\nNO"
   },
-  "birthdate": "10.09.1955",
+  "birthdate": "1955-09-82",
   "emailaddress": "mikkel@criipto.com",
   "mobilephone": "4748059940",
   "socialno": "10098235846",
