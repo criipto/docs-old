@@ -5,23 +5,23 @@ To pick the login method you must set the `acr_values` parameter on the authenti
 
 The current list of possible values is:
 
-
+| **Login method** | **acr_values** |
+| --- | --- |
 | **Norwegian BankID** |
-| &nbsp;&nbsp;Mobile or Web (user choice):&nbsp;         | `urn:grn:authn:no:bankid` | 
+| &nbsp;&nbsp;Mobile or Web (user choice):&nbsp;         | `urn:grn:authn:no:bankid` |
 | **Norwegian Vipps Login** |
-| &nbsp;&nbsp;Login with Vipps app:&nbsp;                | `urn:grn:authn:no:vipps` | 
+| &nbsp;&nbsp;Login with Vipps app:&nbsp;                | `urn:grn:authn:no:vipps` |
 | **Swedish BankID** |
-| &nbsp;&nbsp;Same device:                               | `urn:grn:authn:se:bankid:same-device` | 
-| &nbsp;&nbsp;Another device (aka mobile):&nbsp;         | `urn:grn:authn:se:bankid:another-device` | 
+| &nbsp;&nbsp;Same device:                               | `urn:grn:authn:se:bankid:same-device` |
+| &nbsp;&nbsp;Another device (aka mobile):&nbsp;         | `urn:grn:authn:se:bankid:another-device` |
 | **Danish NemID** |
-| &nbsp;&nbsp;Personal with code card:&nbsp;             | `urn:grn:authn:dk:nemid:poces` | 
-| &nbsp;&nbsp;Employee with code card:&nbsp;             | `urn:grn:authn:dk:nemid:moces` | 
-| &nbsp;&nbsp;Employee with code file:&nbsp;             | `urn:grn:authn:dk:nemid:moces:codefile` | 
+| &nbsp;&nbsp;Personal with code card:&nbsp;             | `urn:grn:authn:dk:nemid:poces` |
+| &nbsp;&nbsp;Employee with code card:&nbsp;             | `urn:grn:authn:dk:nemid:moces` |
+| &nbsp;&nbsp;Employee with code file:&nbsp;             | `urn:grn:authn:dk:nemid:moces:codefile` |
 | **Finish e-ID** |
 | &nbsp;&nbsp;BankID:                                    |`urn:grn:authn:fi:bank-id` |
-| &nbsp;&nbsp;Mobile certificate (Mobiilivarmenne):&nbsp;|`urn:grn:authn:fi:mobile-id` | 
-| &nbsp;&nbsp;Any of the two:                            |`urn:grn:authn:fi:all` | 
+| &nbsp;&nbsp;Mobile certificate (Mobiilivarmenne):&nbsp;|`urn:grn:authn:fi:mobile-id` |
+| &nbsp;&nbsp;Any of the two:                            |`urn:grn:authn:fi:all` |
 | **Itsme** |
-| &nbsp;&nbsp;Basic:                                     | `urn:grn:authn:itsme:basic` | 
-| &nbsp;&nbsp;Advanced:                                  | `urn:grn:authn:itsme:advanced` | 
-&nbsp;&nbsp;
+| &nbsp;&nbsp;Basic:                                     | `urn:grn:authn:itsme:basic` |
+| &nbsp;&nbsp;Advanced:                                  | `urn:grn:authn:itsme:advanced` |

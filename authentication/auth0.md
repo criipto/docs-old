@@ -62,6 +62,7 @@ For example, the `acr_values` of Norwegian BankID login method is `urn:grn:authn
 Below is a list of supported login methods with corresponding base64 encoded `acr_values`. Choose the once you intend to use.
 
 | **Login method** | **acr_values** | **base64 encoded** |
+| --- | --- | --- |
 | **Norwegian BankID** |
 | &nbsp;&nbsp;Mobile or Web (user choice):&nbsp;         | `urn:grn:authn:no:bankid` | `dXJuOmdybjphdXRobjpubzpiYW5raWQ=` |
 | **Norwegian Vipps Login** |
