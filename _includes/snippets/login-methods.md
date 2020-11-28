@@ -21,5 +21,7 @@ The current list of possible values is:
 | &nbsp;&nbsp;BankID:                                    |`urn:grn:authn:fi:bank-id` |
 | &nbsp;&nbsp;Mobile certificate (Mobiilivarmenne):&nbsp;|`urn:grn:authn:fi:mobile-id` | 
 | &nbsp;&nbsp;Any of the two:                            |`urn:grn:authn:fi:all` | 
-
+| **Itsme** |
+| &nbsp;&nbsp;Basic:                                     | `urn:grn:authn:itsme:basic` | 
+| &nbsp;&nbsp;Advanced:                                  | `urn:grn:authn:itsme:advanced` | 
 &nbsp;&nbsp;

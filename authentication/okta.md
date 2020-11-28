@@ -20,7 +20,7 @@ Once configured you may test that everything works from Okta.
 The setup requires a bit of switching back-and-forth between Criipto and Okta's respective management dashboards, so we recommend that you have them open simultaneously to make the process really smooth.
 
 Before you get started, you will need the following information:
-- The callback URL for your Okta tenant - this will depend on the DNS name you use in Okta for running your logins. The value will probably look something like `https://your-company-name.okta.com/oauth2/v1/authorize/callback`, but check your Okta settings to make sure. We have use `criipto-samples` as a replacement for `your-company-name` in this tutorial.
+- The callback URL for your Okta tenant - this will depend on the DNS name you use in Okta for running your logins. The value will probably look something like `https://your-company-name.okta.com/oauth2/v1/authorize/callback`, but check your Okta settings to make sure. We have used `criipto-samples` as a replacement for `your-company-name` in this tutorial.
 - _[Optional]_ The `post_logout_redirect_url` for your Okta tenant.
 
 <a name="register"></a>
@@ -67,18 +67,23 @@ Fill in the form with values for you Criipto Verify application, similar to the 
 
 ![Example identity provider](/images/okta-add-criipto-verify-example-identityprovider.png)
 
-Given the values above, you must add
-1. _Client ID_: `urn:criipto:verify`
+Given the values above, and assuming that your Criipto Verify domain is `acme-corp.criipto.id` you must add
+1. _Client ID_: `urn:criipto:verify` (if you have set a different value in your Criipto Verify `Client ID/Realm`, use that value instead here - they must match)
 2. _Client Secret_: The secret generated for you by Criipto Verify during the `OAuth code flow` setup
 3. _Scopes_: `openid` will suffice
-4. _Issuer_: `https://samples.criipto.id`
-5. _Authorization endpoint_: `https://samples.criipto.id/oauth2/authorize`
-6. _Token endpoint_: `https://samples.criipto.id/oauth2/token`
-7. _JWKS endpoint_: `https://samples.criipto.id/.well-known/jwks`
+4. _Issuer_: `https://acme-corp.criipto.id`
+5. _Authorization endpoint_: `https://acme-corp.criipto.id/oauth2/authorize?acr_values=urn:grn:authn:itsme:basic`
+6. _Token endpoint_: `https://acme-corp.criipto.id/oauth2/token`
+7. _JWKS endpoint_: `https://acme-corp.criipto.id/.well-known/jwks`
 
 The _Name_ is entirely up to you, and you don't have to specify the optional _Userinfo endpoint_ if you at the same time ensure that you configure your Criipto Verify application to use `fromTokenEndpoint` in the `User info response strategy` dropdown.
 
-{% include snippets/test-users.md %}
+{% iconnote note %}
+This setup assumes you are looking to authenticate your users with `Itsme` in `basic` mode. If you have other needs, replace the value of the `acr_values` parametery in the _Authorization endpoint_, or set up several _Identity Providers_ in your Okta tenant - see below for a list of all supported values.
+{% endiconnote %}
+
+### Supported `acr_values`
+{% include snippets/login-methods.md %} 
 
 {% iconnote note %}
 You can [find more details here](https://developer.okta.com/docs/guides/add-an-external-idp/openidconnect/configure-idp-in-okta/)

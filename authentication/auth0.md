@@ -77,6 +77,9 @@ Below is a list of supported login methods with corresponding base64 encoded `ac
 | &nbsp;&nbsp;BankID:                                    |`urn:grn:authn:fi:bankid` | `dXJuOmdybjphdXRobjpmaTpiYW5raWQ=` |
 | &nbsp;&nbsp;Mobile certificate (Mobiilivarmenne):&nbsp;|`urn:grn:authn:fi:mobile-id` | `dXJuOmdybjphdXRobjpmaTptb2JpbGUtaWQ=` |
 | &nbsp;&nbsp;Any of the two:                            |`urn:grn:authn:fi:all` | `dXJuOmdybjphdXRobjpmaTphbGw=` |
+| **Itsme** |
+| &nbsp;&nbsp;Basic:                                     | `urn:grn:authn:itsme:basic` | `dXJuOmdybjphdXRobjppdHNtZTpiYXNpYw==` |
+| &nbsp;&nbsp;Advanced:                                  | `urn:grn:authn:itsme:advanced` | `dXJuOmdybjphdXRobjppdHNtZTphZHZhbmNlZA==` |
 
 <hr />
 
