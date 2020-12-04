@@ -10,7 +10,7 @@ Criipto Verify is integrated through the authentcation API which follows the Ope
 
 {% iconnote note %}
 
-Criipto Verify supports the OAuth2 *authorization code flow* and the *implicit flow* as described below. The code flow is used for traditional, server based, web applications which are able to make back-channel calls to the Criipto Verify service. The implicit flow is used for single page applications and requires no backend server on your end, and thus is sometimes referred to as a front-channel flow. 
+Criipto Verify supports the OAuth2 *authorization code flow*, the *PKCE flow* and the (obsolete) *implicit flow* as described below. The code flow is used for traditional, server based, web applications which can keep a secret and are able to make back-channel calls to the Criipto Verify service. The PKCE (pronounced _pixy_) flow can be used by _public clients_ such as SPA's and native applications that cannot keep a secret. The implicit flow is still supported and can be used for single page applications and requires no backend server on your end, and thus is sometimes referred to as a front-channel flow. Support for the implicit flow will continue on test domains for the foreseable future, but will be yanked from production domains some time in 2021.
 
 {% endiconnote %}
 
@@ -54,15 +54,15 @@ GET https://YOUR_SUBDOMAIN.criipto.id/oauth2/authorize?
     state=YOUR_STATE
 ```
 
-Note that providing `response_type=code` specifies that you want the back-channel *authorization code* flow, where as specifying `response_type=id_token` indicates that you want the *implicit flow*. In the implicit flow you receive the issued token in a query parameter on the return URL.
+Note that providing `response_type=code` specifies that you want either the traditional back-channel *authorization code* flow or the *PKCE* flow, where as specifying `response_type=id_token` indicates that you want the *implicit flow*. In the implicit flow you receive the issued token in a query parameter on the return URL.
 
-If you want to receive the id_token in another way you must specify the `response_mode` parameter, see below.
+If you want to receive the response in another way you must specify the `response_mode` parameter, see below.
 
 #### Parameters
 
 | Parameter name  | Description |
 |-----------------|-------------|
-| `response_type` | Denotes the kind of credential that Criipto will return (`code` or `id_token`). If you are integrating a traditional server based web application - back-channel flow - use `code`. Use `id_token` for single page applications using a front-channel flow |
+| `response_type` | Denotes the kind of credential that Criipto will return (`code` or `id_token`). If you are integrating a traditional server based web application (back-channel flow) or a *PKCE-enabled* client, use `code`. Use `id_token` for legacy single page applications using a front-channel flow |
 | `client_id`     | Your application's Client ID. You can find this value in the Criipto Verify UI in the settings for actual application |
 | `redirect_uri`  | The URL to which Criipto will redirect the browser after authentication has been completed. The authorization code and the `id_token` will be available in the `code` and `id_token` URL parameter for the back-channel flow and on a URL query parameter for the front-channel flow. This URL must be pre-registered as a valid callback URL in your application settings.<br /> <br /> **Warning:** Per the [OAuth 2.0 Specification](https://tools.ietf.org/html/rfc6749#section-3.1.2), Criipto removes everything after the hash and does *not* honor any fragments. |
 | `scope`         | Specifies the scopes for which you want to request authorization, which dictate which claims (or user attributes) you want returned. These must be separated by a space. To get an ID Token in the response, you need to specify a scope of at least `openid`. |
@@ -90,7 +90,7 @@ You can <a href="https://acme-corp.criipto.id/oauth2/authorize?response_type=id_
 
 For more about how to handle the implicit flow, see below. 
 
-### Response for code flow
+### Response for back-channel code flow
 
 For the code flow, when you used `response_type=code`, you will receive an `HTTP 302` response which redirects your browser to your specified `redirect_uri` with the authorization code included at the end of the URL:
 
@@ -99,12 +99,13 @@ HTTP/1.1 302 Found
 Location: YOUR_RETURN_URL?code=AUTHORIZATION_CODE&state=YOUR_STATE
 ```
 
-Note that depending your your `response_type` you may also receive an `id_token` as a query parameter instead of the authorization code.
-
 #### Exchange the code for a token
 For the code flow you will need to exchange the returned code for an actual token. This is done by posting the authorization code received from the previous step to the token endpoint.
 
-Note that you must use a HTML-form-style HTTP POST here, and preferably send the credentials in the `Authorization` HTTP header. You must also x-www-form-urlencode the values of the `CLIENT_ID` and `CLIENT_SECRET`, respectively, before constructing the `Authorization` header in `Basic` format.
+For PKCE-enabled clients, this exchange is based on a one-time secret created by the OIDC library you use to handle the flow, and the exchange will also be handled by the same library.
+
+For traditional back-channel flows, note that you must use a HTML-form-style HTTP POST here, and preferably send the credentials in the `Authorization` HTTP header. You must also x-www-form-urlencode the values of the `CLIENT_ID` and `CLIENT_SECRET`, respectively, before constructing the `Authorization` header in `Basic` format.
+
 
 ```text
 HTTP POST https://YOUR_SUBDOMAIN.criipto.id/oauth2/token
@@ -120,7 +121,9 @@ The client id and secret are retrieved from the Criipto Verify management UI and
 
 {% iconnote warning %}
 
-Note that the exchange of the authorization code requires the use of the client secret, which is basically just a password, and therefore *must always* be made via a back-channel - server to server - and never from a public client like a browser or native appliction. Never include the secret in the frontend code.
+Note that the back-channel exchange of the authorization code requires the use of the client secret, which is basically just a password, and therefore *must always* be made via a back-channel - server to server - and never from a public client like a browser or native appliction. Never include the secret in the frontend code.
+
+For PKCE-enabled clients, the secret is generated on-the-fly, and no special handling of it is required by you.
 
 {% endiconnote %}
 
