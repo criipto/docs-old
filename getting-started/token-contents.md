@@ -314,4 +314,9 @@ Same as BankID, except the `satu` property will have a value as well.
     "city": "WOLFSBURG",
     "country": "DE"
   }
-}```
+}
+```
+
+{% iconnote note %}
+Contrary to other login methods, the `sub` value is not persistent across logins from the same natural person.
+{% endiconnote %}
