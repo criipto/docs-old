@@ -25,3 +25,7 @@ The current list of possible values is:
 | **Itsme** |
 | &nbsp;&nbsp;Basic:                                     | `urn:grn:authn:itsme:basic` |
 | &nbsp;&nbsp;Advanced:                                  | `urn:grn:authn:itsme:advanced` |
+| **Belgium** |
+| &nbsp;&nbsp;Verified e-ID                              | `urn:grn:authn:be:eid:verified` |
+| **Germany** |
+| &nbsp;&nbsp;Sofort (with Schufa check)                 | `urn:grn:authn:de:sofort` |

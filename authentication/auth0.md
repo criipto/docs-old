@@ -81,7 +81,10 @@ Below is a list of supported login methods with corresponding base64 encoded `ac
 | **Itsme** |
 | &nbsp;&nbsp;Basic:                                     | `urn:grn:authn:itsme:basic` | `dXJuOmdybjphdXRobjppdHNtZTpiYXNpYw==` |
 | &nbsp;&nbsp;Advanced:                                  | `urn:grn:authn:itsme:advanced` | `dXJuOmdybjphdXRobjppdHNtZTphZHZhbmNlZA==` |
-
+| **Belgium** |
+| &nbsp;&nbsp;Verified e-ID                              | `urn:grn:authn:be:eid:verified` | `dXJuOmdybjphdXRobjpiZTplaWQ6dmVyaWZpZWQ=` |
+| **Germany** |
+| &nbsp;&nbsp;Sofort (with Schufa check)                 | `urn:grn:authn:de:sofort` | `dXJuOmdybjphdXRobjpkZTpzb2ZvcnQ=` |
 <hr />
 
 ### Create the OIDC connection(s)

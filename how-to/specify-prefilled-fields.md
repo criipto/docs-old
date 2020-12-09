@@ -17,7 +17,33 @@ The actual support for controlling the input data varies by e-ID method:
 2. Swedish BankID: Use `login_hint=sub:<SSN>` where `<SSN>` has the format `YYYYMMDDXXXX`
 3. Norwegian BankID Mobile: Use `login_hint=BIM:<PHONENUMBER>:<BIRTHDATE>` where `<PHONENUMBER>` has 8 digits and `<BIRTHDATE>` has the format `DDMMYY`
 4. Norwegian BankID Kodebrikke: Use `login_hint=BID:<SSN>` where `<SSN>` has the format `DDMMYYXXXXX`
+5. Sofort: You can send the data you want to use for the Schufa check in a base64-url-encoded JSON structure in `login_hint=schufa:<base64-url encoded JSON>`. The JSON literal can contain the following properties:
+```json
+{
+    "given_name": "HANS-GERD",
+    "family_name": "WARNECKE",
+    "birthdate": "1953-01-16",
+    "street_address" : "ALTENBURGER STR. 10",
+    "city": "WOLFSBURG",
+    "postal_code": "38444",
+    "address_country_id" : "DE",
+    "account_country_id" : "DE"
+}
+```
+The stringified and base64-url-encoded variant of this particular example is
+```
+eyJnaXZlbl9uYW1lIjoiSEFOUy1HRVJEIiwiZmFtaWx5X25hbWUiOiJXQVJORUNLRSIsImJpcnRoZGF0ZSI6IjE5NTMtMDEtMTYiLCJzdHJlZXRfYWRkcmVzcyI6IkFMVEVOQlVSR0VSIFNUUi4gMTAiLCJjaXR5IjoiV09MRlNCVVJHIiwicG9zdGFsX2NvZGUiOiIzODQ0NCIsImFkZHJlc3NfY291bnRyeV9pZCI6IkRFIiwiYWNjb3VudF9jb3VudHJ5X2lkIjoiREUifQ==
+```
+and the `login_hint` value will be
+```
+login_hint=schufa:eyJnaXZlbl9uYW1lIjoiSEFOUy1HRVJEIiwiZmFtaWx5X25hbWUiOiJXQVJORUNLRSIsImJpcnRoZGF0ZSI6IjE5NTMtMDEtMTYiLCJzdHJlZXRfYWRkcmVzcyI6IkFMVEVOQlVSR0VSIFNUUi4gMTAiLCJjaXR5IjoiV09MRlNCVVJHIiwicG9zdGFsX2NvZGUiOiIzODQ0NCIsImFkZHJlc3NfY291bnRyeV9pZCI6IkRFIiwiYWNjb3VudF9jb3VudHJ5X2lkIjoiREUifQ==
+```
+
+{% iconnote note %}
 
 Note that you should not include the angle brackets, so for example a Danish NemID prefilled CPR 
 would be passed like this: `login_hint=sub:2201891234`.
+
+{% endiconnote %}
+
 
