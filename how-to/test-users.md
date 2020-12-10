@@ -205,10 +205,12 @@ For production domains, you cannot use test cards, as the data on these cannot b
 
 3 pre-created test accounts exist - 1 can be used for a succesful login, the other 2 will return errors.
 
-| **Test account** | **Valid** |
-| --- | --- |
-| Hans-Gerd Warnecke | yes |
-| Petra Mustermann | no |
-| Max Mustermann | no |
+You will be prompted for an `account number` and a `PIN` during login. You can use pretty much any values you like, as long as you specify 4 characters for the `account number` and 3 characters for the `PIN`.
+
+| **Test account** | **Valid** | **Account Number** | **PIN** |
+| --- | --- | --- | --- |
+| Hans-Gerd Warnecke | yes | 4+ characters | 3+ characters |
+| Petra Mustermann | no | 4+ characters | 3+ characters |
+| Max Mustermann | no | 4+ characters | 3+ characters |
 
 Full account details are available [in the Sofort documentation](https://integration.sofort.com/integrationCenter-eng-DE/content/view/full/2867/#h5)
