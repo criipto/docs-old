@@ -21,8 +21,13 @@ You may refer to the sections below for test users for your choice of e-ID:
 - [Norwegian Vipps Login](#novipps)
 - [Danish NemID](#dknemid)
 - [Finnish BankID](#fibankid)
+- [Itsme](#beitsme)
+- [Belgian eID](#beeid)
+- [German Sofort](#desofort)
 
 <br/>
+
+<a name="sebankid"></a>
 
 ## Swedish BankID
 
@@ -30,11 +35,11 @@ Swedish BankID test users are created at the <a href="https://demo.bankid.com/" 
 
 Even if the demo site is where you will actually create your test users, it does link to the <a href="https://www.bankid.com/bankid-i-dina-tjanster/rp-info" target="_blank">general BankID technical page</a>. As a Criipto Verify customer you don't have worry about most of what's this site, but on the page is also a link to the document describing in detail how to create and use test user accounts. The document is called something like "How to get a test BankID" and links to a PDF.
 
-<a name="nobankid"></a>
-
 _Note_ that, as is also described in the document, using test BankID users does require a reconfiguration of the BankID application. This means it cannot be used for real BankID. So if you are Swedish and already have BankID on your phone, you may want to use a spare phone for testing.
 
 <br/>
+
+<a name="nobankid"></a>
 
 ## Norwegian BankID
 
@@ -53,7 +58,7 @@ Test users are created through the web page at [https://ra-preprod.bankidnorge.n
 4. Click "Order" to initiate the process
 5. Once the process complete you now have a test user. User name is the generated SSN, one time password (OTP) is always "otp", and password is always "qwer1234"  
 
-You can test it out at [www.grean.id](https://www.grean.id) which is a small sample run by Criipto. 
+You can test it out at [our authentication demo site](https://verify-login.azurewebsites.net), which is a small sample hosted by Criipto.
 
 <a name="dknemid"></a>
 
@@ -69,11 +74,11 @@ For testing you may order up to three test SIM cards through Criipto once you ha
 
 In order to test Vipps Login you need to install the Vipps app in a special test version on your device. Follow the Vipps [guide for intstructions](https://github.com/vippsas/vipps-developers/blob/master/vipps-test-environment.md#vipps-test-apps) on how to set up test apps.
 
-<a name="dknemid"></a>
-
 In order to test you also need a test phone number. Write to [support@criipto.com](mailto:support@criipto.com) and put something like "Vipps Login test number" in the subject line.
 
 <br/>
+
+<a name="dknemid"></a>
 
 ## Danish NemID
 
@@ -95,13 +100,13 @@ That said the steps to create a test user are fairly simple:
 
 ![NemID personal test user](/images/nemid_test_user.png)
 
-<a name="fibankid"></a>
-
 ### NemID test users for employees (medarbejdersignatur)
 
 Creating test users for the socalled "medarbejdersigantur" is quite a bit more complicated. Send us an email at <support@criipto.com> if this is something you need, and we will guide you through the process.
 
 <br/>
+
+<a name="fibankid"></a>
 
 ## Finnish BankID
 
@@ -177,3 +182,33 @@ Käyttäjätunnus: `11111111` / `22222222`<br/>
 Salasana: `123456`<br/>
 Turvaluku: `123456`<br/>
 Turvaluku 2: `123456`<br/>
+
+<a name="beitsme"></a>
+
+## Itsme
+
+You will need to enroll with the Itsme organization to get access to test accounts, which can be used in the `Itsme Sandbox` environment.
+
+The process is [described here](https://brand.belgianmobileid.be/d/CX5YsAKEmVI7/let-s-get-started#/step-by-step-guide/4-test-itsme-in-your-application) - just note that the integration guidelines of that documentation is not relevant for you, as you are integrating via Criipto's pre-built Itsme integration. It is all just a matter of configuring your project settings in our management UI.
+
+<a name="desofort"></a>
+
+<a name="beeid"></a>
+
+## Belgian eID
+
+This login method is smartcard based, so you will need both a smartcard reader and accompanying cards.
+For test domains, you can use both test-specific cards and also "live" cards. The only difference is that on test domains, the data from the card will not be verified after being read.
+For production domains, you cannot use test cards, as the data on these cannot be verified.
+
+## German Sofort
+
+3 pre-created test accounts exist - 1 can be used for a succesful login, the other 2 will return errors.
+
+| **Test account** | **Valid** |
+| --- | --- |
+| Hans-Gerd Warnecke | yes |
+| Petra Mustermann | no |
+| Max Mustermann | no |
+
+Full account details are available [in the Sofort documentation](https://integration.sofort.com/integrationCenter-eng-DE/content/view/full/2867/#h5)
