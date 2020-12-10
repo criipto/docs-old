@@ -17,7 +17,7 @@ The actual support for controlling the input data varies by e-ID method:
 2. Swedish BankID: Use `login_hint=sub:<SSN>` where `<SSN>` has the format `YYYYMMDDXXXX`
 3. Norwegian BankID Mobile: Use `login_hint=BIM:<PHONENUMBER>:<BIRTHDATE>` where `<PHONENUMBER>` has 8 digits and `<BIRTHDATE>` has the format `DDMMYY`
 4. Norwegian BankID Kodebrikke: Use `login_hint=BID:<SSN>` where `<SSN>` has the format `DDMMYYXXXXX`
-5. Sofort: You can send the data you want to use for the Schufa check in a base64-url-encoded JSON structure in `login_hint=schufa:<base64-url encoded JSON>`. The JSON literal can contain the following properties:
+5. Sofort: You can send the data you want to use for pre-selection of the users bank and the Schufa check in a base64-url-encoded JSON structure in `login_hint=sofort:<base64-url encoded JSON>`. The JSON literal can contain the following properties:
 ```json
 {
     "given_name": "HANS-GERD",
@@ -27,17 +27,19 @@ The actual support for controlling the input data varies by e-ID method:
     "city": "WOLFSBURG",
     "postal_code": "38444",
     "address_country_id" : "DE",
-    "account_country_id" : "DE"
+    "account_country_id" : "DE",
+    "bank_code" : "00000"
 }
 ```
 The stringified and base64-url-encoded variant of this particular example is
 ```
-eyJnaXZlbl9uYW1lIjoiSEFOUy1HRVJEIiwiZmFtaWx5X25hbWUiOiJXQVJORUNLRSIsImJpcnRoZGF0ZSI6IjE5NTMtMDEtMTYiLCJzdHJlZXRfYWRkcmVzcyI6IkFMVEVOQlVSR0VSIFNUUi4gMTAiLCJjaXR5IjoiV09MRlNCVVJHIiwicG9zdGFsX2NvZGUiOiIzODQ0NCIsImFkZHJlc3NfY291bnRyeV9pZCI6IkRFIiwiYWNjb3VudF9jb3VudHJ5X2lkIjoiREUifQ==
+eyJnaXZlbl9uYW1lIjoiSEFOUy1HRVJEIiwiZmFtaWx5X25hbWUiOiJXQVJORUNLRSIsImJpcnRoZGF0ZSI6IjE5NTMtMDEtMTYiLCJzdHJlZXRfYWRkcmVzcyI6IkFMVEVOQlVSR0VSIFNUUi4gMTAiLCJjaXR5IjoiV09MRlNCVVJHIiwicG9zdGFsX2NvZGUiOiIzODQ0NCIsImFkZHJlc3NfY291bnRyeV9pZCI6IkRFIiwiYWNjb3VudF9jb3VudHJ5X2lkIjoiREUiLCJiYW5rX2NvZGUiOiIwMDAwMCJ9
 ```
-and the `login_hint` value will be
+and the corresponding `login_hint` query parameter and value is thus
 ```
-login_hint=schufa:eyJnaXZlbl9uYW1lIjoiSEFOUy1HRVJEIiwiZmFtaWx5X25hbWUiOiJXQVJORUNLRSIsImJpcnRoZGF0ZSI6IjE5NTMtMDEtMTYiLCJzdHJlZXRfYWRkcmVzcyI6IkFMVEVOQlVSR0VSIFNUUi4gMTAiLCJjaXR5IjoiV09MRlNCVVJHIiwicG9zdGFsX2NvZGUiOiIzODQ0NCIsImFkZHJlc3NfY291bnRyeV9pZCI6IkRFIiwiYWNjb3VudF9jb3VudHJ5X2lkIjoiREUifQ==
+login_hint=sofort:eyJnaXZlbl9uYW1lIjoiSEFOUy1HRVJEIiwiZmFtaWx5X25hbWUiOiJXQVJORUNLRSIsImJpcnRoZGF0ZSI6IjE5NTMtMDEtMTYiLCJzdHJlZXRfYWRkcmVzcyI6IkFMVEVOQlVSR0VSIFNUUi4gMTAiLCJjaXR5IjoiV09MRlNCVVJHIiwicG9zdGFsX2NvZGUiOiIzODQ0NCIsImFkZHJlc3NfY291bnRyeV9pZCI6IkRFIiwiYWNjb3VudF9jb3VudHJ5X2lkIjoiREUiLCJiYW5rX2NvZGUiOiIwMDAwMCJ9
 ```
+ - you can use `btoa(JSON.stringify({...})` in your browsers dev-tools Console tab if you want to try with different settings than the above.
 
 {% iconnote note %}
 
