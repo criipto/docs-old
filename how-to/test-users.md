@@ -102,7 +102,21 @@ That said the steps to create a test user are fairly simple:
 
 ### NemID test users for employees (medarbejder-signatur)
 
-Creating test users for employees (the socalled "medarbejder-signatur") is quite a bit more complicated. Send us an email at <support@criipto.com> if this is something you need, and we will guide you through the process.
+The current OTP card(s) can be accessed on the same testtools-site as above.
+
+Unfortunately, it is not possible to use the testtools-site to create your own test-employee users.
+We have pre-created [the following test employee account](https://appletk.danid.dk/testtools/viewstatus.jsp?userid=putandtracktest) that you can use:
+
+| **User ID** | **Password** |
+| --- | --- |
+| putandtracktest | PandT123 |
+
+
+{% iconnote note %}
+
+If you need to have your own test-MOCES accounts created, you must contact NETS directly.
+
+{% endiconnote %}
 
 <br/>
 
