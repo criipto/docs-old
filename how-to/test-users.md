@@ -100,9 +100,9 @@ That said the steps to create a test user are fairly simple:
 
 ![NemID personal test user](/images/nemid_test_user.png)
 
-### NemID test users for employees (medarbejdersignatur)
+### NemID test users for employees (medarbejder-signatur)
 
-Creating test users for the socalled "medarbejdersigantur" is quite a bit more complicated. Send us an email at <support@criipto.com> if this is something you need, and we will guide you through the process.
+Creating test users for employees (the socalled "medarbejder-signatur") is quite a bit more complicated. Send us an email at <support@criipto.com> if this is something you need, and we will guide you through the process.
 
 <br/>
 
