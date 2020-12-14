@@ -10,7 +10,8 @@ Criipto Verify is integrated through the authentcation API which follows the Ope
 
 {% iconnote note %}
 
-Criipto Verify supports the OAuth2 *authorization code flow*, the *PKCE flow* and the (obsolete) *implicit flow* as described below. The code flow is used for traditional, server based, web applications which can keep a secret and are able to make back-channel calls to the Criipto Verify service. The PKCE (pronounced _pixy_) flow can be used by _public clients_ such as SPA's and native applications that cannot keep a secret. The implicit flow is still supported and can be used for single page applications and requires no backend server on your end, and thus is sometimes referred to as a front-channel flow. Support for the implicit flow will continue on test domains for the foreseable future, but will be yanked from production domains some time in 2021.
+Criipto Verify supports the OAuth2 *authorization code flow*, the *PKCE flow* and the (obsolete) *implicit flow* as described below. The code flow is used for traditional, server based, web applications which can keep a secret and are able to make back-channel calls to the Criipto Verify service. The PKCE (pronounced _pixy_) flow can be used by _public clients_ such as single page applications, SPAs, and native applications that cannot keep a secret. Support for the traditional implicit flow is being discontinued, although
+it will continue to function on test domains for the foreseable future for simpler debugging during development.
 
 {% endiconnote %}
 
