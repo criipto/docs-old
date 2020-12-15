@@ -86,7 +86,7 @@ In the tenant pulldown menu, click **Manage Users...**:
 
 ![Manage Users](/images/manage-users.png)
 
-and you will then have access to invite and/or revoke users from your Criipto Verify tenant:
+and you will then have access to add and remove users from your Criipto Verify tenant, and also control which specific permissions each user has:
 
 ![Manage Users Details](/images/manage-users-details.png)
 
