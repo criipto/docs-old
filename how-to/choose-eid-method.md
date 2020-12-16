@@ -14,6 +14,7 @@ The following descrribes you options for specifying which specific e-ID method y
 
 You can see the list of [supported values for e-ID methods here](/how-to/acr-values/).
 
+<a name="standards-based"></a>
 ## Option 1: The standards-based approach
 
 The recommended way of specifying the e-ID method is to send an `acr_values` as a query parameter when using OpenID Connect.  (If you  use WS-Federation, the choice is sent in the  `wauth` parameter). 
@@ -26,6 +27,8 @@ In some cases, however, you don't have an option to control how (or if) this par
 
 In cases where you cannot specify the `acr_values` parameter please see below for ways to get around this.
 
+<a name="path-embedded"></a>
+
 ## Option 2: Embed e-ID method in the URL-path
 
 You can embed the chosen e-ID method in the URL path that your client application uses to request authentication on [as described in detail here](/how-to/work-with-metadata). This approach works for both OpenID Connect (OIDC) and WS-Federation, but is typically something you would set up during configuration time, so it is not very flexible.
@@ -34,6 +37,8 @@ Basially you encode the e-ID method, the value you would otherwise put in the `a
 ```
 https://yourdomain.criipto.id/dXJuOmdybjphdXRobjpzZTpiYW5raWQ6c2FtZS1kZXZpY2U=/.well-known/openid-configuration
 ```
+
+<a name="login-hint-embedded"></a>
 
 ## Option 3: Embedded in the login_hint query parameter (OIDC only)
 Specifically for OpenID Connect some intermediate services, for example Auth0, will relay a provided `login_hint` to upstream  identity providers such as Criipto. Exploiting this option you may use this parameter to communicate the choice of e-ID method.
@@ -50,6 +55,8 @@ login_hint=acr_values:urn:grn:authn:se:bankid:same-device
 ```
 
 You can also use this workaround in conjunction with sending other [prefilled fields](/how-to/specify-prefilled-fields) in the `login_hint`.
+
+<a name="http-header"></a>
 
 ## Option 4: In an HTTP header (OIDC only)
 You can also send the targeted e-ID method in an `acr_values` HTTP request header:

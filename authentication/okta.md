@@ -36,7 +36,7 @@ Specifically you need the following information to integrate with Okta:
 - _Client ID_ to identify your Okta tenant to Criipto Verify. In the case below we chose `urn:criipto:verify`
 - _Domain_ on which you will be communicating with Criipto Verify. Could be for example `samples.criipto.id`
 - _Client secret_ which Okta needs to fetch actual user information from Criipto Verify during login.
-The secret is generated and copied as describe further down.
+The secret is generated and copied as described further down.
 
 ![Register App](/images/okta-register-application.png)
 
