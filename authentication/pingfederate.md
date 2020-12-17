@@ -65,15 +65,7 @@ Click the **Next** button, choose `BROWSER SSO` in `Connection Options`
 
 Click the **Next** button, enter your specific _Domain_ authority in the `ISSUER` field and click the **Load Metadata** button
 
-{% iconnote note %}
-For this article, one would replace `https://yourdomain.criipto.id/` with `https://samples.criipto.id/`
-{% endiconnote %}
-
 Give the connection a recognizable name, copy-paste the _Client ID_ and _Client secret_ values from your Criipto Verify application
-
-{% iconnote note %}
-For this article, one would set `urn:criipto:verify` as the `CLIENT SECRET`.
-{% endiconnote %}
 
 ![General Info](/images/pingfederate-connection-general.png)
 
