@@ -81,8 +81,6 @@ Click the **Next** button and add the claim types that you want to consume in th
 
 ![Attribute Contract](/images/pingfederate-connection-attribute-contract.png)
 
-Here, we have chosen some representative fields from the Norwegian BankID e-ID method. 
-
 You can find the available claim types [here](/getting-started/token-contents).
 
 Click the **Save** button and the callback URL you need to finalize the Criipto Verify application configuration is displayed - in PingFederate terms, though, the callback URL is called a `Redirect URI`.
@@ -113,7 +111,7 @@ If you plan on using single-signon, you must also register your PingFederate `po
 
 How to integrate your application with PingFederate depends on the technology you are working with. Refer to the [PingFederate developer documentation](https://developer.pingidentity.com/en/cloud-software/pingfederate.html) for more details.
 
-If you want to use pass-through of `login_hint` values sent from your own application to Criipto Verify via PingFederate, you must enable via policy in your `IDP AUTHENTICATION POLICIES`. 
+If you want to use pass-through of `login_hint` values sent from your own application to Criipto Verify via PingFederate, you must enable it via a `Policy` in your `IDP AUTHENTICATION POLICIES`.
 
 If you haven't already done so, create a `Policy Contract` with the attributes you wish to consume
 
