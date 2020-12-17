@@ -51,19 +51,51 @@ The application details pane will be hidden automatically - you can expand it ag
 
 ## Create PingFederate authentication source
 
-On the dashboard of your PingFederate tenant, go to the `Authentication` tab and click on the `IdP Connections` tile.
-- Click **Create Connection**
-- Enable `BROWSER SSO PROFILES` in `Connection Type`
-  - Choose `OpenID Connect` in the `PROTOCOL` dropdown
-- Choose `BROWSER SSO` in `Connection Options`
-- Assuming your actual Criipto Verify _Domain_ is `acme-corp.criipto.id`, type `https://acme-corp.criipto.id/` in the `ISSUER` field and click the **Load Metadata** button
-- Give the connection a recognizable name
-- Copy and paste the `client id` and `client secret` values from your Criipto Verify application
-- Click the **Next** button
-- Click the **Configure Browser SSO** button
-  - Select **NO MAPPING** and click **Save**
-- Set up an `Attribute Contract` to map the claims you want to consume. You can find the available claim types [here](/getting-started/token-contents).
-- Click the **Save** button and the callback URL becomes available.
+On the dashboard of your PingFederate tenant, go to the `Authentication` tab and click on the `IdP Connections` tile
+
+![IdP Connections](/images/pingfederate-idpconnections.png)
+
+Click the **Create Connection** button and choose `BROWSER SSO PROFILES` in `Connection Type` and then `OpenID Connect` in the `PROTOCOL` dropdown
+
+![Create Connection](/images/pingfederate-connection-type.png)
+
+Click the **Next** button, choose `BROWSER SSO` in `Connection Options`
+
+![Connection Options](/images/pingfederate-connection-options.png)
+
+Click the **Next** button, enter your specific _Domain_ authority in the `ISSUER` field and click the **Load Metadata** button
+
+{% iconnote note %}
+For this article, one would replace `https://yourdomain.criipto.id/` with `https://samples.criipto.id/`
+{% endiconnote %}
+
+Give the connection a recognizable name, copy-paste the _Client ID_ and _Client secret_ values from your Criipto Verify application
+
+{% iconnote note %}
+For this article, one would set `urn:criipto:verify` as the `CLIENT SECRET`.
+{% endiconnote %}
+
+![General Info](/images/pingfederate-connection-general.png)
+
+Click the **Next** button and then click the **Configure Browser SSO** button
+
+![Browser SSO](/images/pingfederate-connection-browser-sso.png)
+
+Choose `NO MAPPING` for the `Identity Mapping`
+
+![Identity Mapping](/images/pingfederate-connection-identity-mapping.png)
+
+Click the **Next** button and add the claim types that you want to consume in the `Attribute Contract`
+
+![Attribute Contract](/images/pingfederate-connection-attribute-contract.png)
+
+Here, we have chosen some representative fields from the Norwegian BankID e-ID method. 
+
+You can find the available claim types [here](/getting-started/token-contents).
+
+Click the **Save** button and the callback URL you need to finalize the Criipto Verify application configuration is displayed - in PingFederate terms, though, the callback URL is called a `Redirect URI`.
+
+![Callback URL](/images/pingfederate-connection-callback-url.png)
 
 <a name="complete-verify-app-config"></a>
 
@@ -71,7 +103,7 @@ On the dashboard of your PingFederate tenant, go to the `Authentication` tab and
 
 Expand the details of the application configuration if you haven't already done so in the first step.
 
-Replace the temporary callback URL (from step 1, `https://example.com` in this article) in your Criipto Verify application with the actual value now available from your PingFederate authentication source configuration and click the **Save** button.
+Replace the temporary callback URL (from step 1, `https://example.com` in this article) in your Criipto Verify application with the actual value now available from your PingFederate authentication source configuration (the value of the `Redirect URI` above) and click the **Save** button.
 
 {% iconnote note %}
 
