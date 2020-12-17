@@ -55,7 +55,7 @@ GET https://YOUR_SUBDOMAIN.criipto.id/oauth2/authorize?
     state=YOUR_STATE
 ```
 
-Note that providing `response_type=code` specifies that you want either the traditional back-channel *authorization code* flow or the *PKCE* flow, where as specifying `response_type=id_token` indicates that you want the *implicit flow*. In the implicit flow you receive the issued token in a query parameter on the return URL.
+Note that providing `response_type=code` specifies that you want either the traditional back-channel *authorization code* flow or the *PKCE* flow. If you specify `response_type=id_token` you indicate that you want the *implicit flow*. In the implicit flow you receive the issued token in a query parameter on the return URL.
 
 If you want to receive the response in another way you must specify the `response_mode` parameter, see below.
 
