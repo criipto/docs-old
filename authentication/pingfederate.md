@@ -95,7 +95,11 @@ Click the **Save** button and the callback URL you need to finalize the Criipto 
 
 Expand the details of the application configuration if you haven't already done so in the first step.
 
-Replace the temporary callback URL (from step 1, `https://example.com` in this article) in your Criipto Verify application with the actual value now available from your PingFederate authentication source configuration (the value of the `Redirect URI` above) and click the **Save** button.
+Replace the temporary callback URL (from step 1, `https://example.com` in this article) in your Criipto Verify application with the actual value now available from your PingFederate authentication source configuration (the value of the `Redirect URI` above)
+
+![Finalize Application](/images/pingfederate-finalize-application-config.png)
+
+and click the **Save** button.
 
 {% iconnote note %}
 
