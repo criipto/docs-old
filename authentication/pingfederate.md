@@ -109,10 +109,22 @@ If you plan on using single-signon, you must also register your PingFederate `po
 
 How to integrate your application with PingFederate depends on the technology you are working with. Refer to the [PingFederate developer documentation](https://developer.pingidentity.com/en/cloud-software/pingfederate.html) for more details.
 
+If you want to use pass-through of `login_hint` values sent from your own application to Criipto Verify via PingFederate, you must enable via policy in your `IDP AUTHENTICATION POLICIES`. 
+
+If you haven't already done so, create a `Policy Contract` with the attributes you wish to consume
+
+![Policy Contract](/images/pingfederate-policy-contract.png)
+
+- available claim types can be found [here](/getting-started/token-contents)
+
+Then create a `Policy` for your `IdP Connection` to Criipto Verify and set the `Options` for `Incoming User ID` to be sourced from `Context` and use the `Requested User` value.
+
+![Policy](/images/pingfederate-relay-login_hint.png)
+
 {% iconnote note %}
 
-Note that PingFederate supports relaying of `login_hint` query parameter values to Criipto Verify. This is very useful for a variety of reasons, such as sending us [acr_values](/how-to/choose-eid-method#login-hint-embedded) or [prefilled fields](/how-to/specify-prefilled-fields) on a per-authorize-request basis.
+You can read more about which per-authorize-request parameters you can use to control the runtime behavior of Criipto Verify [here (prefilled fields)](/how-to/specify-prefilled-fields) and [here (acr_values)](/how-to/choose-eid-method#login-hint-embedded).
 
-It also makes you authentication source setup in PingFederate very smooth - you just need to register one, and reuse it for all the e-ID methods you need to consume.
+Leveraging these features makes you authentication source setup in PingFederate as simple as possible - you just need to register Criipto Verify once, and reuse it for all the e-ID methods you need to consume.
 
 {% endiconnote %}
