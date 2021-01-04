@@ -14,8 +14,6 @@ _Test users_ are either created by you for the occasion, or we provide you with 
 
 You may refer to the sections below for test users for your choice of e-ID:
 
-<a name="sebankid"></a>
-
 - [Swedish BankID](#sebankid)
 - [Norwegian BankID](#nobankid)
 - [Norwegian Vipps Login](#novipps)
@@ -62,21 +60,21 @@ You can test it out at [our authentication demo site](https://verify-login.azure
 
 ### Testing Mobile BankID 
 
-<a name="novipps"></a>
-
 For testing you may order up to three test SIM cards through Criipto once you have signed up for Norwegian BankID.
 
 <br/>
+
+<a name="novipps"></a>
 
 ## Norwegian Vipps Login
 
 In order to test Vipps Login you need to install the Vipps app in a special test version on your device. Follow the Vipps [guide for intstructions](https://github.com/vippsas/vipps-developers/blob/master/vipps-test-environment.md#vipps-test-apps) on how to set up test apps.
 
-<a name="dknemid"></a>
-
 In order to test you also need a test phone number. Write to [support@criipto.com](mailto:support@criipto.com) and put something like "Vipps Login test number" in the subject line.
 
 <br/>
+
+<a name="dknemid"></a>
 
 ## Danish NemID
 
@@ -110,8 +108,6 @@ We have pre-created [the following test employee account](https://appletk.danid.
 | putandtracktest | PandT123 |
 
 
-<a name="fibankid"></a>
-
 {% iconnote note %}
 
 If you need to have your own test-MOCES accounts created, you must contact NETS directly.
@@ -119,6 +115,9 @@ If you need to have your own test-MOCES accounts created, you must contact NETS 
 {% endiconnote %}
 
 <br/>
+
+<a name="fibankid"></a>
+
 ## Finnish BankID
 
 A set list of test users for the different banks are given below. Sometimes the test credentials will be shown also on the actual login page at the bank.
@@ -189,8 +188,6 @@ Tunnusluku 2: any four numbers<br/>
  
 ### Oma Säästöpankki
 
-<a name="beitsme"></a>
-
 Käyttäjätunnus: `11111111` / `22222222`<br/>
 Salasana: `123456`<br/>
 Turvaluku: `123456`<br/>
@@ -198,21 +195,21 @@ Turvaluku 2: `123456`<br/>
 
 <br/>
 
+<a name="beitsme"></a>
+
 ## Itsme
 
 You will need to enroll with the Itsme organization to get access to test accounts, which can be used in the `Itsme Sandbox` environment.
-
-<a name="beeid"></a>
 
 The process is [described here](https://brand.belgianmobileid.be/d/CX5YsAKEmVI7/let-s-get-started#/step-by-step-guide/4-test-itsme-in-your-application) - just note that the integration guidelines of that documentation is not relevant for you, as you are integrating via Criipto's pre-built Itsme integration. It is all just a matter of configuring your project settings in our management UI.
 
 <br/>
 
+<a name="beeid"></a>
+
 ## Belgian eID
 
 This login method is smartcard based, so you will need both a smartcard reader and accompanying cards.
-
-<a name="desofort"></a>
 
 For test domains, you can use both test-specific cards and also "live" cards. The only difference is that on test domains, the data from the card will not be verified after being read.
 
@@ -220,6 +217,8 @@ For test domains, you can use both test-specific cards and also "live" cards. Th
 For production domains, you cannot use test cards, as the data on these cannot be verified.
 
 <br/>
+
+<a name="desofort"></a>
 
 ## German Sofort
 
