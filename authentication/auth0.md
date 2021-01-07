@@ -85,6 +85,7 @@ Below is a list of supported login methods with corresponding base64 encoded `ac
 | &nbsp;&nbsp;Verified e-ID                              | `urn:grn:authn:be:eid:verified` | `dXJuOmdybjphdXRobjpiZTplaWQ6dmVyaWZpZWQ=` |
 | **Germany** |
 | &nbsp;&nbsp;Sofort (with Schufa check)                 | `urn:grn:authn:de:sofort` | `dXJuOmdybjphdXRobjpkZTpzb2ZvcnQ=` |
+
 <hr />
 
 ### Create the OIDC connection(s)

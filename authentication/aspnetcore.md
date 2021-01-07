@@ -107,6 +107,7 @@ public void ConfigureServices(IServiceCollection services)
 _Note_ that the above code dynamically sets the `AcrValues` by picking it from the query string. In the general case, this may, of course, be set in other ways. Just note that it is dynamically set at the time of the actual login.
 
 <a name="loginmethod"></a>
+
 ### Choosing the specific login method
 
 {% include snippets/login-methods.md %}
