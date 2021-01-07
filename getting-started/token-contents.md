@@ -10,6 +10,31 @@ Below you will find the the structure and example content for the JSON Web Token
 
 The examples below illustrate only the fields that are user-specific. The actual JWTs issued contain other more technical, OIDC conformant, fields as well, which are mostly relevant for validation and session maintenance purposes.
 
+### Sweden
+- [BankID](#sebankid)
+
+### Norway
+- [BankID](#nobankid)
+- [Vipps](#novipps)
+
+### Denmark
+- [NemID for citizens (POCES)](#poces)
+- [NemID for company signatories (POCES-with-CVR)](#poces-cvr)
+- [NemID for employees (MOCES)](#moces)
+- [MitID](#dkmitid)
+
+### Finland
+- [Finnish Trust Network - BankID](#fibankid)
+- [Finnish Trust Network - Mobillivarmenne](#mobillivarmenne)
+
+### Belgium
+- [Itsme](#itsme)
+
+### Germany
+- [Sofort](#sofort)
+
+<a name="sebankid"></a>
+
 ## Sweden
 ### BankID
 ```json
@@ -26,6 +51,8 @@ The examples below illustrate only the fields that are user-specific. The actual
 }
 ```
 The `ssn` field is the social security number.
+
+<a name="nobankid"></a>
 
 ## Norway
 ### BankID
@@ -46,6 +73,8 @@ The `ssn` field is the social security number.
 }
 ```
 The `socialno` field is the social security number. The `uniqueUserId` identifies the legal person corresponding to the login, and is not considered sensitive.
+
+<a name="novipps"></a>
 
 ### Vipps
 ```json
@@ -71,6 +100,8 @@ The `socialno` field is the social security number. The `uniqueUserId` identifie
 }
 ```
 The `socialno` field is the social security number.
+
+<a name="poces"></a>
 
 ## Denmark
 ### NemID for citizens (POCES)
@@ -107,6 +138,8 @@ Also, you may additionally opt-in to having and `address` lookup enabled. This w
 ```
 Existence of this field is not guaranteed, even if the you have opted in to lookup.
 
+<a name="poces-cvr"></a>
+
 ### NemID for company signatories (POCES-with-CVR)
 ```json
 {
@@ -128,6 +161,8 @@ Existence of this field is not guaranteed, even if the you have opted in to look
 ```
 The `cprNumberIdentifier` field is the social security number.
 
+<a name="moces"></a>
+
 ### NemID for employees (MOCES)
 ```json
 {
@@ -165,6 +200,8 @@ No social security number in this case, but the combination of `cvrNumberIdentif
 }
 ```
 No social security number in this case, but the combination of `cvrNumberIdentifier` and `ridNumberIdentifier` identifies the legal person corresponding to the login.
+
+<a name="dkmitid"></a>
 
 ### MitID
 ```json
@@ -179,8 +216,11 @@ No social security number in this case, but the combination of `cvrNumberIdentif
   "age": "93",
   "name": "Ditlev Von Testesen",
   "country": "DK"
- ```
+}
+```
 The `cprNumberIdentifier` field is the social security number.
+
+<a name="fibankid"></a>
 
 ## Finland
 ### Finnish Trust Network - BankID
@@ -200,8 +240,12 @@ The `cprNumberIdentifier` field is the social security number.
 ```
 The `hetu` field is the personal identity code.
 
+<a name="mobillivarmenne"></a>
+
 ### Finnish Trust Network - Mobillivarmenne
 Same as BankID, except the `satu` property will have a value as well.
+
+<a name="itsme"></a>
 
 ## Belgium
 ### Itsme - Basic level, with Extra ID Data and Security Data enabled
@@ -258,7 +302,8 @@ Same as BankID, except the `satu` property will have a value as well.
   }
  ```
 
- ### eID - verified, with national number, personal info, photo and address enabled
+### eID - verified, with national number, personal info, photo and address enabled
+
  ```json
  {
     "identityscheme": "beeid",
@@ -295,6 +340,8 @@ Same as BankID, except the `satu` property will have a value as well.
     "picture": "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"
 }
  ```
+
+<a name="sofort"></a>
 
 ## Germany
 ### Sofort - Schufa age-check is always included
