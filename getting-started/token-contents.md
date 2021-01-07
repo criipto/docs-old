@@ -29,13 +29,15 @@ The examples below illustrate only the fields that are user-specific. The actual
 
 ### Belgium
 - [Itsme](#itsme)
+- [eID](#beeid)
 
 ### Germany
 - [Sofort](#sofort)
 
+## Sweden
+
 <a name="sebankid"></a>
 
-## Sweden
 ### BankID
 ```json
 {
@@ -52,9 +54,10 @@ The examples below illustrate only the fields that are user-specific. The actual
 ```
 The `ssn` field is the social security number.
 
+## Norway
+
 <a name="nobankid"></a>
 
-## Norway
 ### BankID
 ```json
 {
@@ -101,9 +104,11 @@ The `socialno` field is the social security number. The `uniqueUserId` identifie
 ```
 The `socialno` field is the social security number.
 
-<a name="poces"></a>
 
 ## Denmark
+
+<a name="poces"></a>
+
 ### NemID for citizens (POCES)
 ```json
 {
@@ -182,25 +187,6 @@ The `cprNumberIdentifier` field is the social security number.
 ```
 No social security number in this case, but the combination of `cvrNumberIdentifier` and `ridNumberIdentifier` identifies the legal person corresponding to the login.
 
-### NemID for employees (MOCES)
-```json
-{
-  "identityscheme": "dknemid",
-  "nameidentifier": "c79c9cde000a4460b64ecb35730ee2bc",
-  "sub": "{c79c9cde-000a-4460-b64e-cb35730ee2bc}",
-  "ridNumberIdentifier": "72131748",
-  "cvrNumberIdentifier": "31884357",
-  "2.5.4.10": "HORSOSOFT ApS // CVR:31884357",
-  "companySignatory": "false",
-  "name": "PutandTrackTest",
-  "country": "DK",
-  "2.5.4.5.1": "CVR:31884357-RID:72131748",
-  "2.5.4.5": "5BAD00A0",
-  "2.5.29.29": "CN=TRUST2408 Systemtest XXII CA, O=TRUST2408, C=DK"
-}
-```
-No social security number in this case, but the combination of `cvrNumberIdentifier` and `ridNumberIdentifier` identifies the legal person corresponding to the login.
-
 <a name="dkmitid"></a>
 
 ### MitID
@@ -220,9 +206,11 @@ No social security number in this case, but the combination of `cvrNumberIdentif
 ```
 The `cprNumberIdentifier` field is the social security number.
 
-<a name="fibankid"></a>
 
 ## Finland
+
+<a name="fibankid"></a>
+
 ### Finnish Trust Network - BankID
 ```json
 {
@@ -245,9 +233,10 @@ The `hetu` field is the personal identity code.
 ### Finnish Trust Network - Mobillivarmenne
 Same as BankID, except the `satu` property will have a value as well.
 
+## Belgium
+
 <a name="itsme"></a>
 
-## Belgium
 ### Itsme - Basic level, with Extra ID Data and Security Data enabled
 ```json
 {
@@ -302,6 +291,8 @@ Same as BankID, except the `satu` property will have a value as well.
   }
  ```
 
+<a name="beeid"></a>
+
 ### eID - verified, with national number, personal info, photo and address enabled
 
  ```json
@@ -341,9 +332,10 @@ Same as BankID, except the `satu` property will have a value as well.
 }
  ```
 
+## Germany
+
 <a name="sofort"></a>
 
-## Germany
 ### Sofort - Schufa age-check is always included
 ```json
 {
