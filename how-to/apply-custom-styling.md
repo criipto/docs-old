@@ -146,8 +146,6 @@ If you want to show text in one of the hidden-by-default `<p>` elements, you can
 ```
 ***Note*** The first selector is needed to "undo" the effect of the `default-hidden` class on the third `<p>` element.
 
-TODO: A drawing of our frame-model ?
-
 ## CSS classes
 ### Generally available
 Each `<body>` element has up to 5 CSS classes attached to it:
