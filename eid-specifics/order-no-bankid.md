@@ -27,18 +27,17 @@ To order the actual keys please send a request to
 with answers to these questions:
 
 1. A short description of what your application does and why it needs BankID.
-2. The URL of your production domain as setup in step 5 of the [Getting ready for production](/how-to/get-ready-for-production)
-1. Your company: _Name, organisation number, and address_
-2. Your company's Norwegian bank: _Name, organisation number, and address_
-3. General contact person at your company for BankID related communication: _Name and email_
-4. Contact person with authorization to receive the secret keys: _Name, mobile phone, and email_
-5. Contact person with authorization to block/revoke the use of BankID: _Name, mobile phone, and email_
-6. Person registered in the business registry with authorization to sign the agreement: _Name and email_
-7. The display name to appear in the login app. E.g. the name of your company or your specific service. (See the image below)
-8. Web address of your service to be listed on www.bankid.no
-9. Contact persons who should be notified of BankID operations related issues: _Names and emails_
-10. If you need access to social security numbers ("fødselsnummer") please provide brief explanation of why and reference the Norwegian law and paragraph that grant you the right
-11. Finally, you must enclose a company certificate ("firmaattest") from the business registry, Brønnøysundregistrene.
+2. Your company: Name, organisation number, and address
+3. General contact person at your company for BankID related communication: Name and email
+4. Your company’s Norwegian bank: Name, organisation number, and address
+5. Contact person with authorization to block/revoke the use of BankID: Name, mobile phone, and email
+6. Person registered in the business registry with authorization to sign the agreement: Name and email
+7. If you need access to social security numbers (“fødselsnummer”) please provide brief explanation of why and reference the Norwegian law and paragraph that grant you the right
+8. Contact person with authorization to receive the secret keys: Name, mobile phone, and email
+9. The display name to appear in the login app. E.g. the name of your company or your specific service. (See the image below)
+10. Web address of your company to be listed on www.bankid.no
+11. The URL of your production domain as setup in step 5 of the Getting ready for production
+12. Finally - if you are not a Norwegian company - you must enclose a company certificate from the official business registry of the country of incoporation.
 
 ![BankID login](/images/no-bankid-central.png)
 
