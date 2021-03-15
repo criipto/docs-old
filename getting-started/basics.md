@@ -63,7 +63,7 @@ Note that although you may change the client ID later, you should be very carefu
 
 If you choose to use the _OAuth2 code flow_ - a flow where sensitive information is exchanged through a back-channel between servers - another important piece of information is the **Client Secret**. Think of it as your application's password which **must be kept confidential at all times**. If anyone gains access to your Client Secret they can impersonate your application and access protected resources.
 
-In our example, `Secure Insurance` has two apps: a web app (running on a server) and a mobile app. Hence, they would create two applications: one of type using the code flwo, and one using the `implicit flow` which requires no client secret.
+In our example, `Secure Insurance` has two apps: a web app (running on a server) and a mobile app. Hence, they would create two applications: one of type using the code flow, and one using the `implicit flow` which requires no client secret.
 
 ## Identity Sources
 
