@@ -31,7 +31,7 @@ You may refer to the sections below for test users for your choice of e-ID:
 
 Swedish BankID test users are created at the <a href="https://demo.bankid.com/" target="_blank">demo web site</a>.   
 
-Even if the demo site is where you will actually create your test users, it does link to the <a href="https://www.bankid.com/bankid-i-dina-tjanster/rp-info" target="_blank">general BankID technical page</a>. As a Criipto Verify customer you don't have worry about most of what's this site, but on the page is also a link to the document describing in detail how to create and use test user accounts. The document is called something like "How to get a test BankID" and links to a PDF.
+Even if the demo site is where you will actually create your test users, it does link to the <a href="https://www.bankid.com/rp/info" target="_blank">general BankID technical page</a>. As a Criipto Verify customer you don't have worry about most of what's this site, but on the page is also a link to the document describing in detail how to create and use test user accounts. The document is called something like "How to get a test BankID" and links to a PDF.
 
 _Note_ that, as is also described in the document, using test BankID users does require a reconfiguration of the BankID application. This means it cannot be used for real BankID. So if you are Swedish and already have BankID on your phone, you may want to use a spare phone for testing.
 
