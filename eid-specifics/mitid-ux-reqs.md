@@ -29,11 +29,11 @@ You will therefore redirect the current page to Criipto, or you may open up a po
 
 ### Styling the landing page
 
-As illustrated below, the default landing page has the MitID box - the red rectangle - at the center. You may not, under any circumstances, change the styling or layout of anything inside the box.
+In general, the landing page for MitID may styled by following [the general guide on styling](/how-to/apply-custom-styling). In essence you can modify the page any way you like using CSS.
+
+As illustrated below, the default landing page has the MitID box - the red rectangle - at the center. It is important that you do noty not, under any circumstances, change the styling or layout of anything inside the red rectangle.
 
 ![MitID default landing page](/images/mitid-landing-page.png)
-
-The landing page for MitID is styled by following [the general guide on styling](/how-to/apply-custom-styling).
 
 <a name="yourapp"></a>
 
