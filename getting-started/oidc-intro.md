@@ -18,8 +18,6 @@ it will continue to function on test domains for the foreseable future for simpl
 
 The following describes the two flows and introduces the parameters to configure the authentication and subsequent user information retrieval.
 
-The full specification of Criipto Verify OAuth2 and OpenID Connect options will be provided in the coming API reference.
-
 {% iconnote info %}
 
 Please beware that you don't have to go through the below motions manually. Most often it will be handled by configuring an OpenID Connect package on your platform of choice.

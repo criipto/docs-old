@@ -15,6 +15,8 @@ As long as you follow the guidelines below you should be in compliance with the 
 
 Note that when moving to production with MitID you will be agreeing to the terms of service for MitID in which you - among other things - commit to the below UX requirements.
 
+Also, Criipto may request that you submit a URL where we can verify that you are in fact in line with the requirements.
+
 {% endiconnote %}
 
 <a name="yourapp"></a>
