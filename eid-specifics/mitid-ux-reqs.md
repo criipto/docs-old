@@ -9,7 +9,7 @@ title: MitID user interface requirements
 When supporting MitID in your application, you must adhere to a few style requirements, both [in your application](#yourapp) 
 and on [the MitID landing page](#landingpage) hosted by Criipto.  
 
-As long as you follow the guidelines below, you should comply with the UX requirements from MitID. And please reach out to our support if you have questions about this or if you want us to verify that your buttons and landing page comply.
+As long as you follow the guidelines below, you must comply with the UX requirements from MitID. Please reach out to our support if you have questions about this or if you want us to verify that your buttons and landing page comply.
 
 {% iconnote info %}
 
@@ -25,13 +25,14 @@ Also, Criipto may request that you submit a URL where we can verify that you are
 
 With MitID everything happens on a page hosted by Criipto. Specifically, MitID cannot be iframed, only shown in full page view.
 
-You will therefore redirect the current page to Criipto, or you may open up a popup window. The latter is only relevant on the desktop and generally not a good idea.
+You will therefore redirect the current page to Criipto, or you may open up a popup window. The latter is only relevant on the desktop and typically not recommended by Criipto.
 
 ### Styling the landing page
 
 In general, the landing page for MitID may styled by following [the general guide on styling](/how-to/apply-custom-styling). In essence you can modify the page any way you like using CSS.
 
-As illustrated below, the default landing page has the MitID box - the red rectangle - at the center. It is important that you do noty not, under any circumstances, change the styling or layout of anything inside the red rectangle.
+As illustrated below, the default landing page has the MitID box - the red rectangle - at the center. 
+It is important that you do not, under any circumstances, change the styling or layout of anything inside the red rectangle.
 
 ![MitID default landing page](/images/mitid-landing-page.png)
 
@@ -42,6 +43,7 @@ As illustrated below, the default landing page has the MitID box - the red recta
 When referring to MitID in your application, web or native alike, you must make sure your language and styling matches 
 the requirements.
 
+Criipto currently provides required assets, such as the MitID logo, upon request. 
 ### Call to Action
 
 When providing a call to action, for example, log in or sign, make sure you follow these requirements:
