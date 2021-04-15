@@ -82,7 +82,7 @@ In order to test you also need a test phone number. Write to [support@criipto.co
 You create personal MitID tet users at [https://pp.mitid.dk/test-tool/frontend](https://pp.mitid.dk/test-tool/frontend):
 
 1. Just use the autofill button and then change the details to you liking
-2. If you haven't done so already install the test app from [https://pp.mitid.dk/mitid-app/index.html](https://.pp.mitid.dk/mitid-app/index.html)
+2. If you haven't done so already install the test app from [https://pp.mitid.dk/mitid-app/index.html](https://pp.mitid.dk/mitid-app/index.html)
 3. You can test your new users by using the "Flows" menu at the top of the screen.
 
 ![MitID test tool](/images/mitid-testtool.png)
