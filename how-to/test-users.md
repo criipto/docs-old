@@ -17,6 +17,7 @@ You may refer to the sections below for test users for your choice of e-ID:
 - [Swedish BankID](#sebankid)
 - [Norwegian BankID](#nobankid)
 - [Norwegian Vipps Login](#novipps)
+- [Danish MitID](#dkmitid)
 - [Danish NemID](#dknemid)
 - [Finnish BankID](#fibankid)
 - [Itsme](#beitsme)
@@ -74,15 +75,27 @@ In order to test you also need a test phone number. Write to [support@criipto.co
 
 <br/>
 
+<a name="dkmitid"></a>
+
+## Danish MitID
+
+You create personal MitID tet users at [https://pp.mitid.dk/test-tool/frontend](https://pp.mitid.dk/test-tool/frontend):
+
+1. Just use the autofill button and then change the details to you liking
+2. If you haven't done so already install the test app from [https://pp.mitid.dk/mitid-app/index.html](https://.pp.mitid.dk/mitid-app/index.html)
+3. You can test your new users by using the "Flows" menu at the top of the screen.
+
+![MitID test tool](/images/mitid-testtool.png)
+
 <a name="dknemid"></a>
 
 ## Danish NemID
 
-For personal NemID test users, you may create them at https://appletk.danid.dk/testtools/. Login in with username `oces` and password `nemid4all`.  Don't worry about the message about not being supported. 
+For personal NemID test users, you may create them at [https://appletk.danid.dk/testtools](https://appletk.danid.dk/testtools/). Login in with username `oces` and password `nemid4all`.  Don't worry about the message about not being supported. 
 
 _First_, note that you can search out already created test users by filling out the search field at the top of that page. This may be convenient if you've lost the link to the user page.
 
-If you just need to do a quick login test, you may use this test user instead of going throught the steps below: https://appletk.danid.dk/testtools/viewstatus.jsp?userid=TOMINE317. (If all the OTP codes have been used, just issue a new OTP card, but click the link for that.)
+If you just need to do a quick login test, you may use this test user instead of going throught the steps below: [https://appletk.danid.dk/testtools/viewstatus.jsp?userid=TOMINE317](https://appletk.danid.dk/testtools/viewstatus.jsp?userid=TOMINE317). (If all the OTP codes have been used, just issue a new OTP card, but click the link for that.)
 
 That said the steps to create a test user are fairly simple:
 
