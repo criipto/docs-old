@@ -7,19 +7,28 @@ title: Get ready for Danish MitID
 
 {% iconnote info %}
 
-**MitID production ready in May 2021**
+**MitID is expected to go live in mid August 2021**
 
-Ordering of MitID for production will be available from May 2021.  More on the process will be provided here.
+The first person to be issued a MitID is planned for mid August 2021. All the holders of NemID will then be migrated
+gradually to MitID during the following 6-9 months.
+
+You can start ordering MitID for production from June 2021.  More on the process will be provided here.
 
 {% endiconnote %}
 
-### Prerequisites before setting up an agreements
+### Prerequisites for setting up an agreement
 
-In order to become a NemID service provider, your company must registered in the the EU and have an EU VAT Id.
+In order to use MitID in production, your company must registered in the the EU and have an EU VAT Id.
+
+### MitID terms of service
+
+In addition to the genral [Criipto terms of service](https://criipto.com/legal/tos/) you must also accept the [MitID specific terms](https://criipto.com/legal/mitid/tos)
 
 ### UX requirements
 
-With MitID you will be using a hosted MitID page at Criipto. The page may be styled to you liking but a few requirements exist.
+With MitID you will be using a hosted MitID page at Criipto. The page may be styled to you liking, but some requirements must be
+observed.
+
 Please [see the UX reqirements](/eid-specifics/mitid-ux-reqs) to make sure you comply.
 
 ### Next steps
