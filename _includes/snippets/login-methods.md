@@ -18,6 +18,9 @@ The current list of possible values is:
 | &nbsp;&nbsp;Personal with code card:&nbsp;             | `urn:grn:authn:dk:nemid:poces` |
 | &nbsp;&nbsp;Employee with code card:&nbsp;             | `urn:grn:authn:dk:nemid:moces` |
 | &nbsp;&nbsp;Employee with code file:&nbsp;             | `urn:grn:authn:dk:nemid:moces:codefile` |
+| **Danish MitID** |
+| &nbsp;&nbsp;Level low:&nbsp;                           | `urn:grn:authn:dk:mitid:low` |
+| &nbsp;&nbsp;Level substantial:&nbsp;                   | `urn:grn:authn:dk:mitid:substantial` |
 | **Finish e-ID** |
 | &nbsp;&nbsp;BankID:                                    |`urn:grn:authn:fi:bank-id` |
 | &nbsp;&nbsp;Mobile certificate (Mobiilivarmenne):&nbsp;|`urn:grn:authn:fi:mobile-id` |
