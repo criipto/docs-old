@@ -34,3 +34,17 @@ Please [see the UX reqirements](/eid-specifics/mitid-ux-reqs) to make sure you c
 ### Next steps
 
 *More to follow shortly*.
+
+# Order MitID for test
+
+If you haven't already done so, you can apply for access to the MitID test environment from the `Identity Sources` tab in Criipto Verify's management UI - in the `DK MitID` section.
+
+Once Criipto has received your application, we will onboard your company to the MitID test environment and get back to you. It may take a few days for us to process your application.
+
+When done, you can return to the management UI and complete your MitID configuration, such as selecting which NemID domain you want to use for side-by-side mode with MitID during the transition phase.
+
+{% iconnote info %}
+
+Custom styling is also available for user-facing MitID pages.
+
+{% endiconnote %}
