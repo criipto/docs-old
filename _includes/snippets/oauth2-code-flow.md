@@ -10,7 +10,7 @@ Open the application registration and configure it for the right OAuth2 flow:
 
 ![OAuth2 code flow](/images/oauth2-code-flow.png)
 
-_Note that this is the only time you will be shown the actual value of the client secret_. Criipto only stores this as a hashed value, which means you cannot retieve the value once it has been generated and stored.
+_Note that this is the only time you will be shown the actual value of the client secret_. Criipto only stores this as a hashed value, which means you cannot retrieve the value once it has been generated and stored.
 
 ![OAuth2 code flow](/images/oauth2-client-secret.png)
 
@@ -20,7 +20,7 @@ Some libraries do not support the final `userinfo` request. In those cases you w
 
 {% endiconnote %}
 
-You may configure Criipto Verify  to retrieve the user information from  either the `userinfo` endpoint - the default option - or you may explicitely choose the `fromTokenEndpoint` in the user info response strategy instead:
+You may configure Criipto Verify  to retrieve the user information from  either the `userinfo` endpoint - the default option - or you may explicitly choose the `fromTokenEndpoint` in the user info response strategy instead:
 ![OAuth2 code flow](/images/userinfo-responsestrategy-fromtokenendpoint.png)
 
 
