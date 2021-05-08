@@ -14,6 +14,7 @@ The current list of possible values is:
 | **Swedish BankID** |
 | &nbsp;&nbsp;Same device:                               | `urn:grn:authn:se:bankid:same-device` |
 | &nbsp;&nbsp;Another device (aka mobile):&nbsp;         | `urn:grn:authn:se:bankid:another-device` |
+| &nbsp;&nbsp;QR code:&nbsp;         | `urn:grn:authn:se:bankid:another-device:qr` |
 | **Danish NemID** |
 | &nbsp;&nbsp;Personal with code card:&nbsp;             | `urn:grn:authn:dk:nemid:poces` |
 | &nbsp;&nbsp;Employee with code card:&nbsp;             | `urn:grn:authn:dk:nemid:moces` |
