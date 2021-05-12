@@ -64,3 +64,11 @@ MitID comes with a new approach to how token signing keys must be handled. There
 Most modern OIDC libraries have built-in support for dynamic metadata retrieval, so all this will normally be handled for you behind the scenes.
 
 Dynamic metadata retrieval is also necessary to achieve minimal disruption for you `clients` in ordinary key rollover as well as disaster recovery scenarios.
+
+# MitID configuration switches
+You have the following options available to configure CPR and side-by-side mode in the management dashboard (`Identity Services` -> `DK MitID`): ![MitID toggles](/images/mitid-config-toggles.png)
+
+
+ - If you need the users CPR number, enable the `Add CPR for personal logins` switch
+ - In contrast to NemID, not all MitID users have a CPR number. If your service can deal with that case, you can leave the `CPR Optional` switch enabled. If not, disable this switch.
+ - If you don't want to show NemID and MitID side-by-side, you can disable it via the `Show alongside NemID logins` switch.
