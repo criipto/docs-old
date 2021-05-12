@@ -48,3 +48,19 @@ When done, you can return to the management UI and complete your MitID configura
 Custom styling is also available for user-facing MitID pages.
 
 {% endiconnote %}
+
+# Setting up MitID side-by-side with NemID
+Your current NemID setup uses another DNS domain than what is required for MitID. For the NemID domain, you have registered the `Application(s)` that represents your  web site(s)/native app(s) (hereafter: `clients`). Each has a unique `realm/client_id` and a list of `Callback URLs`. In order for Criipto Verify to support a seamless introduction of the side-by-side feature, you have to register identically configured `Application(s)` under the new MitID domain. You can set this up from the `Applications` tab in the management dashboard on [manage.criipto.id](https://manage.criipto.id).
+
+Before you complete these configuration tasks, clicking the `MitID` tab in the side-by-side will not work correctly (you'll see an error with a slightly technical wording).
+
+You must configure these "shadowing" applications for both TEST and PRODUCTION modes.
+
+Once the MitID rollout is complete and NemID has been sunset, you can change the configuration for your `clients` to point directly to the MitID domain, and also modify the accompanying `acr_values`.
+
+# Validating token signatures for MitID
+MitID comes with a new approach to how token signing keys must be handled. There will be a distinct token signing key in use for MitID, in parallel to the one you have today for NemID. Criipto Verify announces all of these signing keys in the metadata documents for your domains (see [work with metadata](/how-to/work-with-metadata) for a primer on this subject).
+
+Most modern OIDC libraries have built-in support for dynamic metadata retrieval, so all this will normally be handled for you behind the scenes.
+
+Dynamic metadata retrieval is also necessary to achieve minimal disruption for you `clients` in ordinary key rollover as well as disaster recovery scenarios.
