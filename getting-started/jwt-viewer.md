@@ -51,7 +51,7 @@ A login request uses a standard protocol, OAuth2. For this example it will be
 
 <a name="login"></a>
 
-## Log in a inspect the result
+## Log in and inspect the result
 
 Just copy the URL from above and change two values:
 
