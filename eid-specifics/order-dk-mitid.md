@@ -1,6 +1,6 @@
 ---
 layout: article
-title: Get ready for Danish MitID
+title: Get ready for production with Danish MitID
 ---
 
 # Order MitID for production
@@ -12,7 +12,7 @@ title: Get ready for Danish MitID
 The first person to be issued a MitID is planned for mid August 2021. All the holders of NemID will then be migrated
 gradually to MitID during the following 6-9 months.
 
-You can start ordering MitID for production from June 2021.  More on the process will be provided here.
+You can start ordering MitID for production from June 2021. More on the process will be provided here.
 
 {% endiconnote %}
 
@@ -31,6 +31,14 @@ observed.
 
 Please [see the UX reqirements](/eid-specifics/mitid-ux-reqs) to make sure you comply.
 
-### Next steps
+## Steps to take in Criipto Verify
 
-*More to follow shortly*.
+### Apply for production access
+1. Go to the [management dashboard](https://manage.criipto.id) and set the environment toggle at the top center to "PRODUCTION".
+2. In the `Identity Sources` tab, expand the `DK MitID` section
+3. Enter the details for your company and click `Apply`
+4. Await feedback from Criipto. We will run a KYC check on your company, and the have NETS set up DNS for your selected `.mitid.dk` domain.
+
+Expect this process to take 4-7 work days.
+
+{% include snippets/mitid-onboard-complete.md %}
