@@ -80,6 +80,9 @@ The text inside the button must be from the set of approved texts:
 | Acceptér med MitID | Accept with MitID |
 | Underskriv med MitID | Sign with MitID |
 
+## MitID from a native app
+Your app must show call to action ![just like for websites](/images/mitid-button-in-native-app.png)
 
+Your app must use a platform-specific web-view (custom tab / Safari view controller) where the user can ![see the address bar and green (TLS) padlock clearly](/images/mitid-native-app-browser-with-address-visible.png)
 
 
