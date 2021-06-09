@@ -1,6 +1,7 @@
 ---
 layout: article
 title: Get ready for production with Danish MitID
+Description: Get ready for production with Danish MitID
 ---
 
 # Order MitID for production
