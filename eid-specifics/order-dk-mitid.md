@@ -35,10 +35,12 @@ Please [see the UX reqirements](/eid-specifics/mitid-ux-reqs) to make sure you c
 
 ### Apply for production access
 1. Go to the [management dashboard](https://manage.criipto.id) and set the environment toggle at the top center to "PRODUCTION".
-2. In the `Identity Sources` tab, expand the `DK MitID` section
-3. Enter the details for your company and click `Apply`
-4. Await feedback from Criipto. We will run a KYC check on your company, and the have NETS set up DNS for your selected `.mitid.dk` domain.
+2. In the "Identity sources" section, expand the "DK MitID" section
+3. Submit the details for your company. Note the following:
+  - The name to show in the MitID login box is the name entered in the "Company alias" box
+  - The "Domain prefix" is typically your company or brand name, e.g. `acme-corp`. Once this registration is completed this will be used to set up yoru MitID domain, in this case `acme-corp.mitid.dk`.
+4. Criipto will verify the identity of you and your organisation. If successful, we then send the information to Nets where the domain will be set up as explained in the previous step. Once the domain has been set up it will appear in the "Domains" section.
 
-Expect this process to take 4-7 work days.
+Expect this process to take 2-5 work days.
 
 {% include snippets/mitid-onboard-complete.md %}
