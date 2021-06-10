@@ -25,14 +25,14 @@ Also, Criipto may request that you submit a URL where we can verify that you are
 
 With MitID everything happens on a page hosted by Criipto. Specifically, MitID cannot be iframed, only shown in full page view.
 
-You will therefore redirect the current page to Criipto, or you may open up a popup window. The latter is only relevant on the desktop and typically not recommended by Criipto.
+You will therefore redirect the current page to Criipto, or you may open up a popup window. The latter is only relevant on the desktop and is typically not recommended by Criipto.
 
 ### Styling the landing page
 
-In general, the landing page for MitID may styled by following [the general guide on styling](/how-to/apply-custom-styling). In essence you can modify the page any way you like using CSS.
+In general, the landing page for MitID may styled by following [the general guide on styling](/how-to/apply-custom-styling). In essence, you can modify the page any way you like using CSS.
 
 As illustrated below, the default landing page has the MitID box - the red rectangle - at the center. 
-It is important that you do not, under any circumstances, change the styling or layout of anything inside the red rectangle.
+It is essential that you do not, under any circumstances, change the styling or layout of anything inside the red rectangle.
 
 ![MitID default landing page](/images/mitid-landing-page.png)
 
@@ -57,7 +57,7 @@ The MitID button should be shown with lightly rounded corners:
 
 <img src="/images/mitid-rounded.png" alt="Default MitID button" style="width: 300px; box-shadow: none;">
 
-The key elements of the default styling are shown below, but we suggest to also simply inspect the buttons in the MitID applet and copy the corresponding styles.
+The key elements of the default styling are shown below, but we suggest to simply inspect the buttons in the MitID applet and copy the corresponding styles.
 
 ```css
 {
@@ -81,8 +81,8 @@ The text inside the button must be from the set of approved texts:
 | Underskriv med MitID | Sign with MitID |
 
 ## MitID from a native app
-Your app must show call to action ![just like for websites](/images/mitid-button-in-native-app.png)
+Your app must show a call to action ![just like for websites](/images/mitid-button-in-native-app.png)
 
-Your app must use a platform-specific web-view (custom tab / Safari view controller) where the user can ![see the address bar and green (TLS) padlock clearly](/images/mitid-native-app-browser-with-address-visible.png)
+Your app must use a platform-specific web view (custom tab / Safari view controller) where the user can ![see the address bar and green (TLS) padlock clearly](/images/mitid-native-app-browser-with-address-visible.png).
 
 
