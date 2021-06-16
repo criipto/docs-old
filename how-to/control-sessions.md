@@ -10,7 +10,7 @@ Enabling Single Sign-On, SSO, for a Criipto Verify domain will let your users ge
 
 {% iconnote info %}
 
-The session information needed to maintain an SSO session is maintained in `HTTP-only`, `Secure` cookies, created with `SameSite=None`. This menas that the session can be established and maintained even if your users access your Criipto Verify domain in third-party context. Cookies and therefore also the SSO session is tied to a single Criipto Verify domain.
+The session information needed to maintain an SSO session is maintained in `HTTP-only`, `Secure` cookies, created with `SameSite=None`. This means that the session can be established and maintained even if your users access your Criipto Verify domain in third-party context. Cookies and therefore also the SSO session is tied to a single Criipto Verify domain.
 
 {% endiconnote %}
 
@@ -28,7 +28,7 @@ You can tweak this behavior on a per-authentication-request basis by specifying 
 
 If you send a `prompt=none` and the user has no session, an error response will be sent back to your supplied callback URL with an `error=login_required` value.
 
-_Note_ that if you are using WS-Federation, and hawe to use a library that supports only tandard parameters, you can achieve the same effect via the `wfresh` parameter. Specify `wfresh=-1` for a `Silent check` and `wfresh=0` for a `Forced login`
+_Note_ that if you are using WS-Federation, and hawe to use a library that supports only standard parameters, you can achieve the same effect via the `wfresh` parameter. Specify `wfresh=-1` for a `Silent check` and `wfresh=0` for a `Forced login`
 
 ## Single LogOut (SLO)
 
