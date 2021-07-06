@@ -8,6 +8,7 @@
 | &nbsp;&nbsp;Same device:                               | `urn:grn:authn:se:bankid:same-device` | `dXJuOmdybjphdXRobjpzZTpiYW5raWQ6c2FtZS1kZXZpY2U=` |
 | &nbsp;&nbsp;Another device (aka mobile):&nbsp;         | `urn:grn:authn:se:bankid:another-device` | `dXJuOmdybjphdXRobjpzZTpiYW5raWQ6YW5vdGhlci1kZXZpY2U=` |
 | &nbsp;&nbsp;QR code:&nbsp;         | `urn:grn:authn:se:bankid:another-device:qr` | `dXJuOmdybjphdXRobjpzZTpiYW5raWQ6YW5vdGhlci1kZXZpY2U6cXI=` |
+| &nbsp;&nbsp;Pick device:&nbsp;         | `urn:grn:authn:se:bankid` | `dXJuOmdybjphdXRobjpzZTpiYW5raWQ=` |
 | **Danish NemID** |
 | &nbsp;&nbsp;Personal with code card:&nbsp;             | `urn:grn:authn:dk:nemid:poces` | `dXJuOmdybjphdXRobjpkazpuZW1pZDpwb2Nlcw==` |
 | &nbsp;&nbsp;Employee with code card:&nbsp;             | `urn:grn:authn:dk:nemid:moces` | `dXJuOmdybjphdXRobjpkazpuZW1pZDptb2Nlcw==` |

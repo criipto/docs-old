@@ -6,42 +6,70 @@ description: How to specify which e-ID method to use for a login flow
 
 # How to request a specific e-ID
 
-When requesting authentication through Criipto Verify you must specify exactly which kind of e-ID the user will use, often including 
-a choice of one out of more options for each type. For example, Swedish BankID allows to different methods, either on the same device
-or on another device.
-
-The following descrribes you options for specifying which specific e-ID method you will request. 
+When requesting authentication through Criipto Verify, you must specify exactly which kind of e-ID that you want your end-user to use - and this will often mean that you have to pre-select one out of several options per e-ID. For example, Swedish BankID allows three different methods, one for same-device login and two for another-device logins.
+ 
+{% iconnote info %}
 
 You can see the list of [supported values for e-ID methods here](/how-to/acr-values/).
 
+{% endiconnote %}
+
+In the following, you can find a description of the options you have for communicating a particular choice of e-ID method to Criipto Verify.
+
 <a name="standards-based"></a>
-## Option 1: The standards-based approach
+## Recommended Option: The standards-based approach
 
-The recommended way of specifying the e-ID method is to send an `acr_values` as a query parameter when using OpenID Connect.  (If you  use WS-Federation, the choice is sent in the  `wauth` parameter). 
+The simplest way of specifying the e-ID method is to use the OpenID Connect (aka OIDC) `acr_values` query parameter. This is the way the standard says you should to go about it, and we recommend that you use it if at all possible.
 
-This is a straightforward excercise in most clients technologies when you integrate directly with Criipto Verify. 
+This is a straightforward excercise in most clients technologies when you integrate directly with Criipto Verify.
 
-In some cases, however, you don't have an option to control how (or if) this parameter is set at runtime. That can be the case when you are working in a less flexible setup, such as
+{% iconnote info %}
+
+If you use the WS-Federation protocol, the corresponding query parameter is called `wauth`, but it works exactly the same way as for OIDC.
+
+{% endiconnote %}
+
+There are cases, however, where you do not have control over how (or if) this parameter is set at runtime. That can be the case when you are working in a less flexible setup, such as
  - Connecting your client application to Criipto Verify via an intermediary identity provider
  - Connecting SaaS-based solutions with Criipto Verify
 
-In cases where you cannot specify the `acr_values` parameter please see below for ways to get around this.
+{% iconnote info %}
+
+Different intermediaries have been observed to treat the OIDC and WS-Federation protocols differently when it comes to relaying the `acr_values` / `wauth` query parameters. We recommend that you test this explictly before considering the alternatives below.
+
+{% endiconnote %}
+
+If you have such a "non-standardizable" case, we support the following alternatives:
 
 <a name="path-embedded"></a>
 
-## Option 2: Embed e-ID method in the URL-path
+## Alternative 1: Embed e-ID method in the URL-path
 
-You can embed the chosen e-ID method in the URL path that your client application uses to request authentication on [as described in detail here](/how-to/work-with-metadata). This approach works for both OpenID Connect (OIDC) and WS-Federation, but is typically something you would set up during configuration time, so it is not very flexible.
+You can embed the chosen e-ID method in the _path_ part of the URL that your client application uses to request authentication on [as described in detail here](/how-to/work-with-metadata). 
 
-Basially you encode the e-ID method, the value you would otherwise put in the `acr_values` query parameter. As an example consider the retrieval of the OIDC discovery document for Swedish BankID same device with a Base64 encoded `urn:grn:authn:se:bankid:same-device`:
+It works by placing (an encoded variant of) the e-ID method value in a dedicated URL _path segment_, instead of sending it in the `acr_values` query parameter.
+
+Basically, the anatomy of the authorize request changes from "/oauth2/authorize?...&**acr_values=urn:grn:authn:se:bankid**&..." to "/**dXJuOmdybjphdXRobjpzZTpiYW5raWQ=**/oauth2/authorize?...", where `dXJuOmdybjphdXRobjpzZTpiYW5raWQ=` is the base64-url encoded value of `urn:grn:authn:se:bankid`.
+
+{% iconnote info %}
+
+The same syntax applies to metadata endpoints, so you can fetch an e-ID method specific OIDC discovery document for SE BankID pick-device from, say:
 ```
-https://yourdomain.criipto.id/dXJuOmdybjphdXRobjpzZTpiYW5raWQ6c2FtZS1kZXZpY2U=/.well-known/openid-configuration
+https://yourdomain.criipto.id/dXJuOmdybjphdXRobjpzZTpiYW5raWQ=/.well-known/openid-configuration
 ```
+
+{% endiconnote %}
+
+{% iconnote info %}
+
+This approach works for both OIDC and WS-Federation, but is typically something you would have to set up as a static configuration, so it is not very flexible.
+
+{% endiconnote %}
 
 <a name="login-hint-embedded"></a>
 
-## Option 3: Embedded in the login_hint query parameter (OIDC only)
-Specifically for OpenID Connect some intermediate services, for example Auth0, will relay a provided `login_hint` to upstream  identity providers such as Criipto. Exploiting this option you may use this parameter to communicate the choice of e-ID method.
+## Alternative 2: Embedded in the login_hint query parameter (OIDC only)
+Specifically for OIDC, some intermediate services, for example Auth0, will relay a provided `login_hint` to upstream  identity providers such as Criipto. You can take advantage of that to communicate the choice of e-ID method.
 
 You must use the following format for the embedding:
 ```
@@ -58,7 +86,7 @@ You can also use this workaround in conjunction with sending other [prefilled fi
 
 <a name="http-header"></a>
 
-## Option 4: In an HTTP header (OIDC only)
+## Alternative 3: In an HTTP header (OIDC only)
 You can also send the targeted e-ID method in an `acr_values` HTTP request header:
 ```
 acr_values: <e-ID method>
@@ -66,12 +94,12 @@ acr_values: <e-ID method>
 
 ## Order of precedence 
 
-Each of the above e-ID method options in order of precedence:
+Each of the above e-ID method options, in order of precedence:
 
-1. `acr_values` specifies the chosen e-ID method
-2. `login_hint` embeds the chosen e-ID method
-3. An HTTP header named `acr_values` contains the chosen e-ID method
-3. The URL-path contains an encoded e-ID method value 
+1. `acr_values` query parameter
+2. `login_hint` embedded
+3. An HTTP header named `acr_values`
+3. URL _path segment_ with encoded e-ID method value
 
 ## Can't make any of the options work for you?
 Drop us a message on <a href="mailto:support@criipto.com">support@criipto.com</a> with a description of your scenario if you are not able to make the above work for you.
