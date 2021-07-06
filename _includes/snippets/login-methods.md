@@ -12,10 +12,10 @@ The current list of possible values is:
 | **Norwegian Vipps Login** |
 | &nbsp;&nbsp;Login with Vipps app:&nbsp;                | `urn:grn:authn:no:vipps` |
 | **Swedish BankID** |
+| &nbsp;&nbsp;All options (user chooses):&nbsp;          | `urn:grn:authn:se:bankid` |
 | &nbsp;&nbsp;Same device:                               | `urn:grn:authn:se:bankid:same-device` |
 | &nbsp;&nbsp;Another device (aka mobile):&nbsp;         | `urn:grn:authn:se:bankid:another-device` |
-| &nbsp;&nbsp;QR code:&nbsp;         | `urn:grn:authn:se:bankid:another-device:qr` |
-| &nbsp;&nbsp;Pick device:&nbsp;         | `urn:grn:authn:se:bankid` |
+| &nbsp;&nbsp;QR code:&nbsp;                             | `urn:grn:authn:se:bankid:another-device:qr` |
 | **Danish NemID** |
 | &nbsp;&nbsp;Personal with code card:&nbsp;             | `urn:grn:authn:dk:nemid:poces` |
 | &nbsp;&nbsp;Employee with code card:&nbsp;             | `urn:grn:authn:dk:nemid:moces` |
@@ -26,7 +26,7 @@ The current list of possible values is:
 | **Finish e-ID** |
 | &nbsp;&nbsp;BankID:                                    |`urn:grn:authn:fi:bank-id` |
 | &nbsp;&nbsp;Mobile certificate (Mobiilivarmenne):&nbsp;|`urn:grn:authn:fi:mobile-id` |
-| &nbsp;&nbsp;Any of the two:                            |`urn:grn:authn:fi:all` |
+| &nbsp;&nbsp;Both of the above:                         |`urn:grn:authn:fi:all` |
 | **Itsme** |
 | &nbsp;&nbsp;Basic:                                     | `urn:grn:authn:itsme:basic` |
 | &nbsp;&nbsp;Advanced:                                  | `urn:grn:authn:itsme:advanced` |

@@ -61,11 +61,11 @@ If you want to receive the response in another way you must specify the `respons
 
 | Parameter name  | Description |
 |-----------------|-------------|
-| `response_type` | Denotes the kind of credential that Criipto will return (`code` or `id_token`). If you are integrating a traditional server based web application (back-channel flow) or a *PKCE-enabled* client, use `code`. Use `id_token` for legacy single page applications using a front-channel flow |
-| `client_id`     | Your application's Client ID. You can find this value in the Criipto Verify UI in the settings for actual application |
+| `response_type` | Denotes the kind of credential that Criipto will return (`code` or `id_token`). If you are integrating a traditional server based web application (back-channel flow) or a *PKCE-enabled* client, use `code`. Use `id_token` for legacy single page applications using a front-channel flow. |
+| `client_id`     | Your application's Client ID. You can find this value in the Criipto Verify UI in the settings for actual application. |
 | `redirect_uri`  | The URL to which Criipto will redirect the browser after authentication has been completed. The authorization code and the `id_token` will be available in the `code` and `id_token` URL parameter for the back-channel flow and on a URL query parameter for the front-channel flow. This URL must be pre-registered as a valid callback URL in your application settings.<br /> <br /> **Warning:** Per the [OAuth 2.0 Specification](https://tools.ietf.org/html/rfc6749#section-3.1.2), Criipto removes everything after the hash and does *not* honor any fragments. |
-| `scope`         | Specify `openid` |
-| `acr_values`    | Identifies which e-ID identity service you want to use. You can only specify one value, and it must identify the exact type of identity service, as some countries have both e.g. a mobile and web based service. Possible values are [listed here](/how-to/acr-values). |
+| `scope`         | Specify `openid`. This gets you the information configured for each kind of e-ID. |
+| `acr_values`    | Identifies which e-ID identity service you want to use. You can only specify one value, and it must identify the exact type of identity service, as some countries have, for example, both a mobile and web based service. Possible values are [listed here](/how-to/acr-values). |
 | `response_mode` | (optional) Specifies how you want your result delivered via the `redirect_uri`: Use `query` to return the `code`/`id_token` as a query parameter, `fragment` to have it delivered on a URL fragment, and finally `form_post` to have it posted back to your `redirect_uri`.  <br />  <br /> Default values are `query` for `response_type=code` and `query` for `response_type=id_token`. |
 | `state`         | (optional but recommended) An opaque arbitrary alphanumeric string your app adds to the initial request that Criipto includes when redirecting back to your application. |
 | `login_hint` | (optional) Some e-ID types will prompt users for input such as phone number or SSN. To avoid this you may pass these data in the `login_hint` as described [here](/how-to/specify-prefilled-fields). |
