@@ -6,26 +6,26 @@ title: MitID user interface requirements
 
 # MitID user interface requirements
 
-When supporting MitID in your application, you must adhere to a few style requirements, both [in your application](#yourapp) 
-and on [the MitID landing page](#landingpage) hosted by Criipto.  
+When supporting MitID in your application, you must adhere to a few style requirements, both [in your application](#webapp) 
+and on [the MitID landing page](#landingpage) hosted by Criipto.
 
-As long as you follow the guidelines below, you must comply with the UX requirements from MitID. Please reach out to our support if you have questions about this or if you want us to verify that your buttons and landing page comply.
+As long as you follow the guidelines below, you should be in compliance with the UX requirements from MitID. However, please reach out to our support if you need assistance verifying that your buttons, pages, and screens comply.
 
 {% iconnote info %}
 
-Note that when moving to production with MitID you will be agreeing to the terms of service for MitID in which you - among other things - commit to the below UX requirements.
+Note that when moving to production with MitID you will be bound by the terms of service for MitID in which you - among other things - commit to the below UX requirements.
 
 Also, Criipto may request that you submit a URL where we can verify that you are, in fact, in line with the requirements.
 
 {% endiconnote %}
 
-<a name="yourapp"></a>
+<a name="landingpage"></a>
 
 ## The MitID landing page
 
 With MitID everything happens on a page hosted by Criipto. Specifically, MitID cannot be iframed, only shown in full page view.
 
-You will therefore redirect the current page to Criipto, or you may open up a popup window. The latter is only relevant on the desktop and is typically not recommended by Criipto.
+You will therefore redirect the current page to Criipto (alternatively [open a web view](#mobileapp) in a native app), or you may open up a popup window. The latter is only relevant on the desktop and is typically not recommended by Criipto.
 
 ### Styling the landing page
 
@@ -36,21 +36,23 @@ It is essential that you do not, under any circumstances, change the styling or 
 
 ![MitID default landing page](/images/mitid-landing-page.png)
 
-<a name="yourapp"></a>
+<a name="webapp"></a>
 
 ## MitiD branding in your application
 
 When referring to MitID in your application, web or native alike, you must make sure your language and styling matches 
 the requirements.
 
+If you are building a native app a few additional requirements must be observed as [described below](#mobileapp).
+
 Criipto currently provides required assets, such as the MitID logo, upon request. 
 ### Call to Action
 
 When providing a call to action, for example, log in or sign, make sure you follow these requirements:
 
-- Always use a button or anchor tag, `<a>` or `<button>`, to make sure it is accessible for keyboard
+- In web applications, always use a button or anchor tag, `<a>` or `<button>`, to make sure it is accessible for keyboard
 navigation and screen readers according to the WCAG 3.0 standard. 
-- The button must be the right color of blue with the white text. See the exact style guide below.
+- The button must be the right color of blue with the white text. See the detailed styling below.
 - The button text must be exactly one of the five allowed phrases as listed below.
 
 The MitID button should be shown with lightly rounded corners:
@@ -80,9 +82,19 @@ The text inside the button must be from the set of approved texts:
 | Acceptér med MitID | Accept with MitID |
 | Underskriv med MitID | Sign with MitID |
 
-## MitID from a native app
-Your app must show a call to action ![just like for websites](/images/mitid-button-in-native-app.png)
+<br/>
 
-Your app must use a platform-specific web view (custom tab / Safari view controller) where the user can ![see the address bar and green (TLS) padlock clearly](/images/mitid-native-app-browser-with-address-visible.png).
+<a name="mobileapp"></a>
+
+## MitID branding in a native app
+
+Just as illustrated above, your app must show a call to action which will open a webview hosting the MitID landing page:
+
+<img src="/images/mitid-button-in-native-app.png" alt="MitID CTA in native app" style="width: 300px; box-shadow: none;">
+
+Your app must use a platform-specific web view (Custom Tab on Android and Safari View Controller on iOS) which clearly reassures the user that they 
+are on a legitimate mitid.dk domain with appropriate security (TLS and the padlock symbol):
+
+<img src="/images/mitid-native-app-browser-with-address-visible.png" alt="MitID CTA in native app" style="width: 300px; box-shadow: none;">
 
 

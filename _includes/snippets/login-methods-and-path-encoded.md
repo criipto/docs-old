@@ -21,9 +21,9 @@
 | &nbsp;&nbsp;Mobile certificate (Mobiilivarmenne):&nbsp;|`urn:grn:authn:fi:mobile-id` | `dXJuOmdybjphdXRobjpmaTptb2JpbGUtaWQ=` |
 | &nbsp;&nbsp;Both of the above:                         |`urn:grn:authn:fi:all` | `dXJuOmdybjphdXRobjpmaTphbGw=` |
 | **Itsme** |
-| &nbsp;&nbsp;Basic:                                     | `urn:grn:authn:itsme:basic` | `dXJuOmdybjphdXRobjppdHNtZTpiYXNpYw==` |
-| &nbsp;&nbsp;Advanced:                                  | `urn:grn:authn:itsme:advanced` | `dXJuOmdybjphdXRobjppdHNtZTphZHZhbmNlZA==` |
+| &nbsp;&nbsp;Basic:&nbsp;                               | `urn:grn:authn:itsme:basic` | `dXJuOmdybjphdXRobjppdHNtZTpiYXNpYw==` |
+| &nbsp;&nbsp;Advanced:&nbsp;                            | `urn:grn:authn:itsme:advanced` | `dXJuOmdybjphdXRobjppdHNtZTphZHZhbmNlZA==` |
 | **Belgium** |
-| &nbsp;&nbsp;Verified e-ID                              | `urn:grn:authn:be:eid:verified` | `dXJuOmdybjphdXRobjpiZTplaWQ6dmVyaWZpZWQ=` |
+| &nbsp;&nbsp;Verified e-ID:&nbsp;                       | `urn:grn:authn:be:eid:verified` | `dXJuOmdybjphdXRobjpiZTplaWQ6dmVyaWZpZWQ=` |
 | **Germany** |
-| &nbsp;&nbsp;Sofort (with Schufa check)                 | `urn:grn:authn:de:sofort` | `dXJuOmdybjphdXRobjpkZTpzb2ZvcnQ=` |
+| &nbsp;&nbsp;Sofort (with Schufa check):&nbsp;          | `urn:grn:authn:de:sofort` | `dXJuOmdybjphdXRobjpkZTpzb2ZvcnQ=` |
