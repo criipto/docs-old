@@ -6,8 +6,8 @@ description: How to customize the UI in user-facing dialogs
 
 # Apply custom styling to login pages
 
-Some of the e-ID methods require additional dialogs outside of those of the actual eID service. These may be styled to you liking 
-using CSS as described below.
+Some of the e-ID methods require additional dialogs outside of those of the actual eID service.
+These may be styled to you liking using CSS as described below.
 
 ## Preview of the user-facing dialogs
 You can see a preview of the dialogs in the `Identity Services` tab for your tenant in the management dashboard on [manage.criipto.id](https://manage.criipto.id) - such as the ones for SE BankID:
@@ -21,6 +21,42 @@ Each of the previews is shown in mobile device size by default, but you can expa
 You can enter a URL to your own (self-hosted) stylesheet just above the previews, and experiment with the effect of changing the preview tile size. The previews use the value in the `Link to your own stylesheet` field, so you can see the effect of your customizations before you hit `Save`.
 
 ![Custom Styling](/images/custom-styling.png)
+
+<a name="dynamic-stylesheets"></a>
+
+## 'Dynamic' stylesheets
+
+In some cases, bundling all of your CSS in just one stylesheet can be tricky and/or infeasible. Criipto Verify supports overriding the _path_ part of the stylesheet URL on a per-authorize request basis.
+
+You can specify a `css_path:/a/b/...?c=d&e=f&...` token in the `login_hint` query parameter in your authorize request, which will then override the path and query parts of the pre-configured stylesheet URL.
+Criipto Verify will use the authority part of your pre-configured URL as a "base" URL, and then set the value you specify in the `css_path` token as the path name and query part of the stylesheet URL.
+
+{% iconnote info %}
+
+If you have not configured a custom stylesheet URL, Criipto Verify ignores the `css_path` token in the `login_hint` query parameter.
+
+{% endiconnote %}
+
+### Example
+
+If you have configured, say,
+```
+https://my.css.host/static/path
+```
+as a custom stylesheet, and your construct an authorize request containing a
+```
+css_path:dynamic/subpath?q=x
+```
+in the `login_hint` parameter, the resulting CSS URL put in the HTML responses from Criipto Verify will change to
+```
+https://my.css.host/dynamic/subpath?q=x
+```
+
+{% iconnote info %}
+
+You can specify more than 1 query parameter in the `css_path` token. In this case, you must URL-component encode (at least) the `&` characters in the query before adding them to the value of the `css_path` token. The URL-component version of the `&` chararcter is `%26`.
+
+{% endiconnote %}
 
 ## Common HTML structures found in user-facing dialogs
 
