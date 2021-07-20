@@ -8,12 +8,10 @@ Description: Get ready for production with Danish MitID
 
 {% iconnote info %}
 
-**MitID is expected to go live in mid-August 2021**
+**MitID is expected to go live in October 2021**
 
-The first person to be issued a MitID is planned for mid August 2021. All the holders of NemID will then be migrated
-gradually to MitID during the following 6-9 months.
-
-You can start ordering MitID for production from June 2021. More on the process will be provided here.
+The first person to be issued a MitID is planned for October 2021 and that's when MitID start appearing side-by-side with NemID
+in production. All the holders of NemID will then be migrated gradually to MitID during the following 6-9 months.
 
 {% endiconnote %}
 
