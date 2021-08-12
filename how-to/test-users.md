@@ -114,20 +114,7 @@ That said the steps to create a test user are fairly simple:
 The current OTP card(s) can be accessed on the same testtools-site as above.
 
 Unfortunately, it is not possible to use the testtools-site to create your own test-employee users.
-We have pre-created [the following test employee account](https://appletk.danid.dk/testtools/viewstatus.jsp?userid=putandtracktest) that you can use:
-
-| **User ID** | **Password** |
-| --- | --- |
-| putandtracktest | PandT123 |
-
-
-{% iconnote note %}
-
 If you need to have your own test-MOCES accounts created, you must contact NETS directly.
-
-{% endiconnote %}
-
-<br/>
 
 <a name="fibankid"></a>
 
