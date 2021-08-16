@@ -36,6 +36,4 @@ All other additional data are treated as optional values. A login may complete e
 
 ## Configuration
 
-You can use the Criipto Verify management dashboard [manage.criipto.id](https://manage.criipto.id) to configure access to the SSN, in the **Identity Sources** -> **NO BankID** section.
-
-If you need access to the unverified data, get in touch, and we will enable it for you.
+You can use the Criipto Verify management dashboard [manage.criipto.id](https://manage.criipto.id) to configure access to these two types of user data, in the **Identity Sources** -> **NO BankID** section.
