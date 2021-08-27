@@ -36,4 +36,4 @@ All other additional data are treated as optional values. A login may complete e
 
 ## Configuration
 
-You can use the Criipto Verify management dashboard [manage.criipto.id](https://manage.criipto.id) to configure access to these two types of user data, in the **Identity Sources** -> **NO BankID** section.
+You can use the Criipto Verify management dashboard [manage.criipto.id](https://manage.criipto.id) to configure access to the optional user data, in the **Identity Sources** -> **NO BankID** section.
