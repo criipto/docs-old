@@ -18,22 +18,22 @@ Each e-ID method supports a specific set of languages - see [UI Language](/choos
 
 Each of the previews is shown in mobile device size by default, but you can expand each of the previews to desktop size by clicking on the dashed square shown just above each preview. In desktop mode, all dialogs will have a customizable common header and footer structure, as well as the elements presented for mobile devices.
 
-You can enter a URL to your own (self-hosted) stylesheet just above the previews, and experiment with the effect of changing the preview tile size. The previews use the value in the `Link to your own stylesheet` field, so you can see the effect of your customizations before you hit `Save`.
+You can enter a URL to your own (self-hosted) style sheet just above the previews, and experiment with the effect of changing the preview tile size. The previews use the value in the `Link to your own style sheet` field, so you can see the effect of your customizations before you hit `Save`.
 
 ![Custom Styling](/images/custom-styling.png)
 
 <a name="dynamic-stylesheets"></a>
 
-## 'Dynamic' stylesheets
+## 'Dynamic' style sheets
 
-In some cases, bundling all of your CSS in just one stylesheet can be tricky and/or infeasible. Criipto Verify supports overriding the _path_ part of the stylesheet URL on a per-authorize request basis.
+In some cases, bundling all of your CSS in just one style sheet can be tricky and/or infeasible. Criipto Verify supports overriding the _path_ part of the style sheet URL on a per-authorize request basis.
 
-You can specify a `css_path:/a/b/...?c=d&e=f&...` token in the `login_hint` query parameter in your authorize request, which will then override the path and query parts of the pre-configured stylesheet URL.
-Criipto Verify will use the authority part of your pre-configured URL as a "base" URL, and then set the value you specify in the `css_path` token as the path name and query part of the stylesheet URL.
+You can specify a `css_path:/a/b/...?c=d&e=f&...` token in the `login_hint` query parameter in your authorize request, which will then override the path and query parts of the pre-configured style sheet URL.
+Criipto Verify will use the authority part of your pre-configured URL as a "base" URL, and then set the value you specify in the `css_path` token as the path name and query part of the style sheet URL.
 
 {% iconnote info %}
 
-If you have not configured a custom stylesheet URL, Criipto Verify ignores the `css_path` token in the `login_hint` query parameter.
+If you have not configured a custom style sheet URL, Criipto Verify ignores the `css_path` token in the `login_hint` query parameter.
 
 {% endiconnote %}
 
@@ -43,7 +43,7 @@ If you have configured, say,
 ```
 https://my.css.host/static/path
 ```
-as a custom stylesheet, and your construct an authorize request containing a
+as a custom style sheet, and your construct an authorize request containing a
 ```
 css_path:dynamic/subpath?q=x
 ```
@@ -70,7 +70,7 @@ These appear in both common and dialog-specific HTML elements. The structure is 
         <span class="text">...english words...</span>
     </span>
 ```
-The wording can be change via CSS selectors in your custom stylesheet - see below for examples.
+The wording can be change via CSS selectors in your custom style sheet - see below for examples.
 Depending on the e-ID, the `lang-sv` class will be replaced with `lang-da`, `lang-nb` etc.
 
 ## Desktop screen sizes
@@ -211,7 +211,7 @@ You get the best overview if you expand the preview first.
 ## Example: Replacing headline texts in the signature flow for SE BankID
 If you expand the `Another Device: Prompt for SSN` preview, you'll se a `{Log in with BankId | Logga in med BankId}` headline text (actual text will depend on the currently selected language for the SE BankID previews).
 
-Should you also want to change the wording for signature flow, you could add the following selectors to your custom stylesheet:
+Should you also want to change the wording for signature flow, you could add the following selectors to your custom style sheet:
 ```css
 .sign #headline .lang span {
   display: none;
