@@ -111,7 +111,7 @@ HTTP POST https://YOUR_SUBDOMAIN.criipto.id/oauth2/token
 Content-Type: application/x-www-form-urlencoded
 Authorization: Basic <BASE64(xWwwFormUrlEncode(CLIENT_ID):xWwwFormUrlEncode(CLIENT_SECRET))>
 
-grant_type=authorization_code&code=AUTHORIZATION_CODE&redirect_uri=YOUR_RETURN_URL
+grant_type=authorization_code&code=AUTHORIZATION_CODE&client_id=CLIENT_ID&redirect_uri=YOUR_RETURN_URL
 ```
 
 ***Note*** _We do also support receiving the client credentials in the payload, but this usage is discouraged by the OAuth2 specification, and we strongly recommend that you send the credentials in the `Authorization: Basic ...` HTTP header value as described above._
