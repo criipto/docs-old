@@ -45,7 +45,12 @@ the requirements.
 
 If you are building a native app a few additional requirements must be observed as [described below](#mobileapp).
 
-Criipto currently provides required assets, such as the MitID logo, upon request. 
+{% iconnote info %}
+
+Download the required assets, the MitID logo and fonts, [directly from our web site](/downloads/MitID-assets.zip). 
+
+{% endiconnote %}
+
 ### Call to Action
 
 When providing a call to action, for example, log in or sign, make sure you follow these requirements:
