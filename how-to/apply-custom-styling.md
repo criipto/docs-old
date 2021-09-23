@@ -14,7 +14,7 @@ You can see a preview of the dialogs in the `Identity Services` tab for your ten
 
 ![Previews](/images/preview-sebankid.png)
 
-Each e-ID method supports a specific set of languages - see [UI Language](/choose-language.md) for details. You can change the language used to generate the previews in the dropdown.
+Each e-ID method supports a specific set of languages - see [UI Language]({% link how-to/choose-language.md %}) for details. You can change the language used to generate the previews in the dropdown.
 
 Each of the previews is shown in mobile device size by default, but you can expand each of the previews to desktop size by clicking on the dashed square shown just above each preview. In desktop mode, all dialogs will have a customizable common header and footer structure, as well as the elements presented for mobile devices.
 
