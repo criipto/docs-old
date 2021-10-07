@@ -9,14 +9,36 @@
   var sp = new StatusPage.page({ page : 'rmcp9k87gctd' });
   sp.components({
     success: function(data) {
+      const eid_list_id = 'kb5rdx4qskc1';
+      const addons_list_id = '5gcvrf1gckpp';
+      const core_id ='z9tsg5vbfvw1';
       data.components.forEach(component => {
-        var element = document.getElementById(component.id);
-        var classesToAdd = classByStatus[component.status];
-        classesToAdd.split(' ').forEach(function(classToAdd) {
-          if(classToAdd.length > 0 && !element.classList.contains(classToAdd)) {
-            element.classList.add(classToAdd);
-          }
-        });
+        if(component.group || component.group_id == null) {  // top level
+          let anchor = document.getElementById(component.id);
+          setStatus(component, anchor);
+        }
+        else {
+          let parent = document.getElementById(component.group_id + '-content');
+          if (!parent) return;
+          let li = document.createElement('li');
+          let anchor = document.createElement('a');
+          anchor.classList.add('status');
+          setStatus(component, anchor);
+          anchor.appendChild(document.createTextNode(component.name));
+          li.appendChild(anchor);
+          parent.appendChild(li);
+        }
+
+        function setStatus(component, anchor) {
+          anchor.href = component.href || "https://status.criipto.com";
+          anchor.target = '_blank';
+          let classesToAdd = classByStatus[component.status];
+          classesToAdd.split(' ').forEach(function (classToAdd) {
+            if (classToAdd.length > 0 && !anchor.classList.contains(classToAdd)) {
+              anchor.classList.add(classToAdd);
+            }
+          });
+        }
       });
 
       var operationalComponents = data.components.filter(component => component.status === 'operational');
@@ -46,3 +68,4 @@
     }
   })
 })();
+
