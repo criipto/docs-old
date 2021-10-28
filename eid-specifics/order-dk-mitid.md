@@ -47,7 +47,7 @@ If your company is registered in Denmark please follow these steps:
 
 Expect this process to take 5-7 workdays.
 
-## Apply for production access - companies registered in Denmark
+## Apply for production access - companies *not* registered in Denmark
 
 If you company is not registered in Denmark, menaing you don't have NemID/MitID employee signatures ("medarbejdersignatur"), please send a request for MitID onboarding to (support@criipto.com)[mailto:support@criipto.com].
 
