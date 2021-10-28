@@ -1,5 +1,8 @@
-### Complete the onboarding process
-1. Once you receive a confirmation from Criipto (via email), go back to the "Identity sources" section and open "DK MitID". Once Criipto has processed your registration and Nets has set up the `mitid.dk` domain, the `Complete` button will become active for you to click
+## Complete the onboarding process
+
+Once you receive a confirmation from Criipto (via email), go back to the "Identity sources" section and open "DK MitID". Nets has now set up the `mitid.dk` domain, and the **Complete** button will be active for you to click.
+
+1. Click the **Complete** button in the MitID section to finish the registration process
 2. Configure the various options that appear after the onboarding completes.
     - If you use our service for NemID as well, select a `NemID fallback domain`. *Note* this is only relevant if you, for some reason, send requests directly to your `mitid.dk` domain. 
     - If you need access to the end-user's CPR number, make sure the `Add CPR for MitID logins` toggle is enabled.
