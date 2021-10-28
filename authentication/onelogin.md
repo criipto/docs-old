@@ -30,8 +30,8 @@ This tutorial demonstrates how to integrate Criipto Verify with OneLogin. The fo
 
   A completed application registration will look as follows:
 
-  ![Register App](/images/onelogin-register-application.jpeg)
-
+![Add New App](/images/onelogin-add-new-application.png)
+![Choose e-ID's](/images/onelogin-choose-eids.png)
 
 <a name="enable"></a>
 
@@ -39,14 +39,14 @@ This tutorial demonstrates how to integrate Criipto Verify with OneLogin. The fo
 
 1. Navigate to applications
 2. Select the application configured in the previous section
-3. Scroll down to the OpenID Connect application section and enable `Enable OAuth2 Code Flow` be selecting the corresponding toggle
-4. You will be presented with the following pop up
-  ![Client secret popup](/images/client-secret-popup.jpeg)
-5. Select `OK`
-6. The client secret will be displayed - This will be needed when configuring the Trusted IDP within OneLogin. Please note this is the only time the client secret will be displayed. Criipto only stores the client secret as a hashed value, meaning it can not be retrieved again once generated and stored.
-7. Leave remaining settings as default.
+3. Scroll down to the OpenID Connect application section and enable `Enable OAuth2 Code Flow` by selecting the corresponding toggle:
+  ![Client secret on save](/images/onelogin-client-secret-on-save.png)
+4. Click `Save`
+5. The client secret will be displayed - This will be needed when configuring the Trusted IDP within OneLogin. Please note this is the only time the client secret will be displayed. Criipto only stores the client secret as a hashed value, meaning it can not be retrieved again once generated and stored.
+  ![OAuth2 config](/images/oauth2-client-secret.png)
+6. Leave remaining settings as default.
 
-![OAuth2 config](/images/oauth2-code-flow.png)
+
 
 <a name="onelogin"></a>
 
