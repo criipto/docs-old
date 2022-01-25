@@ -67,5 +67,12 @@ The response will be either a `302 Redirect` (with a `Location` HTTP response he
 
 ## Danish MitID
 
-You must (still) use a Custom Tab / Safari View Controller to run the login flow, but an app-switch button will show up in the MitID Core Client, allowing the user to launch the MitID app. Once the flow completes, the MitID app will perform an app-switch back to the Custom Tab / SafariViewController of your native application.
-This will trigger the Broker Landing Page in your Criipto Verify tenant, which will then complete the MitID login process, and then issue an OAuth2 response to your native app, typically an access code. This code can then be exchanged for a token.
+You must (still) use a either a `Custom Tab` (on `Android`) or an `SFAuthenticationSession` (on `iOS`) to run the login flow in your app, but an app-switch button will show up in the MitID Core Client, allowing the user to launch the MitID app from the browser.
+
+{% iconnote info %}
+
+On `iOS`, you can also use an `SFSafariViewController` if the `SFAuthenticationSession` is unavailable.
+
+{% endiconnote %}
+
+Once the flow completes, the MitID app will perform an app-switch back to your app, which makes the `Custom Tab` / `SFAuthenticationSession` resume its operation, thus completing the login process by issuing an `OAuth2` formatted response to your native app.
