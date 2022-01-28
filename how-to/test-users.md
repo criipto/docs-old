@@ -69,7 +69,7 @@ For testing you may order up to three test SIM cards through Criipto once you ha
 
 ## Norwegian Vipps Login
 
-In order to test Vipps Login you need to install the Vipps app in a special test version on your device. Follow the Vipps [guide for intstructions](https://github.com/vippsas/vipps-developers/blob/master/vipps-test-environment.md#vipps-test-apps) on how to set up test apps.
+In order to test Vipps Login you need to install the Vipps app in a special test version on your device. Follow the Vipps [guide with instructions](https://github.com/vippsas/vipps-developers/blob/master/vipps-test-environment.md#vipps-test-apps) on how to set up test apps.
 
 In order to test you also need a test phone number. Write to [support@criipto.com](mailto:support@criipto.com) and put something like "Vipps Login test number" in the subject line.
 
