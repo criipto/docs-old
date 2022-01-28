@@ -57,6 +57,8 @@ Note that providing `response_type=code` specifies that you want either the trad
 
 If you want to receive the response in another way you must specify the `response_mode` parameter, see below.
 
+<a name="authorize-request-parameters"></a>
+
 #### Parameters
 
 | Parameter name  | Description |
@@ -68,7 +70,7 @@ If you want to receive the response in another way you must specify the `respons
 | `acr_values`    | Identifies which e-ID identity service you want to use. You can only specify one value, and it must identify the exact type of identity service, as some countries have, for example, both a mobile and web based service. Possible values are [listed here](/how-to/acr-values). |
 | `response_mode` | (optional) Specifies how you want your result delivered via the `redirect_uri`: Use `query` to return the `code`/`id_token` as a query parameter, `fragment` to have it delivered on a URL fragment, and finally `form_post` to have it posted back to your `redirect_uri`.  <br />  <br /> Default values are `query` for `response_type=code` and `query` for `response_type=id_token`. |
 | `state`         | (optional but recommended) An opaque arbitrary alphanumeric string your app adds to the initial request that Criipto includes when redirecting back to your application. |
-| `login_hint` | (optional) Some e-ID types will prompt users for input such as phone number or SSN. To avoid this you may pass these data in the `login_hint` as described [here](/how-to/specify-prefilled-fields). |
+| `login_hint` | (optional) Some e-ID types will prompt users for input such as phone number or SSN. To avoid this you may pass these data in the `login_hint` as described [here](/how-to/specify-prefilled-fields). <br /> <br />Multiple values can be sent in a `login_hint`. They must be separated by a whitespace.|
 
 
 As an example, your HTML snippet for your authorization URL when adding login to your app might look like:

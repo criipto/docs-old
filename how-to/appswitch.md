@@ -13,10 +13,12 @@ This will require that you take on a bit more work to orchestrate the login proc
 You should always start by detecting the presence of the native e-ID app on the users device.
 The implementation of this check is OS dependent, so you need to consult the platform's documentation for guidance.
 
-If the desired app is present on the users device, you must augment the authorize request you send to Criipto Verify with one of the following values (also OS dependent)
+If the desired app is present on the users device, you must augment the authorize request you send to Criipto Verify so it contains one of the following values (also OS dependent)
 
  - `login_hint=appswitch:ios`
  - `login_hint=appswitch:android`
+
+The value must be sent in the `login_hint` query parameter. Further details on this (and other) parameters in an authorize request can be found [here](/getting-started/oidc-intro#authorize-request-parameters)
 
 Your app is responsible for sending the appropriate value for the platform it is deployed on.
 
