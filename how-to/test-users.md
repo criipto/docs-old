@@ -19,7 +19,7 @@ You may refer to the sections below for test users for your choice of e-ID:
 - [Norwegian Vipps Login](#novipps)
 - [Danish MitID](#dkmitid)
 - [Danish NemID](#dknemid)
-- [Finnish BankID](#fibankid)
+- [Finnish Trust Network, FTN](#fibankid)
 - [Itsme](#beitsme)
 - [Belgian eID](#beeid)
 - [German Sofort](#desofort)
@@ -118,80 +118,23 @@ If you need to have your own test-MOCES accounts created, you must contact NETS 
 
 <a name="fibankid"></a>
 
-## Finnish BankID
+<br/>
+## Finnish Trust Network, FTN
 
-A set list of test users for the different banks are given below. Sometimes the test credentials will be shown also on the actual login page at the bank.
- 
+Testing is allowed with a few of the banks as described below.
+
 ### Aktia
 
-Käyttäjätunnus: `12345678`<br/>
-Salasana: `123456`<br/>
-Turvaluku: `1234`<br/>
-Turvaluku 2: `1234`<br/>
-
-### Danske Bank
-
-Must use your own customer credentials. No real cash is withdrawn from your bank account.
- 
-### Handelsbanken
-
-Käyttäjätunnus: `11111111`<br/>
-Salasana: `123456`<br/>
-Turvaluku: `123456`<br/>
-Turvaluku 2: `123456`<br/>
- 
-### LähiTapiola
-
-Käyttäjätunnus: `12345678`<br/>
-Salasana: any numbers<br/>
-Tunnusluku: any four numbers<br/>
-Tunnusluku 2: any four numbers<br/>
+The test user info is prefilled. Just go with that.
  
 ### Nordea
 
-Tunnus: `123456`<br/>
-Salasana: `1234`<br/>
-Vahvistustunnus: any four numbers<br/>
- 
+Click the "Need Help?" button and user one of the suggested user names, for example `DEMOUSER1`
+
 ### OP / Osuuspankki
 
-Käyttäjätunnus: `123456`<br/>
-Salasana: `7890`<br/>
-Avainluku: any four numbers<br/>
+The test user info is prefilled. Just go with that.
  
-POP Bank
-Käyttäjätunnus: `11111111`<br/>
-Salasana: `123456`<br/>
-Turvaluku: `123456`<br/>
-Turvaluku 2: `123456`<br/>
- 
-### S-Bank
-
-Käyttäjätunnus: `12345678`<br/>
-Salasana: any numbers<br/>
-Tunnusluku: any four numbers<br/>
-Tunnusluku 2: any four numbers<br/>
- 
-### Savings bank
-
-Käyttäjätunnus: `11111111`<br/>
-Salasana: `123456`<br/>
-Turvaluku: `123456`<br/>
-Turvaluku 2: `123456`<br/>
- 
-### Ålandsbanken
-
-Käyttäjätunnus: `12345678`<br/>
-Salasana: any numbers<br/>
-Tunnusluku: any four numbers<br/>
-Tunnusluku 2: any four numbers<br/>
- 
-### Oma Säästöpankki
-
-Käyttäjätunnus: `11111111` / `22222222`<br/>
-Salasana: `123456`<br/>
-Turvaluku: `123456`<br/>
-Turvaluku 2: `123456`<br/>
 
 <br/>
 
