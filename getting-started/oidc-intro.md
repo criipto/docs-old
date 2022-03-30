@@ -4,7 +4,7 @@ title: Introduction to OpenID Connect
 description: Learn the how Criipto supports the OpenID Connect protocol
 ---
 
-# Using OpenID Connect to integrate vith Criipto Verify
+# Using OpenID Connect to integrate with Criipto Verify
 
 Criipto Verify is integrated through the authentcation API which follows the OpenID Connect and OAuth2 specifications. 
 
