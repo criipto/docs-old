@@ -76,7 +76,7 @@ There are three important steps in obtaining a signature:
 
 A first step in obtaining a signature is to upload one or more PDF documents to Criipto Verify, which will respond with a redirect URI where you have to redirect the users browser to, so they can complete the signature process.
 
-Endpoint: `/sign/pdfv1`
+Endpoint: `/sign/pdfv1` (which accepts `JSON` payloads).
 
 Query parameters:
   * `wa` - constant value: `wsignin1.0`
@@ -84,6 +84,7 @@ Query parameters:
   * `wreply` - a signature callback URL for your application
   * `wauth` - `acr_value` of the authentication method. Currently only the Norwegian BankID, `urn:grn:authn:no:bankid`, may be used for PDF signing.
   * `ui_locales` - specify the UI language to use by authentication provider
+
 
 Body parameters:
   * signProperties: Object\<SignProperties\>
@@ -123,7 +124,7 @@ public class PdfSeal {
 }
 ```
 
-Full URI example: `{your_criipto_domain}/sign/pdfv1?wa=wsignin1.0&wtrealm={your_criipto_id}&wreply=https://localhost:5001/sign/callback&wauth=urn:grn:authn:no:bankid&ui_locales=en`
+Full URI example: `https://samples.criipto.id/sign/pdfv1?wa=wsignin1.0&wtrealm=urn:criipto:samples:no1&wreply=https://localhost:5001/sign/callback&wauth=urn:grn:authn:no:bankid&ui_locales=en`
 
 Body example:
 ```c#
@@ -145,6 +146,31 @@ var body = new PdfSignRequest {
     }
   }
 };
+```
+
+Or, in HTTP request format:
+```
+POST https://samples.criipto.id/sign/pdfv1?wa=wsignin1.0&wtrealm=urn:criipto:samples:no1&wreply=https://localhost:5001/sign/callback&wauth=urn:grn:authn:no:bankid&ui_locales=en HTTP/1.1
+Content-Type: application/json
+
+{
+    "signProperties" : {
+        "orderName": "Demo signing",
+        "showConfirmation" : true,
+        "showUnderstanding" : true
+    },
+    "documents": [
+        {
+            "description" : "Demo document",
+            "pdf" : "...base64-encoded PDF document contents (UTF8)...",
+            "seal": {
+                "x": 10,
+                "y": 10,
+                "page": 1
+            }
+        }
+    ]
+}
 ```
 
 If successful, Criipto Verify will respond with a `JSON` literal with a `redirectUri` property:
@@ -246,7 +272,7 @@ Query parameters:
   * `showUnderstanding` and `showConfirmation` - booleans which control respective UI aspects of authentication provider
   * `ui_locales` - specify the UI language to use by authentication provider
 
-Full signature URL example: `{your_criipto_domain}/sign/pdfv1?wa=wsignin1.0&wtrealm={your_criipto_id}&wreply=https://localhost:5001/sign/callback&wauth=urn:grn:authn:no:bankid&signtext=VGhpcyBpcyBhbiBleGFtcGxlLg%3D%3D&orderName=Signing%20demo&showUnderstanding=true&showConfirmation=true&ui_locales=en`
+Full signature URL example: `https://samples.criipto.id/sign/pdfv1?wa=wsignin1.0&wtrealm=urn:criipto:samples:no1&wreply=https://localhost:5001/sign/callback&wauth=urn:grn:authn:no:bankid&signtext=VGhpcyBpcyBhbiBleGFtcGxlLg%3D%3D&orderName=Signing%20demo&showUnderstanding=true&showConfirmation=true&ui_locales=en`
 
 If a valid signature URL has been constructed, Criipto Verify will redirect the user to the authentication provider and handle signing, after which the user will be redirected to the callback URL, and a JWT will be posted to the callback route.
 
