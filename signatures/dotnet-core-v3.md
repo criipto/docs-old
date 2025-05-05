@@ -272,7 +272,7 @@ Query parameters:
   * `showUnderstanding` and `showConfirmation` - booleans which control respective UI aspects of authentication provider
   * `ui_locales` - specify the UI language to use by authentication provider
 
-Full signature URL example: `https://samples.criipto.id/sign/pdfv1?wa=wsignin1.0&wtrealm=urn:criipto:samples:no1&wreply=https://localhost:5001/sign/callback&wauth=urn:grn:authn:no:bankid&signtext=VGhpcyBpcyBhbiBleGFtcGxlLg%3D%3D&orderName=Signing%20demo&showUnderstanding=true&showConfirmation=true&ui_locales=en`
+Full signature URL example: `https://samples.criipto.id/sign/text?wa=wsignin1.0&wtrealm=urn:criipto:samples:no1&wreply=https://localhost:5001/sign/callback&wauth=urn:grn:authn:no:bankid&signtext=VGhpcyBpcyBhbiBleGFtcGxlLg%3D%3D&orderName=Signing%20demo&showUnderstanding=true&showConfirmation=true&ui_locales=en`
 
 If a valid signature URL has been constructed, Criipto Verify will redirect the user to the authentication provider and handle signing, after which the user will be redirected to the callback URL, and a JWT will be posted to the callback route.
 
